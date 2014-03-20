@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{472D207C-E4D8-4EB5-AB8B-2D1587F5BF6B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>MultiPlatformTest_Win32</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\OpenGLFramework;$(SolutionDir)..\MultiPlatformFramework\Interfaces;$(SolutionDir)..\MultiPlatformFramework\Windows;$(SolutionDir)..\MultiPlatformFramework\Common;$(SolutionDIr)..\libs\libpng\;$(SolutionDir)..\libs\glm;$(SolutionDir)..\libs\pthread\include;$(ProjectDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\Libs\libpng\lib;$(SolutionDir)..\Libs\pthread\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libpng16.lib;pthreadVCE2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\OpenGLFramework;$(SolutionDir)..\MultiPlatformFramework\Interfaces;$(SolutionDir)..\MultiPlatformFramework\Windows;$(SolutionDir)..\MultiPlatformFramework\Common;$(SolutionDIr)..\libs\libpng\;$(SolutionDir)..\libs\pthread\include;$(ProjectDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\Libs\libpng\lib;$(SolutionDir)..\Libs\pthread\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libpng16.lib;pthreadVCE2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\MultiPlatformFramework\Common\CommonInput.h" />
+    <ClInclude Include="..\..\MultiPlatformFramework\Common\MainGameLoop.h" />
+    <ClInclude Include="..\..\MultiPlatformFramework\Common\Timer.h" />
+    <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IAudio.h" />
+    <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IBitmap.h" />
+    <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IFile.h" />
+    <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IFileIO.h" />
+    <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IGame.h" />
+    <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IGameLoopListener.h" />
+    <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IGraphics.h" />
+    <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IInput.h" />
+    <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IPlatform.h" />
+    <ClInclude Include="..\..\MultiPlatformFramework\OpenGLTest.h" />
+    <ClInclude Include="..\..\MultiPlatformFramework\Windows\logger.h" />
+    <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsCommon.h" />
+    <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsFile.h" />
+    <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsFileIO.h" />
+    <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsGraphics.h" />
+    <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsInput.h" />
+    <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsPlatform.h" />
+    <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsTimer.h" />
+    <ClInclude Include="..\..\OpenGLFramework\Camera.h" />
+    <ClInclude Include="..\..\OpenGLFramework\Camera2D.h" />
+    <ClInclude Include="..\..\OpenGLFramework\glmtypedef.h" />
+    <ClInclude Include="..\..\OpenGLFramework\Image.h" />
+    <ClInclude Include="..\..\OpenGLFramework\OpenGLCommons.h" />
+    <ClInclude Include="..\..\OpenGLFramework\Rect.h" />
+    <ClInclude Include="..\..\OpenGLFramework\Sprite.h" />
+    <ClInclude Include="..\..\OpenGLFramework\SpriteBatcher.h" />
+    <ClInclude Include="..\..\OpenGLFramework\Texture.h" />
+    <ClInclude Include="MultiPlatformTest_Win32.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\MultiPlatformFramework\Common\CommonInput.cpp" />
+    <ClCompile Include="..\..\MultiPlatformFramework\Common\MainGameLoop.cpp" />
+    <ClCompile Include="..\..\MultiPlatformFramework\Common\Timer.cpp" />
+    <ClCompile Include="..\..\MultiPlatformFramework\OpenGLTest.cpp" />
+    <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsFile.cpp" />
+    <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsFileIO.cpp" />
+    <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsGraphics.cpp" />
+    <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsInput.cpp" />
+    <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsPlatform.cpp" />
+    <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsTimer.cpp" />
+    <ClCompile Include="..\..\OpenGLFramework\Camera.cpp" />
+    <ClCompile Include="..\..\OpenGLFramework\Camera2D.cpp" />
+    <ClCompile Include="..\..\OpenGLFramework\Image.cpp" />
+    <ClCompile Include="..\..\OpenGLFramework\Rect.cpp" />
+    <ClCompile Include="..\..\OpenGLFramework\Sprite.cpp" />
+    <ClCompile Include="..\..\OpenGLFramework\SpriteBatcher.cpp" />
+    <ClCompile Include="..\..\OpenGLFramework\Texture.cpp" />
+    <ClCompile Include="MultiPlatformTest_Win32.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MultiPlatformTest_Win32.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="MultiPlatformTest_Win32.ico" />
+    <Image Include="small.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

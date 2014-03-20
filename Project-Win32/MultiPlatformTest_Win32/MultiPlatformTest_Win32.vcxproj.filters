@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{3e8c2755-d20c-4fca-9206-646f46563ab8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Interfaces">
+      <UniqueIdentifier>{bf007e9f-7c7c-4fd4-9b56-9906df310796}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Windows">
+      <UniqueIdentifier>{d2358451-659c-4ba4-b425-26b24f35d0ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Common">
+      <UniqueIdentifier>{cd63a76d-4e2e-4187-b1f8-53583e5165ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\OpenGL">
+      <UniqueIdentifier>{cfc4dcf0-83ce-4c77-ab4e-f3780f5e5666}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiPlatformTest_Win32.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IAudio.h">
+      <Filter>Framework\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IFileIO.h">
+      <Filter>Framework\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IGame.h">
+      <Filter>Framework\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IGraphics.h">
+      <Filter>Framework\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IInput.h">
+      <Filter>Framework\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IPlatform.h">
+      <Filter>Framework\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsGraphics.h">
+      <Filter>Framework\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsPlatform.h">
+      <Filter>Framework\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\OpenGLTest.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsCommon.h">
+      <Filter>Framework\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IGameLoopListener.h">
+      <Filter>Framework\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsTimer.h">
+      <Filter>Framework\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\Common\CommonInput.h">
+      <Filter>Framework\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\Common\MainGameLoop.h">
+      <Filter>Framework\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\Common\Timer.h">
+      <Filter>Framework\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsInput.h">
+      <Filter>Framework\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\Windows\logger.h">
+      <Filter>Framework\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IBitmap.h">
+      <Filter>Framework\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OpenGLFramework\Image.h">
+      <Filter>Framework\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OpenGLFramework\Texture.h">
+      <Filter>Framework\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IFile.h">
+      <Filter>Framework\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsFileIO.h">
+      <Filter>Framework\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsFile.h">
+      <Filter>Framework\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OpenGLFramework\glmtypedef.h">
+      <Filter>Framework\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OpenGLFramework\Sprite.h">
+      <Filter>Framework\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OpenGLFramework\SpriteBatcher.h">
+      <Filter>Framework\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OpenGLFramework\OpenGLCommons.h">
+      <Filter>Framework\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OpenGLFramework\Camera2D.h">
+      <Filter>Framework\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OpenGLFramework\Rect.h">
+      <Filter>Framework\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OpenGLFramework\Camera.h">
+      <Filter>Framework\OpenGL</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiPlatformTest_Win32.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsGraphics.cpp">
+      <Filter>Framework\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsPlatform.cpp">
+      <Filter>Framework\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\MultiPlatformFramework\OpenGLTest.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsTimer.cpp">
+      <Filter>Framework\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\MultiPlatformFramework\Common\CommonInput.cpp">
+      <Filter>Framework\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\MultiPlatformFramework\Common\MainGameLoop.cpp">
+      <Filter>Framework\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\MultiPlatformFramework\Common\Timer.cpp">
+      <Filter>Framework\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsInput.cpp">
+      <Filter>Framework\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\OpenGLFramework\Image.cpp">
+      <Filter>Framework\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\OpenGLFramework\Texture.cpp">
+      <Filter>Framework\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsFileIO.cpp">
+      <Filter>Framework\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsFile.cpp">
+      <Filter>Framework\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\OpenGLFramework\Sprite.cpp">
+      <Filter>Framework\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\OpenGLFramework\SpriteBatcher.cpp">
+      <Filter>Framework\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\OpenGLFramework\Camera.cpp">
+      <Filter>Framework\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\OpenGLFramework\Camera2D.cpp">
+      <Filter>Framework\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\OpenGLFramework\Rect.cpp">
+      <Filter>Framework\OpenGL</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MultiPlatformTest_Win32.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="MultiPlatformTest_Win32.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
