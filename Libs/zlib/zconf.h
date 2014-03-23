@@ -8,6 +8,9 @@
 #ifndef ZCONF_H
 #define ZCONF_H
 
+// add by kang
+#define HAVE_UNISTD_H 1
+
 /*
  * If you *really* need a unique prefix for all types and library functions,
  * compile with -DZ_PREFIX. The "standard" zlib should be compiled without it.
