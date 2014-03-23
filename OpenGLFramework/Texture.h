@@ -1,6 +1,8 @@
 #ifndef TEXTURE_H_
 #define TEXTURE_H_
 
+#include "Common/CommonHeaders.h"
+
 class IFileIO;
 class Image;
 class Texture {

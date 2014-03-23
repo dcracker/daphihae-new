@@ -1,4 +1,6 @@
+
 #include "stdafx.h"
+
 #include "Image.h"
 #include "IFile.h"
 #include "png.h"
@@ -113,6 +115,9 @@ Image* Image::LoadPNG( IFile* file ) {
 		png_set_expand_gray_1_2_4_to_8( png_ptr );
 		format = GL_LUMINANCE_ALPHA;
 		break;
+    default:
+        format = 0;
+        break;
 	}
 
 	// Update the png info struct.

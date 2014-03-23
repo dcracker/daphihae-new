@@ -9,6 +9,10 @@
 #ifndef Project_iOS_stdafx_h
 #define Project_iOS_stdafx_h
 
+// I am a dummy now
 
+#include <OpenGLES/ES1/gl.h>
+
+#define glFrustum glFrustumf
 
 #endif

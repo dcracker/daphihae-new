@@ -9,22 +9,24 @@
 #ifndef MultiPlatformTest_iOS_iOSPlatform_h
 #define MultiPlatformTest_iOS_iOSPlatform_h
 
-#include "IPlatform.h"
+#include "Interfaces/IPlatform.h"
 #include "iOSGraphics.h"
 
 class CIOSPlatform : public IPlatform
 {
-public:
-	CIOSPlatform( UIView *viewRoot );
-	~CIOSPlatform();
+protected:
+    CIOSGraphics* m_Graphics;
     
-	IInput*		GetInput() const { return NULL; };
-	IFileIO*	GetFileIO() const { return NULL; };
-	IGraphics*	GetGraphics() const { return m_Graphics; };
-	IAudio*		GetAudio() const { return NULL; };
+public:
+	CIOSPlatform();
+	virtual ~CIOSPlatform();
+    
+	IInput*		GetInput() const;
+	const IFileIO*	GetFileIO() const;
+	const IGraphics*	GetGraphics() const;
+	const IAudio*		GetAudio() const { return NULL; };
 
-private:
-	CIOSGraphics* m_Graphics;
+protected:
 };
 
 

@@ -1,6 +1,8 @@
-#include "stdafx.h"
-#include "Camera.h"
 
+#include "stdafx.h"
+
+#include "OpenGLCommons.h"
+#include "Camera.h"
 
 Camera::Camera( float fovY, float aspectRatio, float _near, float _far )
 	: mFov( fovY )
@@ -16,6 +18,7 @@ Camera::~Camera()
 }
 
 void Camera::Bind() const {
+#if 1
 	glMatrixMode( GL_PROJECTION );
 	glLoadIdentity();
 
@@ -25,4 +28,5 @@ void Camera::Bind() const {
 
 	glMatrixMode( GL_MODELVIEW );
 	glLoadIdentity();
+#endif
 }

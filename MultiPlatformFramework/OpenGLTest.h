@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "Interfaces/IGame.h"
+#include "Common/CommonHeaders.h"
 
 class IPlatform;
 class Texture;

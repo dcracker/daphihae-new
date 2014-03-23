@@ -1,4 +1,6 @@
+
 #include "stdafx.h"
+
 #include "Sprite.h"
 #include "Texture.h"
 #include "Rect.h"

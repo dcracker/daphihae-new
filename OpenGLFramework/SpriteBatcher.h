@@ -1,5 +1,8 @@
 #pragma once
+
 #include <vector>
+#include "glmtypedef.h"
+#include "Common/CommonHeaders.h"
 
 class Texture;
 class Sprite;

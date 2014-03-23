@@ -1,6 +1,8 @@
 #ifndef IMAGE_H_
 #define IMAGE_H_
 
+#include "Common/CommonHeaders.h"
+
 class IFile;
 
 class Image {

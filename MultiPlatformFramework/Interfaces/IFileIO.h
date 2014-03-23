@@ -2,6 +2,7 @@
 #define IFileIO_H_
 
 #include "IFile.h"
+
 class IFileIO {
 public:
 	virtual ~IFileIO () {}

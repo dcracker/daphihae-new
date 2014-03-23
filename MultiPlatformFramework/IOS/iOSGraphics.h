@@ -10,30 +10,18 @@
 #define MultiPlatformTest_iOS_iOSGraphics_h
 
 
-#include "IGraphics.h"
+#include "Interfaces/IGraphics.h"
 
 class CIOSGraphics : public IGraphics
 {
 public:
-    CIOSGraphics( UIView *viewRoot );
-    ~CIOSGraphics();
+    CIOSGraphics();
+    virtual ~CIOSGraphics();
     
-    void Clear( int color ) const;
-    void Present() const;
-    
-    void DrawPixel( int x, int y, int color ) const;
-    void DrawLine( int startX, int startY, int stopX, int stopY, int color ) const;
-	void DrawRect( int x, int y, int width, int height, int color ) const;
-    
-	int GetWidth()	const;
-	int GetHeight() const;
-    
-protected:
-    UIView *m_viewRoot;
+	virtual int GetWidth() const;
+	virtual int GetHeight() const;
+    virtual float GetAspectRatio() const;
 };
-
-
-UIColor* GetUIColorFromARGB( int argb );
 
 
 #endif

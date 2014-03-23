@@ -15,6 +15,10 @@ struct TouchEvent {
 	int x, y;
 };
 
+// just add for explicit compatibility (C style) - kang
+typedef struct TouchEvent TouchEvent;
+
+
 class IInput {
 public:
 

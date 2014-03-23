@@ -1,6 +1,9 @@
+
 #include "stdafx.h"
+
 #include "CommonInput.h"
 #include "logger.h"
+
 #define LOG_TAG "CommonInput"
 
 CommonInput::CommonInput()

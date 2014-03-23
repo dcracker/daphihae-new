@@ -1,4 +1,6 @@
+
 #include "stdafx.h"
+
 #include "Camera2D.h"
 
 Camera2D::Camera2D( float left, float right, float bottom, float top )
@@ -21,10 +23,12 @@ Camera2D::~Camera2D()
 }
 
 void Camera2D::Bind() const {
+#if 0
 	glMatrixMode( GL_PROJECTION );
 	glLoadIdentity();
 	glOrtho( mDrawRegion.GetLeft(), mDrawRegion.GetRight(), mDrawRegion.GetBottom(), mDrawRegion.GetTop(), mNear, mFar );
 
 	glMatrixMode( GL_MODELVIEW );
 	glLoadIdentity();
+#endif
 }

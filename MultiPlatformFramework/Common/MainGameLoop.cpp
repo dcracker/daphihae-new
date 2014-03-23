@@ -1,10 +1,13 @@
+
 #include "stdafx.h"
 
+#include "Interfaces/IGame.h"
+#include "Interfaces/IGameLoopListener.h"
+
 #include "MainGameLoop.h"
-#include "Logger.h"
-#include "../Interfaces/IGame.h"
-#include "../Interfaces/IGameLoopListener.h"
-#include "../Common/Timer.h"
+#include "logger.h"
+#include "Timer.h"
+#include "CommonHeaders.h"
 
 #define LOG_TAG "MainGameLoop"
 
@@ -95,6 +98,9 @@ void MainGameLoop::MainLoop()
 				mGameInstance->Pause();
 				mListener->OnPause();
 				break;
+                    
+            default:
+                break;
 			}
 
 			mMessageQueue.pop();
@@ -102,7 +108,7 @@ void MainGameLoop::MainLoop()
 		else {
 			float deltaTime = mTickTimer->Tick();
 			// trash too long frame
-			if ( deltaTime < 1 ) {
+			if ( deltaTime < 1.0f ) {
 				mGameInstance->Update( deltaTime );
 				mGameInstance->Render();
 				mListener->OnPresent();

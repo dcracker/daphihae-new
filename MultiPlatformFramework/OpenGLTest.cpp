@@ -1,7 +1,7 @@
+
 #include "stdafx.h"
 
-#include "OpenGLTest.h"
-#include "IPlatform.h"
+#include "Interfaces/IPlatform.h"
 #include "Texture.h"
 #include "SpriteBatcher.h"
 #include "Sprite.h"
@@ -10,6 +10,9 @@
 #include "Camera2D.h"
 
 #include "logger.h"
+
+#include "OpenGLTest.h"
+
 #define LOG_TAG "OpenGLTest"
 
 static GLfloat vertices[][3] = {
@@ -139,7 +142,7 @@ void OpenGLTest::Pause() {
 }
 
 void OpenGLTest::Update( float deltaTime ) {
-	static int time = 10;
+//	static int time = 10;
 	static float speed = -100;
 	std::vector<TouchEvent> events = mPlatform->GetInput()->GetTouchEvents();
     mAngle -= 360 * deltaTime / (mPlatform->GetInput()->IsTouchDown(0) ? 60 : 5);
