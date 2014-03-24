@@ -23,12 +23,10 @@ Camera2D::~Camera2D()
 }
 
 void Camera2D::Bind() const {
-#if 0
 	glMatrixMode( GL_PROJECTION );
 	glLoadIdentity();
 	glOrtho( mDrawRegion.GetLeft(), mDrawRegion.GetRight(), mDrawRegion.GetBottom(), mDrawRegion.GetTop(), mNear, mFar );
 
 	glMatrixMode( GL_MODELVIEW );
 	glLoadIdentity();
-#endif
 }

@@ -18,7 +18,6 @@ Camera::~Camera()
 }
 
 void Camera::Bind() const {
-#if 1
 	glMatrixMode( GL_PROJECTION );
 	glLoadIdentity();
 
@@ -28,5 +27,4 @@ void Camera::Bind() const {
 
 	glMatrixMode( GL_MODELVIEW );
 	glLoadIdentity();
-#endif
 }

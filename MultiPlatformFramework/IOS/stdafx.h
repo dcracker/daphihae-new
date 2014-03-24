@@ -14,5 +14,6 @@
 #include <OpenGLES/ES1/gl.h>
 
 #define glFrustum glFrustumf
+#define glOrtho glOrthof
 
 #endif

@@ -62,7 +62,7 @@ void SpriteBatcher::Render() const {
 	if ( mNumSprite <= 0 ) {
 		return; 
 	}
-#if 0
+
 	glEnableClientState( GL_VERTEX_ARRAY );
 	glEnableClientState( GL_TEXTURE_COORD_ARRAY );
 
@@ -74,5 +74,4 @@ void SpriteBatcher::Render() const {
 
 	glDisableClientState( GL_TEXTURE_COORD_ARRAY );
 	glDisableClientState( GL_VERTEX_ARRAY );
-#endif
 }
