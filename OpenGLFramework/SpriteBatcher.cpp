@@ -70,7 +70,7 @@ void SpriteBatcher::Render() const {
 	// because gcc does not support that in ndk.
 	glVertexPointer( 3, GL_FLOAT, sizeof(VertexFormat), &mVertices.front() );
 	glTexCoordPointer( 2, GL_FLOAT, sizeof(VertexFormat), ((float*)&mVertices.front()) + 3 );
-	glDrawElements( GL_TRIANGLES, mIndices.size(), GL_UNSIGNED_SHORT, &mIndices.front() );
+	glDrawElements( GL_TRIANGLES, (int)mIndices.size(), GL_UNSIGNED_SHORT, &mIndices.front() );
 
 	glDisableClientState( GL_TEXTURE_COORD_ARRAY );
 	glDisableClientState( GL_VERTEX_ARRAY );

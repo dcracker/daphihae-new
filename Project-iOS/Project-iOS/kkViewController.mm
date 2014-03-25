@@ -56,7 +56,7 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     // for debug
-    NSLog( @"touch began count: %d", touches.count );
+    NSLog( @"touch began count: %u", (unsigned int)touches.count );
     for ( int i=0; i < touches.count; i++ )
     {
         UITouch* touch = [touches.allObjects objectAtIndex:i];
@@ -74,7 +74,7 @@
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     // for debug
-    NSLog( @"touch moved count: %d", touches.count );
+    NSLog( @"touch moved count: %u", (unsigned int)touches.count );
     for ( int i=0; i < touches.count; i++ )
     {
         UITouch* touch = [touches.allObjects objectAtIndex:i];
@@ -92,7 +92,7 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     // for debug
-    NSLog( @"touch ended count: %d", touches.count );
+    NSLog( @"touch ended count: %u", (unsigned int)touches.count );
     for ( int i=0; i < touches.count; i++ )
     {
         UITouch* touch = [touches.allObjects objectAtIndex:i];
@@ -110,7 +110,7 @@
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
     // for debug
-    NSLog( @"touch cancelled count: %d", touches.count );
+    NSLog( @"touch cancelled count: %u", (unsigned int)touches.count );
     for ( int i=0; i < touches.count; i++ )
     {
         UITouch* touch = [touches.allObjects objectAtIndex:i];

@@ -124,7 +124,7 @@ Image* Image::LoadPNG( IFile* file ) {
 	png_read_update_info( png_ptr, info_ptr );
 
 	// Row size in bytes.
-	int rowbytes = png_get_rowbytes( png_ptr, info_ptr );
+	int rowbytes = (int)png_get_rowbytes( png_ptr, info_ptr );
 
 	// glTexImage2d requires rows to be 4-byte aligned
 	rowbytes += 3 - ((rowbytes-1) % 4);
@@ -162,7 +162,7 @@ Image* Image::LoadPNG( IFile* file ) {
 
 static void png_read_callback(png_structp png, png_bytep data, png_size_t size) {
 	IFile* file = (IFile*)png_get_io_ptr( png );
-	if ( file->ReadByte( data, size ) == false ) {
+	if ( file->ReadByte( data, (int)size ) == false ) {
 		LOG_ERROR( "Error while reading PNG file" );
 	}
 }
