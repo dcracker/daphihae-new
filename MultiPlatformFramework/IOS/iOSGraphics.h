@@ -11,16 +11,48 @@
 
 
 #include "Interfaces/IGraphics.h"
+#include "Common/CommonHeaders.h"
+
 
 class CIOSGraphics : public IGraphics
 {
+protected:
+    void* m_viewRender;
+    void* m_Context;
+    void* m_DisplayLink;
+    
+    GLint m_nFBufferWidth;
+    GLint m_nFBufferHeight;
+    
+    GLuint m_uFBufferDefault;
+    GLuint m_uRBufferColor;
+    GLuint m_uRBufferDepth;
+    
+    bool m_bUseDepthBuffer;
+    
+    float m_fRetinaScale;
+
 public:
     CIOSGraphics();
     virtual ~CIOSGraphics();
     
-	virtual int GetWidth() const;
-	virtual int GetHeight() const;
+    virtual void Present() const;
+    
+    virtual int GetWidth() const;
+    virtual int GetHeight() const;
     virtual float GetAspectRatio() const;
+    
+    int AttachRenderView( void* viewRender, float fRetinaScale, bool bUseDepthBuffer=false );
+    void DetachRenderView();
+    void ResizeRenderView();
+    bool isRenderViewReady();
+    
+    void startRenderLoop();
+    void stopRenderLoop();
+    
+private:
+    void createFramebuffer();
+    void deleteFramebuffer();
 };
 
 

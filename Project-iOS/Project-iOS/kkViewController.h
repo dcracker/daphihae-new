@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "kkRenderView.h"
 
 @interface kkViewController : UIViewController
+{
+    kkRenderView* m_viewRender;
+}
 
 @end

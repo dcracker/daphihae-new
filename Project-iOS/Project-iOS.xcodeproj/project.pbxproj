@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D58B9D318E017E900FCC1B2 /* kkRenderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D58B9D218E017E900FCC1B2 /* kkRenderView.m */; };
+		3D58B9DB18E030D000FCC1B2 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D58B9DA18E030D000FCC1B2 /* OpenGLES.framework */; };
+		3D58B9DE18E05AE100FCC1B2 /* iOSFileIO.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D58B9DC18E05AE100FCC1B2 /* iOSFileIO.mm */; };
+		3D58B9E118E05D1500FCC1B2 /* iOSInput.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D58B9DF18E05D1500FCC1B2 /* iOSInput.mm */; };
+		3D58B9E418E0614200FCC1B2 /* iOSTimer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D58B9E218E0614200FCC1B2 /* iOSTimer.mm */; };
+		3D58B9E618E0854100FCC1B2 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D58B9E518E0854100FCC1B2 /* test.png */; };
 		3D66323F18DAB917002C31A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D66323E18DAB917002C31A5 /* Foundation.framework */; };
 		3D66324118DAB917002C31A5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D66324018DAB917002C31A5 /* CoreGraphics.framework */; };
 		3D66324318DAB917002C31A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D66324218DAB917002C31A5 /* UIKit.framework */; };
 		3D66324918DAB917002C31A5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D66324718DAB917002C31A5 /* InfoPlist.strings */; };
 		3D66324B18DAB917002C31A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D66324A18DAB917002C31A5 /* main.m */; };
-		3D66324F18DAB917002C31A5 /* kkAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D66324E18DAB917002C31A5 /* kkAppDelegate.m */; };
+		3D66324F18DAB917002C31A5 /* kkAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D66324E18DAB917002C31A5 /* kkAppDelegate.mm */; };
 		3D66325218DAB917002C31A5 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D66325018DAB917002C31A5 /* Main_iPhone.storyboard */; };
 		3D66325518DAB917002C31A5 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D66325318DAB917002C31A5 /* Main_iPad.storyboard */; };
-		3D66325818DAB917002C31A5 /* kkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D66325718DAB917002C31A5 /* kkViewController.m */; };
+		3D66325818DAB917002C31A5 /* kkViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D66325718DAB917002C31A5 /* kkViewController.mm */; };
 		3D66325A18DAB917002C31A5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D66325918DAB917002C31A5 /* Images.xcassets */; };
 		3D66326118DAB917002C31A5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D66326018DAB917002C31A5 /* XCTest.framework */; };
 		3D66326218DAB917002C31A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D66323E18DAB917002C31A5 /* Foundation.framework */; };
@@ -141,7 +147,8 @@
 		3D66446618DADF92002C31A5 /* vector_query.inl in Resources */ = {isa = PBXBuildFile; fileRef = 3D6643E818DADF92002C31A5 /* vector_query.inl */; };
 		3D66446718DADF92002C31A5 /* wrap.inl in Resources */ = {isa = PBXBuildFile; fileRef = 3D6643EA18DADF92002C31A5 /* wrap.inl */; };
 		3D6644B018DC3EDB002C31A5 /* libpthread.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6644AF18DC3EDB002C31A5 /* libpthread.dylib */; };
-		3D66459118DEC612002C31A5 /* liblibpng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D66454418DC4476002C31A5 /* liblibpng.a */; };
+		3D66459118DEC612002C31A5 /* libpng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D66454418DC4476002C31A5 /* libpng.a */; };
+		3D6645CA18DF4C0E002C31A5 /* iOSFile.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D6645C818DF4C0E002C31A5 /* iOSFile.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +169,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D58B9D118E017E900FCC1B2 /* kkRenderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kkRenderView.h; sourceTree = "<group>"; };
+		3D58B9D218E017E900FCC1B2 /* kkRenderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = kkRenderView.m; sourceTree = "<group>"; };
+		3D58B9DA18E030D000FCC1B2 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		3D58B9DC18E05AE100FCC1B2 /* iOSFileIO.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iOSFileIO.mm; sourceTree = "<group>"; };
+		3D58B9DD18E05AE100FCC1B2 /* iOSFileIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSFileIO.h; sourceTree = "<group>"; };
+		3D58B9DF18E05D1500FCC1B2 /* iOSInput.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iOSInput.mm; sourceTree = "<group>"; };
+		3D58B9E018E05D1500FCC1B2 /* iOSInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSInput.h; sourceTree = "<group>"; };
+		3D58B9E218E0614200FCC1B2 /* iOSTimer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iOSTimer.mm; sourceTree = "<group>"; };
+		3D58B9E318E0614200FCC1B2 /* iOSTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSTimer.h; sourceTree = "<group>"; };
+		3D58B9E518E0854100FCC1B2 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test.png; path = ../../Resources/test.png; sourceTree = "<group>"; };
 		3D66323B18DAB917002C31A5 /* Project-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D66323E18DAB917002C31A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3D66324018DAB917002C31A5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -171,11 +188,11 @@
 		3D66324A18DAB917002C31A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3D66324C18DAB917002C31A5 /* Project-iOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Project-iOS-Prefix.pch"; sourceTree = "<group>"; };
 		3D66324D18DAB917002C31A5 /* kkAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kkAppDelegate.h; sourceTree = "<group>"; };
-		3D66324E18DAB917002C31A5 /* kkAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kkAppDelegate.m; sourceTree = "<group>"; };
+		3D66324E18DAB917002C31A5 /* kkAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = kkAppDelegate.mm; sourceTree = "<group>"; };
 		3D66325118DAB917002C31A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		3D66325418DAB917002C31A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		3D66325618DAB917002C31A5 /* kkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kkViewController.h; sourceTree = "<group>"; };
-		3D66325718DAB917002C31A5 /* kkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kkViewController.m; sourceTree = "<group>"; };
+		3D66325718DAB917002C31A5 /* kkViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = kkViewController.mm; sourceTree = "<group>"; };
 		3D66325918DAB917002C31A5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3D66325F18DAB917002C31A5 /* Project-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D66326018DAB917002C31A5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -475,6 +492,8 @@
 		3D6644AE18DC3862002C31A5 /* stdafx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stdafx.h; sourceTree = "<group>"; };
 		3D6644AF18DC3EDB002C31A5 /* libpthread.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpthread.dylib; path = usr/lib/libpthread.dylib; sourceTree = SDKROOT; };
 		3D66453F18DC4475002C31A5 /* libpng.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpng.xcodeproj; path = libpng/libpng.xcodeproj; sourceTree = "<group>"; };
+		3D6645C818DF4C0E002C31A5 /* iOSFile.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iOSFile.mm; sourceTree = "<group>"; };
+		3D6645C918DF4C0E002C31A5 /* iOSFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSFile.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -482,8 +501,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D66459118DEC612002C31A5 /* liblibpng.a in Frameworks */,
+				3D66459118DEC612002C31A5 /* libpng.a in Frameworks */,
 				3D6644B018DC3EDB002C31A5 /* libpthread.dylib in Frameworks */,
+				3D58B9DB18E030D000FCC1B2 /* OpenGLES.framework in Frameworks */,
 				3D66324118DAB917002C31A5 /* CoreGraphics.framework in Frameworks */,
 				3D66324318DAB917002C31A5 /* UIKit.framework in Frameworks */,
 				3D66323F18DAB917002C31A5 /* Foundation.framework in Frameworks */,
@@ -525,6 +545,7 @@
 		3D66323D18DAB917002C31A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3D58B9DA18E030D000FCC1B2 /* OpenGLES.framework */,
 				3D6644AF18DC3EDB002C31A5 /* libpthread.dylib */,
 				3D66323E18DAB917002C31A5 /* Foundation.framework */,
 				3D66324018DAB917002C31A5 /* CoreGraphics.framework */,
@@ -629,12 +650,20 @@
 		3D6638C718DACD16002C31A5 /* IOS */ = {
 			isa = PBXGroup;
 			children = (
+				3D6638D618DAD363002C31A5 /* logger.h */,
+				3D6644AE18DC3862002C31A5 /* stdafx.h */,
 				3D6638C818DACD16002C31A5 /* iOSGraphics.h */,
 				3D6638C918DACD16002C31A5 /* iOSGraphics.mm */,
 				3D6638CA18DACD16002C31A5 /* iOSPlatform.h */,
 				3D6638CB18DACD16002C31A5 /* iOSPlatform.mm */,
-				3D6638D618DAD363002C31A5 /* logger.h */,
-				3D6644AE18DC3862002C31A5 /* stdafx.h */,
+				3D6645C918DF4C0E002C31A5 /* iOSFile.h */,
+				3D6645C818DF4C0E002C31A5 /* iOSFile.mm */,
+				3D58B9DD18E05AE100FCC1B2 /* iOSFileIO.h */,
+				3D58B9DC18E05AE100FCC1B2 /* iOSFileIO.mm */,
+				3D58B9E018E05D1500FCC1B2 /* iOSInput.h */,
+				3D58B9DF18E05D1500FCC1B2 /* iOSInput.mm */,
+				3D58B9E318E0614200FCC1B2 /* iOSTimer.h */,
+				3D58B9E218E0614200FCC1B2 /* iOSTimer.mm */,
 			);
 			name = IOS;
 			path = ../../MultiPlatformFramework/IOS;
@@ -643,6 +672,7 @@
 		3D6638D418DACD62002C31A5 /* Application Part */ = {
 			isa = PBXGroup;
 			children = (
+				3D58B9E518E0854100FCC1B2 /* test.png */,
 				3D6638D518DACD8B002C31A5 /* Classes */,
 				3D66325018DAB917002C31A5 /* Main_iPhone.storyboard */,
 				3D66325318DAB917002C31A5 /* Main_iPad.storyboard */,
@@ -656,9 +686,11 @@
 			isa = PBXGroup;
 			children = (
 				3D66324D18DAB917002C31A5 /* kkAppDelegate.h */,
-				3D66324E18DAB917002C31A5 /* kkAppDelegate.m */,
+				3D66324E18DAB917002C31A5 /* kkAppDelegate.mm */,
 				3D66325618DAB917002C31A5 /* kkViewController.h */,
-				3D66325718DAB917002C31A5 /* kkViewController.m */,
+				3D66325718DAB917002C31A5 /* kkViewController.mm */,
+				3D58B9D118E017E900FCC1B2 /* kkRenderView.h */,
+				3D58B9D218E017E900FCC1B2 /* kkRenderView.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -998,7 +1030,7 @@
 		3D66454018DC4475002C31A5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3D66454418DC4476002C31A5 /* liblibpng.a */,
+				3D66454418DC4476002C31A5 /* libpng.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1082,10 +1114,10 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		3D66454418DC4476002C31A5 /* liblibpng.a */ = {
+		3D66454418DC4476002C31A5 /* libpng.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = liblibpng.a;
+			path = libpng.a;
 			remoteRef = 3D66454318DC4476002C31A5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -1117,6 +1149,7 @@
 				3D66442718DADF92002C31A5 /* matrix_transform.inl in Resources */,
 				3D66442018DADF92002C31A5 /* type_vec2.inl in Resources */,
 				3D66445C18DADF92002C31A5 /* simd_quat.inl in Resources */,
+				3D58B9E618E0854100FCC1B2 /* test.png in Resources */,
 				3D66446118DADF92002C31A5 /* transform.inl in Resources */,
 				3D66446418DADF92002C31A5 /* vec1.inl in Resources */,
 				3D66445918DADF92002C31A5 /* rotate_vector.inl in Resources */,
@@ -1223,10 +1256,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D58B9DE18E05AE100FCC1B2 /* iOSFileIO.mm in Sources */,
 				3D6638D118DACD16002C31A5 /* iOSGraphics.mm in Sources */,
 				3D6638D218DACD16002C31A5 /* iOSPlatform.mm in Sources */,
+				3D6645CA18DF4C0E002C31A5 /* iOSFile.mm in Sources */,
+				3D58B9E418E0614200FCC1B2 /* iOSTimer.mm in Sources */,
 				3D6638CF18DACD16002C31A5 /* MainGameLoop.cpp in Sources */,
 				3D6638CE18DACD16002C31A5 /* CommonInput.cpp in Sources */,
+				3D58B9E118E05D1500FCC1B2 /* iOSInput.mm in Sources */,
 				3D6638D018DACD16002C31A5 /* Timer.cpp in Sources */,
 				3D6638E918DAD3CB002C31A5 /* Camera2D.cpp in Sources */,
 				3D6638E818DAD3CB002C31A5 /* Camera.cpp in Sources */,
@@ -1234,11 +1271,12 @@
 				3D6638EA18DAD3CB002C31A5 /* Image.cpp in Sources */,
 				3D6638ED18DAD3CB002C31A5 /* SpriteBatcher.cpp in Sources */,
 				3D6638EE18DAD3CB002C31A5 /* Texture.cpp in Sources */,
+				3D58B9D318E017E900FCC1B2 /* kkRenderView.m in Sources */,
 				3D6638EC18DAD3CB002C31A5 /* Sprite.cpp in Sources */,
 				3D6638D318DACD16002C31A5 /* OpenGLTest.cpp in Sources */,
 				3D66324B18DAB917002C31A5 /* main.m in Sources */,
-				3D66324F18DAB917002C31A5 /* kkAppDelegate.m in Sources */,
-				3D66325818DAB917002C31A5 /* kkViewController.m in Sources */,
+				3D66324F18DAB917002C31A5 /* kkAppDelegate.mm in Sources */,
+				3D66325818DAB917002C31A5 /* kkViewController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1313,6 +1351,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1354,6 +1393,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;

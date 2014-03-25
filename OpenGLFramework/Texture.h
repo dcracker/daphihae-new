@@ -39,7 +39,7 @@ private:
 	GLint	mMinFilter;
 	GLint	mMagFilter;
 	GLint	mWrapModeU;	// s
-	GLint	mWrapModeV;	// t
+	GLint	mWrapModeV;	// t    
 };
 
 #endif /* TEXTURE_H_ */

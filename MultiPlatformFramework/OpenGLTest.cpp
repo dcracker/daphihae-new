@@ -124,7 +124,7 @@ void OpenGLTest::Resume() {
 
 	glDisable(GL_DITHER);
     glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_FASTEST);
-    glClearColor(0, 0, 0, 0);
+    glClearColor(0, 0, 0, 1);
     glEnable(GL_CULL_FACE);
     glShadeModel(GL_SMOOTH);
     

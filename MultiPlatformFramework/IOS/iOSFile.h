@@ -9,6 +9,21 @@
 #ifndef __Project_iOS__iOSFile__
 #define __Project_iOS__iOSFile__
 
-#include <iostream>
+#include "Interfaces/IFile.h"
+
+
+class CIOSFile : public IFile
+{
+protected:
+    int m_nFD;
+    char m_strFileName[1024];
+    
+public:
+    CIOSFile( const char* fileName );
+    virtual ~CIOSFile();
+    
+    const char* GetFileName();
+    bool ReadByte( void* out_byteBuffer, int numByteToRead );
+};
 
 #endif /* defined(__Project_iOS__iOSFile__) */
