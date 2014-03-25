@@ -46,6 +46,7 @@ void CIOSPlatform::OnWindowChanged( void *args )
 
 void CIOSPlatform::OnTouchEvent( void *args )
 {
+    m_Input->PushTouchEvent( (const int*)args );
 }
 
 void CIOSPlatform::OnResume()

@@ -26,5 +26,9 @@
 - (void)StartRenderLoop;
 - (void)ResizeView;
 
+- (void)TouchBegan:(CGPoint)point;
+- (void)TouchMoved:(CGPoint)point;
+- (void)TouchEnded:(CGPoint)point;
+
 
 @end

@@ -104,4 +104,42 @@
     gameLoop->PushMessage( MainGameLoop::MSG_WINDOW_SET, NULL );
 }
 
+- (void)TouchBegan:(CGPoint)point
+{
+    int* touchParams = new int[4];
+    touchParams[0] = TouchEvent::TOUCH_DOWN;
+    touchParams[1] = 0;
+    touchParams[2] = (int)point.x;
+    touchParams[3] = (int)point.y;
+    
+    MainGameLoop* gameLoop = (MainGameLoop*)m_GameLoop;
+    gameLoop->PushMessage( MainGameLoop::MSG_TOUCH_EVENT, touchParams );
+    
+    NSLog( @"touch passed" );
+}
+
+- (void)TouchMoved:(CGPoint)point
+{
+    int* touchParams = new int[4];
+    touchParams[0] = TouchEvent::TOUCH_DRAG;
+    touchParams[1] = 0;
+    touchParams[2] = (int)point.x;
+    touchParams[3] = (int)point.y;
+    
+    MainGameLoop* gameLoop = (MainGameLoop*)m_GameLoop;
+    gameLoop->PushMessage( MainGameLoop::MSG_TOUCH_EVENT, touchParams );
+}
+
+- (void)TouchEnded:(CGPoint)point
+{
+    int* touchParams = new int[4];
+    touchParams[0] = TouchEvent::TOUCH_UP;
+    touchParams[1] = 0;
+    touchParams[2] = (int)point.x;
+    touchParams[3] = (int)point.y;
+    
+    MainGameLoop* gameLoop = (MainGameLoop*)m_GameLoop;
+    gameLoop->PushMessage( MainGameLoop::MSG_TOUCH_EVENT, touchParams );
+}
+
 @end
