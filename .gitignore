@@ -1,3 +1,9 @@
 Project-Win32/MultiPlatformTest_Win32.opensdf
 Project-Win32/MultiPlatformTest_Win32.sdf
 Project-Win32/MultiPlatformTest_Win32/Debug/
+Project-Android/bin/
+Project-Android/.settings/
+Project-Android/libs/
+Project-Android/obj/
+Project-Win32/ipch/
+Project-Android/lint.xml
