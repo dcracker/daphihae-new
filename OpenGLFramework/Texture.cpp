@@ -2,7 +2,7 @@
 #include "stdafx.h"
 
 #include "Texture.h"
-#include "IFileIO.h"
+#include "Interfaces/IFileIO.h"
 #include "Image.h"
 
 Texture::Texture( const IFileIO* io, const char* fileName )

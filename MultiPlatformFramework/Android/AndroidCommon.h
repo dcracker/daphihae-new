@@ -9,7 +9,7 @@
 #define glFrustum glFrustumf
 #define glOrtho	glOrthof
 
-#include "CommonHeaders.h"
+#include "Common/CommonHeaders.h"
 #include "OpenGLCommons.h"
 
 #endif	// ANDROIDCOMMON_H_

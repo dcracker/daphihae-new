@@ -6,7 +6,6 @@
  *		Visit My Site At nehe.gamedev.net
  */
 #include "stdafx.h"
-#include "../OpenGLTest.h"
 
 #pragma comment(linker, "/entry:WinMainCRTStartup /subsystem:console")
 
@@ -16,7 +15,7 @@
 #include "WindowsInput.h"
 
 #include "MainGameLoop.h"
-#include "../OpenGLTest.h"
+#include "DaPhiHae.h"
 
 MainGameLoop* loop = NULL;
 
@@ -41,7 +40,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
 	WindowsPlatform platformInstance(
 		new WindowsGraphics()
 	);
-	OpenGLTest gameInstance( &platformInstance );
+	DaPhiHae gameInstance( &platformInstance );
 	loop = new MainGameLoop( &gameInstance, &platformInstance, new WindowsTimer() );
 
 	// Create Our OpenGL Window

@@ -1,7 +1,7 @@
 #ifndef ANDROIDASSET_H_
 #define ANDROIDASSET_H_
 
-#include "IFile.h"
+#include "Interfaces/IFile.h"
 
 class AAssetManager;
 class AAsset;

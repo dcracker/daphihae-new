@@ -4,10 +4,10 @@
 #include <android/native_window.h> // requires ndk r5 or newer
 #include <android/native_window_jni.h> // requires ndk r5 or newer
 
+#include "Common/MainGameLoop.h"
 #include "AndroidPlatform.h"
 #include "AndroidTimer.h"
-#include "../Common/MainGameLoop.h"
-#include "../OpenGLTest.h"
+#include "DaPhiHae.h"
 #ifndef NDEBUG
 #include <unistd.h>
 #endif
@@ -26,7 +26,7 @@ extern "C" {
 static ANativeWindow *window = 0;
 static MainGameLoop *loop = 0;
 static AndroidPlatform*	platform = NULL;
-static OpenGLTest*	game = NULL;
+static DaPhiHae*	game = NULL;
 
 IMPL_JNI_API_WITH_PARAM( OnCreate, jobject assetManager ) {
 #ifndef NDEBUG
@@ -34,7 +34,7 @@ IMPL_JNI_API_WITH_PARAM( OnCreate, jobject assetManager ) {
 #endif
 	LOG_INFO( "NativeOnStart()" );
 	platform = new AndroidPlatform( env, assetManager );
-	game = new OpenGLTest( platform );
+	game = new DaPhiHae( platform );
 	loop = new MainGameLoop( game, platform, new AndroidTimer() );
 }
 

@@ -58,6 +58,11 @@
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
+			<name>jni/DaPhiHaeGame</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
 			<name>jni/Interfaces</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
@@ -181,6 +186,41 @@
 			<name>jni/Common/Timer.h</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Common/Timer.h</locationURI>
+		</link>
+		<link>
+			<name>jni/DaPhiHaeGame/Asset.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/Asset.cpp</locationURI>
+		</link>
+		<link>
+			<name>jni/DaPhiHaeGame/Asset.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/Asset.h</locationURI>
+		</link>
+		<link>
+			<name>jni/DaPhiHaeGame/DaPhiHae.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/DaPhiHae.cpp</locationURI>
+		</link>
+		<link>
+			<name>jni/DaPhiHaeGame/DaPhiHae.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/DaPhiHae.h</locationURI>
+		</link>
+		<link>
+			<name>jni/DaPhiHaeGame/GameScene.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/GameScene.cpp</locationURI>
+		</link>
+		<link>
+			<name>jni/DaPhiHaeGame/GameScene.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/GameScene.h</locationURI>
+		</link>
+		<link>
+			<name>jni/DaPhiHaeGame/TSingleton.hpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/TSingleton.hpp</locationURI>
 		</link>
 		<link>
 			<name>jni/Interfaces/IAudio.h</name>

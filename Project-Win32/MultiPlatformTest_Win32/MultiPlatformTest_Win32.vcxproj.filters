@@ -28,6 +28,9 @@
     <Filter Include="Framework\OpenGL">
       <UniqueIdentifier>{cfc4dcf0-83ce-4c77-ab4e-f3780f5e5666}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DaPhiHaeGame">
+      <UniqueIdentifier>{4fe33462-4b23-43ed-8e20-ca90df33a94a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -68,9 +71,6 @@
     </ClInclude>
     <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsPlatform.h">
       <Filter>Framework\Windows</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\MultiPlatformFramework\OpenGLTest.h">
-      <Filter>Framework</Filter>
     </ClInclude>
     <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsCommon.h">
       <Filter>Framework\Windows</Filter>
@@ -135,6 +135,21 @@
     <ClInclude Include="..\..\OpenGLFramework\Camera.h">
       <Filter>Framework\OpenGL</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\DaPhiHaeGame\Asset.h">
+      <Filter>DaPhiHaeGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DaPhiHaeGame\DaPhiHae.h">
+      <Filter>DaPhiHaeGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DaPhiHaeGame\GameScene.h">
+      <Filter>DaPhiHaeGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\OpenGLTest.h">
+      <Filter>DaPhiHaeGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DaPhiHaeGame\TSingleton.hpp">
+      <Filter>DaPhiHaeGame</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -148,9 +163,6 @@
     </ClCompile>
     <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsPlatform.cpp">
       <Filter>Framework\Windows</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\MultiPlatformFramework\OpenGLTest.cpp">
-      <Filter>Framework</Filter>
     </ClCompile>
     <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsTimer.cpp">
       <Filter>Framework\Windows</Filter>
@@ -193,6 +205,18 @@
     </ClCompile>
     <ClCompile Include="..\..\OpenGLFramework\Rect.cpp">
       <Filter>Framework\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DaPhiHaeGame\Asset.cpp">
+      <Filter>DaPhiHaeGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DaPhiHaeGame\DaPhiHae.cpp">
+      <Filter>DaPhiHaeGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DaPhiHaeGame\GameScene.cpp">
+      <Filter>DaPhiHaeGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\MultiPlatformFramework\OpenGLTest.cpp">
+      <Filter>DaPhiHaeGame</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

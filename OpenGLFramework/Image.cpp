@@ -2,7 +2,7 @@
 #include "stdafx.h"
 
 #include "Image.h"
-#include "IFile.h"
+#include "Interfaces/IFile.h"
 #include "png.h"
 
 #include "logger.h"

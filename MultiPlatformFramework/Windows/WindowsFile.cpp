@@ -17,7 +17,8 @@ WindowsFile::WindowsFile( const char* path, const char* fileName, DWORD access )
 	// open
 	mFileHandle = CreateFile( filePath, access, 0, 0, GetCreationDisposition( access ), 0, 0 );
 	if ( mFileHandle == INVALID_HANDLE_VALUE ) {
-		LOG_ERROR( "cannot read asset : %s", fileName );
+		LOG_ERROR( "cannot read asset : %s", filePath );
+		assert( false && "cannot read asset" );
 	}
 
 	delete[] filePath;
