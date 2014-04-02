@@ -105,7 +105,8 @@ void MainGameLoop::MainLoop()
 
 			mMessageQueue.pop();
 		}
-		else {
+
+		{
 			float deltaTime = mTickTimer->Tick();
 			// trash too long frame
 			if ( deltaTime < 1.0f ) {

@@ -22,6 +22,7 @@ MainGameLoop* loop = NULL;
 bool	gActivate = false;
 bool	keys[256];			// Array Used For The Keyboard Routine
 bool	fullscreen=TRUE;	// Fullscreen Flag Set To Fullscreen Mode By Default
+bool	isLButtonDown = false;
 
 
 LRESULT	CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);	// Declaration For WndProc
@@ -116,6 +117,7 @@ LRESULT CALLBACK WndProc(	HWND	hWnd,			// Handle For This Window
 
 		case WM_LBUTTONDOWN:
 		{
+			isLButtonDown = true;
 			loop->PushMessage( MainGameLoop::MSG_TOUCH_EVENT, WindowsInput::CreateTouchParam( 0, lParam ) );
 			SetCapture( hWnd );
 			return 0;
@@ -123,14 +125,17 @@ LRESULT CALLBACK WndProc(	HWND	hWnd,			// Handle For This Window
 
 		case WM_LBUTTONUP:
 		{
+			isLButtonDown = false;
 			loop->PushMessage( MainGameLoop::MSG_TOUCH_EVENT, WindowsInput::CreateTouchParam( 1, lParam ) );
 			ReleaseCapture();
 			return 0;
 		}
 
-		case WM_MOVE:
+		case WM_MOUSEMOVE:
 		{
-			loop->PushMessage( MainGameLoop::MSG_TOUCH_EVENT, WindowsInput::CreateTouchParam( 2, lParam ) );
+			if ( isLButtonDown == true ) {
+				loop->PushMessage( MainGameLoop::MSG_TOUCH_EVENT, WindowsInput::CreateTouchParam( 2, lParam ) );
+			}
 			return 0;
 		}
 

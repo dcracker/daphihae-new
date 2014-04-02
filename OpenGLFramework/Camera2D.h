@@ -9,6 +9,7 @@ public:
 	~Camera2D();
 
 	void Bind() const;
+	Vector2 AdjustTouchPoint( const Vector2 touchedPoint ) const;
 
 private:
 	Rect mDrawRegion;

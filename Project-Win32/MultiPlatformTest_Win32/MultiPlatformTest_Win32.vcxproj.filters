@@ -144,11 +144,11 @@
     <ClInclude Include="..\..\DaPhiHaeGame\GameScene.h">
       <Filter>DaPhiHaeGame</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\MultiPlatformFramework\OpenGLTest.h">
-      <Filter>DaPhiHaeGame</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\DaPhiHaeGame\TSingleton.hpp">
       <Filter>DaPhiHaeGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\OpenGLTest.h">
+      <Filter>Framework</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -216,7 +216,7 @@
       <Filter>DaPhiHaeGame</Filter>
     </ClCompile>
     <ClCompile Include="..\..\MultiPlatformFramework\OpenGLTest.cpp">
-      <Filter>DaPhiHaeGame</Filter>
+      <Filter>Framework</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -30,3 +30,10 @@ void Camera2D::Bind() const {
 	glMatrixMode( GL_MODELVIEW );
 	glLoadIdentity();
 }
+
+Vector2 Camera2D::AdjustTouchPoint( const Vector2 normalizedTouchPoint ) const {
+	Vector2 adjustedPoint = normalizedTouchPoint;
+	adjustedPoint.x *= mDrawRegion.GetWidth();
+	adjustedPoint.y *= mDrawRegion.GetHeight();
+	return adjustedPoint;
+}

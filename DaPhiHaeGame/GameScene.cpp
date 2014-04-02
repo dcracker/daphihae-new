@@ -14,6 +14,7 @@ GameScene::GameScene( IPlatform* platform )
 	, mMainCam( new Camera2D( 0, 320, 0, 480 ) )
 	, mSpriteBatcher( new SpriteBatcher() )
 	, mShip( NULL )
+	, mShipSpeed( 0 )
 {
 	mBullets.clear();
 }
@@ -63,12 +64,33 @@ void GameScene::Render() const {
 
 void GameScene::ProcessTouchInput() {
 	mPlatform->GetInput()->GetTouchEvents();
+
+	if ( mPlatform->GetInput()->IsTouchDown( 0 ) == false ) {
+		mShipSpeed = 0;
+		return;
+	}
+
+	int x = mPlatform->GetInput()->GetTouchX( 0 );
+	int w = mPlatform->GetGraphics()->GetWidth();
+	float touchPoint = (float)x / (float)w;
+
+	static const float cShipSpeed = 100.f;
+	if ( touchPoint > 0.5f ) {
+		mShipSpeed = cShipSpeed;
+	}
+	else {
+		mShipSpeed = -cShipSpeed;
+	}
 }
 
 void GameScene::UpdateShip( float deltaTime ) {
 	if ( mShip == NULL ) {
 		mShip = new Sprite( Vector2( 160, 20 ), Vector2( 20, 15 ), gAsset->mainAtlas, *(gAsset->ship) );
 	}
+
+	Vector2 currentPosition = mShip->GetPosition();
+	currentPosition.x += mShipSpeed * deltaTime;
+	mShip->SetPosition( currentPosition );
 }
 
 void GameScene::UpdateBullets( float deltaTime ) {

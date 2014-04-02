@@ -33,5 +33,6 @@ private:
 
 	std::vector<Sprite*> mBullets;
 	Sprite* mShip;
+	float mShipSpeed;
 };
 
