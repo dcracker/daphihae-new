@@ -78,19 +78,19 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback {
 			switch ( action ) {
 			case MotionEvent.ACTION_DOWN:
 			case MotionEvent.ACTION_POINTER_DOWN:
-				NativeInterface.OnTouch( 0, pointerId, (int)(event.getX( pointerId )), (int)(event.getY( pointerId )) );
+				NativeInterface.OnTouch( 0, pointerId, (int)(event.getX( pointerIndex )), (int)(event.getY( pointerIndex )) );
 				break;
 			
 			case MotionEvent.ACTION_CANCEL:
 			case MotionEvent.ACTION_UP:
 			case MotionEvent.ACTION_POINTER_UP:
-				NativeInterface.OnTouch( 1, pointerId, (int)(event.getX( pointerId )), (int)(event.getY( pointerId )) );
+				NativeInterface.OnTouch( 1, pointerId, (int)(event.getX( pointerIndex )), (int)(event.getY( pointerIndex )) );
 				break;
 				
 			case MotionEvent.ACTION_MOVE:
 				int pointerCount = event.getPointerCount();
 				for ( int i=0; i < pointerCount; ++i ) {
-					NativeInterface.OnTouch( 2, pointerId, (int)(event.getX( pointerId )), (int)(event.getY( pointerId )) );
+					NativeInterface.OnTouch( 2, pointerId, (int)(event.getX( pointerIndex )), (int)(event.getY( pointerIndex )) );
 				}
 				break;
 			}
