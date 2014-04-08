@@ -26,6 +26,13 @@ private:
 	void CheckCollision();
 
 private:
+	static const int cWorldWidth = 300;
+	static const int cWorldHeight = 500;
+	
+	// process only 2 fingers.
+	static const int cMaxNumFingers = 2;
+
+private:
 	IPlatform* mPlatform;
 
 	Camera2D* mMainCam;
