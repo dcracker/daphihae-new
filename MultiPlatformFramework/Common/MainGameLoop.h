@@ -31,7 +31,6 @@ public:
         MSG_RESUME				= 1,
         MSG_RENDER_LOOP_EXIT	= 2,
         MSG_WINDOW_SET			= 3,
-        MSG_TOUCH_EVENT			= 4,
     };
 
 public:

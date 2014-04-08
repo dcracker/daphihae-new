@@ -14,10 +14,12 @@
 #include "WindowsGraphics.h"
 #include "WindowsInput.h"
 
-#include "MainGameLoop.h"
+#include "Common/CommonTouchMessageHandler.h"
+#include "Common/MainGameLoop.h"
 #include "DaPhiHae.h"
 
 MainGameLoop* loop = NULL;
+CommonTouchMessageHandler* touchHandler = NULL;
 
 bool	gActivate = false;
 bool	keys[256];			// Array Used For The Keyboard Routine
@@ -38,8 +40,9 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
 		fullscreen=FALSE;							// Windowed Mode
 	}
 
+	touchHandler = new CommonTouchMessageHandler();
 	WindowsPlatform platformInstance(
-		new WindowsGraphics()
+		touchHandler
 	);
 	DaPhiHae gameInstance( &platformInstance );
 	loop = new MainGameLoop( &gameInstance, &platformInstance, new WindowsTimer() );
@@ -108,35 +111,18 @@ LRESULT CALLBACK WndProc(	HWND	hWnd,			// Handle For This Window
 		case WM_CLOSE:								// Did We Receive A Close Message?
 		{
 			loop->Stop();
-			delete loop;
-			loop = NULL;
+			SAFE_DELETE( loop );
+			SAFE_DELETE( touchHandler );
 
 			PostQuitMessage(0);						// Send A Quit Message
 			return 0;								// Jump Back
 		}
 
 		case WM_LBUTTONDOWN:
-		{
-			isLButtonDown = true;
-			loop->PushMessage( MainGameLoop::MSG_TOUCH_EVENT, WindowsInput::CreateTouchParam( 0, lParam ) );
-			SetCapture( hWnd );
-			return 0;
-		}
-
 		case WM_LBUTTONUP:
-		{
-			isLButtonDown = false;
-			loop->PushMessage( MainGameLoop::MSG_TOUCH_EVENT, WindowsInput::CreateTouchParam( 1, lParam ) );
-			ReleaseCapture();
-			return 0;
-		}
-
 		case WM_MOUSEMOVE:
 		{
-			if ( isLButtonDown == true ) {
-				loop->PushMessage( MainGameLoop::MSG_TOUCH_EVENT, WindowsInput::CreateTouchParam( 2, lParam ) );
-			}
-			return 0;
+			WindowsInput::PushTouchEvent( touchHandler, hWnd, uMsg, lParam );
 		}
 
 		case WM_KEYDOWN:							// Is A Key Being Held Down?

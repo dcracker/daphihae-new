@@ -5,11 +5,12 @@
 class WindowsGraphics;
 class WindowsInput;
 class WindowsFileIO;
+class CommonTouchMessageHandler;
 
 class WindowsPlatform : public IPlatform, public IGameLoopListener
 {
 public:
-	WindowsPlatform( WindowsGraphics* graphics );
+	WindowsPlatform( const CommonTouchMessageHandler* touchHandler );
 	~WindowsPlatform();
 
 // IPlatform

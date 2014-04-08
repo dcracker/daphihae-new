@@ -51,7 +51,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\DaPhiHaeGame;$(SolutionDir)..\OpenGLFramework;$(SolutionDir)..\MultiPlatformFramework;$(SolutionDir)..\MultiPlatformFramework\Windows;$(SolutionDir)..\MultiPlatformFramework\Common;$(SolutionDIr)..\libs\libpng\;$(SolutionDir)..\libs\glm;$(SolutionDir)..\libs\pthread\include;$(ProjectDir)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\DaPhiHaeGame;$(SolutionDir)..\OpenGLFramework;$(SolutionDir)..\MultiPlatformFramework;$(SolutionDir)..\MultiPlatformFramework\Windows;$(SolutionDIr)..\libs\libpng\;$(SolutionDir)..\libs\glm;$(SolutionDir)..\libs\pthread\include;$(ProjectDir)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -88,6 +88,7 @@
     <ClInclude Include="..\..\DaPhiHaeGame\GameScene.h" />
     <ClInclude Include="..\..\DaPhiHaeGame\TSingleton.hpp" />
     <ClInclude Include="..\..\MultiPlatformFramework\Common\CommonInput.h" />
+    <ClInclude Include="..\..\MultiPlatformFramework\Common\CommonTouchMessageHandler.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Common\MainGameLoop.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Common\Timer.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IAudio.h" />
@@ -127,6 +128,7 @@
     <ClCompile Include="..\..\DaPhiHaeGame\DaPhiHae.cpp" />
     <ClCompile Include="..\..\DaPhiHaeGame\GameScene.cpp" />
     <ClCompile Include="..\..\MultiPlatformFramework\Common\CommonInput.cpp" />
+    <ClCompile Include="..\..\MultiPlatformFramework\Common\CommonTouchMessageHandler.cpp" />
     <ClCompile Include="..\..\MultiPlatformFramework\Common\MainGameLoop.cpp" />
     <ClCompile Include="..\..\MultiPlatformFramework\Common\Timer.cpp" />
     <ClCompile Include="..\..\MultiPlatformFramework\OpenGLTest.cpp" />

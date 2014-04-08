@@ -63,8 +63,6 @@ void GameScene::Render() const {
 }
 
 void GameScene::ProcessTouchInput() {
-	mPlatform->GetInput()->GetTouchEvents();
-
 	if ( mPlatform->GetInput()->IsTouchDown( 0 ) == false ) {
 		mShipSpeed = 0;
 		return;

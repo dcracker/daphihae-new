@@ -83,10 +83,6 @@ void MainGameLoop::MainLoop()
 				mGameInstance->Resume();
 				break;
 
-			case MSG_TOUCH_EVENT:
-				mListener->OnTouchEvent( msg.args );
-				break;
-
 			case MSG_RESUME:
 				mListener->OnResume();
 				mGameInstance->Resume();
@@ -105,8 +101,7 @@ void MainGameLoop::MainLoop()
 
 			mMessageQueue.pop();
 		}
-
-		{
+		else {
 			float deltaTime = mTickTimer->Tick();
 			// trash too long frame
 			if ( deltaTime < 1.0f ) {

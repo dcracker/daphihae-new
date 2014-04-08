@@ -4,9 +4,9 @@
 #include "WindowsInput.h"
 #include "WindowsFileIO.h"
 
-WindowsPlatform::WindowsPlatform( WindowsGraphics* graphics )
-	: mGraphics( graphics )
-	, mInput( new WindowsInput() )
+WindowsPlatform::WindowsPlatform( const CommonTouchMessageHandler* touchHandler )
+	: mGraphics( new WindowsGraphics() )
+	, mInput( new WindowsInput( touchHandler ) )
 	, mFileIO( new WindowsFileIO() )
 {
 }
@@ -14,9 +14,9 @@ WindowsPlatform::WindowsPlatform( WindowsGraphics* graphics )
 
 WindowsPlatform::~WindowsPlatform()
 {
-	if ( mGraphics != NULL ) {
-		delete mGraphics;
-	}
+	SAFE_DELETE( mGraphics );
+	SAFE_DELETE( mInput );
+	SAFE_DELETE( mFileIO );
 }
 
 const IGraphics* WindowsPlatform::GetGraphics() const {
@@ -34,9 +34,6 @@ const IFileIO* WindowsPlatform::GetFileIO() const {
 void WindowsPlatform::OnWindowChanged( void* args ) {
 	mGraphics->SetWindow( (HWND)args );
 	mGraphics->Resize();
-}
-void WindowsPlatform::OnTouchEvent( void* args ) {
-	mInput->PushTouchEvent( (const int*)args );
 }
 
 void WindowsPlatform::OnResume() {

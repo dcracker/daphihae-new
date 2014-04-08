@@ -7,7 +7,7 @@
 #pragma comment (lib, "OpenGL32.lib")
 #pragma comment (lib, "GLu32.lib")
 
-#include "CommonHeaders.h"
+#include "Common/CommonHeaders.h"
 #include "OpenGLCommons.h"
 
 // GL_CLAMP_TO_EDGE is feature of OpenGL 1.2.

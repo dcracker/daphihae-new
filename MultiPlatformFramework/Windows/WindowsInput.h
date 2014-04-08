@@ -3,7 +3,7 @@
 
 class WindowsInput : public CommonInput {
 public:
-	WindowsInput();
+	WindowsInput( const CommonTouchMessageHandler* touchHandler );
 	~WindowsInput();
 
 // IInput Interfaces
@@ -14,5 +14,9 @@ public:
 	float GetAccelZ() const;
 
 public:
-	static void* CreateTouchParam( int eventType, LPARAM param );
+	static void PushTouchEvent( CommonTouchMessageHandler* handler, HWND hWnd, UINT eventType, LPARAM param );
+
+private:
+	static const int cNumButtons = 1;
+	static bool sIsButtonDown[cNumButtons];
 };

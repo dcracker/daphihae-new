@@ -7,8 +7,6 @@ public:
 
 	// when receieve MSG_WINDOW_SET
 	virtual void OnWindowChanged( void* args ) = 0;
-	// when touch occured
-	virtual void OnTouchEvent( void* args ) = 0;
 
 	// when thread start
 	virtual void OnResume() = 0;

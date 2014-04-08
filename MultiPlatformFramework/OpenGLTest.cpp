@@ -144,7 +144,6 @@ void OpenGLTest::Pause() {
 void OpenGLTest::Update( float deltaTime ) {
 //	static int time = 10;
 	static float speed = -100;
-	std::vector<TouchEvent> events = mPlatform->GetInput()->GetTouchEvents();
     mAngle -= 360 * deltaTime / (mPlatform->GetInput()->IsTouchDown(0) ? 60 : 5);
 
 	mSpriteBatcher->Clear();

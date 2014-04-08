@@ -150,6 +150,9 @@
     <ClInclude Include="..\..\MultiPlatformFramework\OpenGLTest.h">
       <Filter>Framework</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\Common\CommonTouchMessageHandler.h">
+      <Filter>Framework\Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -217,6 +220,9 @@
     </ClCompile>
     <ClCompile Include="..\..\MultiPlatformFramework\OpenGLTest.cpp">
       <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\MultiPlatformFramework\Common\CommonTouchMessageHandler.cpp">
+      <Filter>Framework\Common</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
