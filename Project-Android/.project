@@ -48,6 +48,11 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>include</name>
+			<type>2</type>
+			<location>D:/Dev/AndroidSDK/android-ndk-r9c/platforms/android-9/arch-arm/usr/include</location>
+		</link>
+		<link>
 			<name>jni/Android</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
@@ -166,6 +171,16 @@
 			<name>jni/Common/CommonInput.h</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Common/CommonInput.h</locationURI>
+		</link>
+		<link>
+			<name>jni/Common/CommonTouchMessageHandler.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Common/CommonTouchMessageHandler.cpp</locationURI>
+		</link>
+		<link>
+			<name>jni/Common/CommonTouchMessageHandler.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Common/CommonTouchMessageHandler.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Common/MainGameLoop.cpp</name>

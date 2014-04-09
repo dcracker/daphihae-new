@@ -26,8 +26,8 @@ private:
 	void CheckCollision();
 
 private:
-	static const int cWorldWidth = 300;
-	static const int cWorldHeight = 500;
+	static const int cWorldWidth = 320;
+	static const int cWorldHeight = 480;
 	
 	// process only 2 fingers.
 	static const int cMaxNumFingers = 2;

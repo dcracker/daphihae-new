@@ -9,9 +9,9 @@
 #include "logger.h"
 #define LOG_TAG "Test"
 
-AndroidPlatform::AndroidPlatform( JNIEnv* env, jobject assetManager )
+AndroidPlatform::AndroidPlatform( JNIEnv* env, jobject assetManager, const CommonTouchMessageHandler* touchHandler )
 	: mGraphics( new AndroidGraphics() )
-	, mInput( new AndroidInput() )
+	, mInput( new AndroidInput( touchHandler ) )
 	, mFileIO( new AndroidFileIO( env, assetManager ) )
 	, mJavaVM( NULL )
 	, mJniEnv( NULL )
@@ -43,16 +43,12 @@ void AndroidPlatform::OnWindowChanged( void* args ) {
 	mGraphics->SetWindow( (ANativeWindow*)args );
 }
 
-void AndroidPlatform::OnTouchEvent( void* args ) {
-	mInput->PushTouchEvent( (const int*)args );
-}
-
 void AndroidPlatform::OnResume() {
-/*	mJavaVM->AttachCurrentThread( &mJniEnv, NULL );
+	mJavaVM->AttachCurrentThread( &mJniEnv, NULL );
 	if ( mJniEnv == NULL ) {
 		LOG_INFO( "Cannot attach thread" );
 	}
-	LOG_INFO( "Successfully attach thread" );*/
+	LOG_INFO( "Successfully attach thread" );
 	mGraphics->InitializeEGLContext();
 
 }

@@ -60,5 +60,6 @@
 			<resource resourceType="PROJECT" workspacePath="/MultiplatformTest_Android"/>
 		</configuration>
 	</storageModule>
-	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings">
+	</storageModule>
 </cproject>

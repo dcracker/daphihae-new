@@ -7,7 +7,7 @@
 
 CommonTouchMessageHandler::CommonTouchMessageHandler()
 {
-	ZeroMemory( mTouchPoints, sizeof( TouchPoint ) * cMaxNumFingers );
+	memset( mTouchPoints, 0, sizeof( TouchPoint ) * cMaxNumFingers );
 }
 
 
@@ -23,7 +23,7 @@ void CommonTouchMessageHandler::ProcessTouchInput( TouchEventType type, int fing
 
 	TouchPoint& current = mTouchPoints[fingerId];
 
-	if ( type == TouchEventType::TOUCH_UP ) {
+	if ( type == TOUCH_UP ) {
 		current.isTouched = false;
 	}
 	else {

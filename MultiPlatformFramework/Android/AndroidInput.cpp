@@ -1,8 +1,9 @@
 #include "stdafx.h"
 #include "AndroidInput.h"
 
-AndroidInput::AndroidInput() {
-
+AndroidInput::AndroidInput( const CommonTouchMessageHandler* touchHandler )
+	: CommonInput( touchHandler )
+{
 }
 
 AndroidInput::~AndroidInput() {

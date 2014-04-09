@@ -5,7 +5,7 @@
 
 class AndroidInput : public CommonInput {
 public:
-	AndroidInput();
+	AndroidInput( const CommonTouchMessageHandler* touchHandler );
 	~AndroidInput();
 
 // IInput Interfaces

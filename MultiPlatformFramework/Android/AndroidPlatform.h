@@ -9,10 +9,11 @@ class AndroidGraphics;
 class AndroidInput;
 class AndroidFileIO;
 class AndroidAudio;
+class CommonTouchMessageHandler;
 
 class AndroidPlatform : public IPlatform, public IGameLoopListener {
 public:
-	AndroidPlatform( JNIEnv* env, jobject assetManager );
+	AndroidPlatform( JNIEnv* env, jobject assetManager, const CommonTouchMessageHandler* touchHandler );
 	~AndroidPlatform();
 
 		  IInput*		GetInput() 		const;
