@@ -6,6 +6,7 @@ class IPlatform;
 class Camera2D;
 class SpriteBatcher;
 class Sprite;
+class Ship;
 
 class GameScene : public IGame
 {
@@ -25,10 +26,10 @@ private:
 	void UpdateShip( float deltaTime );
 	void CheckCollision();
 
-private:
+public:
 	static const int cWorldWidth = 320;
 	static const int cWorldHeight = 480;
-	
+private:
 	// process only 2 fingers.
 	static const int cMaxNumFingers = 2;
 
@@ -39,7 +40,6 @@ private:
 	SpriteBatcher* mSpriteBatcher;
 
 	std::vector<Sprite*> mBullets;
-	Sprite* mShip;
-	float mShipSpeed;
+	Ship*	mShip;
 };
 

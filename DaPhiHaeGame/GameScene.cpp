@@ -9,12 +9,13 @@
 
 #include "Texture.h"
 
+#include "Ship.h"
+
 GameScene::GameScene( IPlatform* platform )
 	: mPlatform( platform )
 	, mMainCam( new Camera2D( 0, static_cast<float>(cWorldWidth), 0, static_cast<float>(cWorldHeight) ) )
 	, mSpriteBatcher( new SpriteBatcher() )
-	, mShip( NULL )
-	, mShipSpeed( 0 )
+	, mShip( new Ship( static_cast<float>(cWorldWidth * 0.5f), 100.f ) )
 {
 	mBullets.clear();
 }
@@ -24,6 +25,7 @@ GameScene::~GameScene()
 	SAFE_DELETE( mMainCam );
 	SAFE_DELETE( mSpriteBatcher );
 	SAFE_DELETE( mShip );
+
 	for ( int i=mBullets.size()-1; i >= 0; --i ) {
 		SAFE_DELETE( mBullets[i] );
 	}
@@ -40,6 +42,8 @@ void GameScene::Resume() {
     glViewport(0, 0, graphics->GetWidth(), graphics->GetHeight());
 
     glEnable(GL_TEXTURE_2D);
+
+	mShip->Resume();
 }
 
 void GameScene::Pause() {
@@ -49,7 +53,7 @@ void GameScene::Pause() {
 void GameScene::Update( float deltaTime ) {
 
 	ProcessTouchInput();
-	UpdateShip( deltaTime );
+	mShip->Update( deltaTime );
 	UpdateBullets( deltaTime );
 	BatchSprites();
 	CheckCollision();
@@ -82,36 +86,16 @@ void GameScene::ProcessTouchInput() {
 			right = true;
 		}
 		// left side touched
-		else if ( touchPoint <= 0.5f ) {
+		else {
 			left = true;
 		}
 	}
 
-	mShipSpeed = 0;
-	if ( left == true ) {
-		mShipSpeed -= cShipSpeed;
+	Ship::MoveDirection moveDirection = Ship::NEUTRAL;
+	if ( left != right ) {
+		moveDirection = (left == true) ? Ship::LEFT : Ship::RIGHT;
 	}
-	if ( right == true ) {
-		mShipSpeed += cShipSpeed;
-	}
-}
-
-void GameScene::UpdateShip( float deltaTime ) {
-	if ( mShip == NULL ) {
-		mShip = new Sprite( Vector2( 160, 100 ), Vector2( 20, 15 ), gAsset->mainAtlas, *(gAsset->ship) );
-	}
-
-	Vector2 currentPosition = mShip->GetPosition();
-	currentPosition.x += mShipSpeed * deltaTime;
-
-	if ( currentPosition.x < 10 ) {
-		currentPosition.x = 10;
-	}
-	else if ( currentPosition.x > cWorldWidth - 10 ) {
-		currentPosition.x = cWorldWidth - 10;
-	}
-
-	mShip->SetPosition( currentPosition );
+	mShip->SetMoveDirection( moveDirection );
 }
 
 void GameScene::UpdateBullets( float deltaTime ) {
@@ -141,7 +125,7 @@ void GameScene::BatchSprites() {
 	for( std::vector<Sprite*>::iterator it = mBullets.begin(); it != mBullets.end(); ++it ) {
 		mSpriteBatcher->DrawSprite( *it );
 	}
-	mSpriteBatcher->DrawSprite( mShip );
+	mShip->Render( mSpriteBatcher );
 }
 
 void GameScene::CheckCollision() {

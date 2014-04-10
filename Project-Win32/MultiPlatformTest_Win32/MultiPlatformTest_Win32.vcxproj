@@ -86,7 +86,10 @@
     <ClInclude Include="..\..\DaPhiHaeGame\Asset.h" />
     <ClInclude Include="..\..\DaPhiHaeGame\DaPhiHae.h" />
     <ClInclude Include="..\..\DaPhiHaeGame\GameScene.h" />
+    <ClInclude Include="..\..\DaPhiHaeGame\Util.h" />
+    <ClInclude Include="..\..\DaPhiHaeGame\Ship.h" />
     <ClInclude Include="..\..\DaPhiHaeGame\TSingleton.hpp" />
+    <ClInclude Include="..\..\MultiPlatformFramework\Common\CommonHeaders.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Common\CommonInput.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Common\CommonTouchMessageHandler.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Common\MainGameLoop.h" />
@@ -127,6 +130,7 @@
     <ClCompile Include="..\..\DaPhiHaeGame\Asset.cpp" />
     <ClCompile Include="..\..\DaPhiHaeGame\DaPhiHae.cpp" />
     <ClCompile Include="..\..\DaPhiHaeGame\GameScene.cpp" />
+    <ClCompile Include="..\..\DaPhiHaeGame\Ship.cpp" />
     <ClCompile Include="..\..\MultiPlatformFramework\Common\CommonInput.cpp" />
     <ClCompile Include="..\..\MultiPlatformFramework\Common\CommonTouchMessageHandler.cpp" />
     <ClCompile Include="..\..\MultiPlatformFramework\Common\MainGameLoop.cpp" />

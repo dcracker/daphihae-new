@@ -153,6 +153,15 @@
     <ClInclude Include="..\..\MultiPlatformFramework\Common\CommonTouchMessageHandler.h">
       <Filter>Framework\Common</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\DaPhiHaeGame\Ship.h">
+      <Filter>DaPhiHaeGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\Common\CommonHeaders.h">
+      <Filter>Framework\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DaPhiHaeGame\Util.h">
+      <Filter>DaPhiHaeGame</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -223,6 +232,9 @@
     </ClCompile>
     <ClCompile Include="..\..\MultiPlatformFramework\Common\CommonTouchMessageHandler.cpp">
       <Filter>Framework\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DaPhiHaeGame\Ship.cpp">
+      <Filter>DaPhiHaeGame</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
