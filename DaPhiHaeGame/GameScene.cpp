@@ -10,6 +10,8 @@
 #include "Texture.h"
 
 #include "Ship.h"
+#include "Bullet.h"
+#include "Util.h"
 
 GameScene::GameScene( IPlatform* platform )
 	: mPlatform( platform )
@@ -26,9 +28,12 @@ GameScene::~GameScene()
 	SAFE_DELETE( mSpriteBatcher );
 	SAFE_DELETE( mShip );
 
-	for ( int i=mBullets.size()-1; i >= 0; --i ) {
-		SAFE_DELETE( mBullets[i] );
+	foreach ( Bullet*, bullet, mBullets ) {
+		if ( *it != NULL ) { 
+			delete (*it);
+		}
 	}
+	mBullets.clear();
 }
 
 void GameScene::Resume() {
@@ -67,8 +72,6 @@ void GameScene::Render() const {
 }
 
 void GameScene::ProcessTouchInput() {
-	static const float cShipSpeed = 100.f;
-
 	bool left = false;
 	bool right = false;
 
@@ -99,16 +102,8 @@ void GameScene::ProcessTouchInput() {
 }
 
 void GameScene::UpdateBullets( float deltaTime ) {
-	static const float speed = -100;
-	for( std::vector<Sprite*>::iterator it = mBullets.begin(); it != mBullets.end(); ++it ) {
-		Vector2 currentPosition = (*it)->GetPosition();
-		currentPosition.y += speed * deltaTime;
-		float halfHeight = (*it)->GetSize().y * 0.5f;
-		if ( currentPosition.y < -halfHeight ) {
-			currentPosition.y = 480 + halfHeight;
-			currentPosition.x = static_cast<float>(rand() % 320);
-		}
-		(*it)->SetPosition( currentPosition );
+	foreach ( Bullet*, it, mBullets ) {
+		(*it)->Update( deltaTime );
 	}
 
 	static float elapsedTime = 0;
@@ -116,14 +111,14 @@ void GameScene::UpdateBullets( float deltaTime ) {
 	elapsedTime += deltaTime;
 	if ( mBullets.size() < 100 && elapsedTime > 1 ) {
 		elapsedTime -= 1;
-		mBullets.push_back( new Sprite( Vector2( rand() % 320, 480 + size * 0.5f ), Vector2( size, size ), gAsset->mainAtlas, *(gAsset->oldBullet) ) );
+		mBullets.push_back( new Bullet( Vector2( 0, -10 ), Vector2( 0, -300 ) ) );
 	}
 }
 
 void GameScene::BatchSprites() {
 	mSpriteBatcher->Clear();
-	for( std::vector<Sprite*>::iterator it = mBullets.begin(); it != mBullets.end(); ++it ) {
-		mSpriteBatcher->DrawSprite( *it );
+	foreach ( Bullet*, it, mBullets ) {
+		(*it)->Render( mSpriteBatcher );
 	}
 	mShip->Render( mSpriteBatcher );
 }

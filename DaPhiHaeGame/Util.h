@@ -1,3 +1,5 @@
+#define foreach( type, element, list )	\
+for ( std::vector<type>::iterator it = list.begin(); it != list.end(); ++it )
 
 class Util {
 public:

@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\DaPhiHaeGame\Asset.h" />
+    <ClInclude Include="..\..\DaPhiHaeGame\Bullet.h" />
     <ClInclude Include="..\..\DaPhiHaeGame\DaPhiHae.h" />
     <ClInclude Include="..\..\DaPhiHaeGame\GameScene.h" />
     <ClInclude Include="..\..\DaPhiHaeGame\Util.h" />
@@ -128,6 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\DaPhiHaeGame\Asset.cpp" />
+    <ClCompile Include="..\..\DaPhiHaeGame\Bullet.cpp" />
     <ClCompile Include="..\..\DaPhiHaeGame\DaPhiHae.cpp" />
     <ClCompile Include="..\..\DaPhiHaeGame\GameScene.cpp" />
     <ClCompile Include="..\..\DaPhiHaeGame\Ship.cpp" />

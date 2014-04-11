@@ -162,6 +162,9 @@
     <ClInclude Include="..\..\DaPhiHaeGame\Util.h">
       <Filter>DaPhiHaeGame</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\DaPhiHaeGame\Bullet.h">
+      <Filter>DaPhiHaeGame</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -234,6 +237,9 @@
       <Filter>Framework\Common</Filter>
     </ClCompile>
     <ClCompile Include="..\..\DaPhiHaeGame\Ship.cpp">
+      <Filter>DaPhiHaeGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DaPhiHaeGame\Bullet.cpp">
       <Filter>DaPhiHaeGame</Filter>
     </ClCompile>
   </ItemGroup>
