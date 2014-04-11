@@ -1,13 +1,12 @@
 #pragma once
 #include "Interfaces/IGame.h"
-#include <vector>
 
 class IPlatform;
 class Camera2D;
 class SpriteBatcher;
 class Sprite;
 class Ship;
-class Bullet;
+class BulletManager;
 
 class GameScene : public IGame
 {
@@ -40,7 +39,7 @@ private:
 	Camera2D* mMainCam;
 	SpriteBatcher* mSpriteBatcher;
 
-	std::vector<Bullet*> mBullets;
-	Ship*	mShip;
+	BulletManager*	mBullets;
+	Ship*			mShip;
 };
 

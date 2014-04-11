@@ -1,5 +1,7 @@
-#define foreach( type, element, list )	\
+#define foreach( type, it, list )	\
 for ( std::vector<type>::iterator it = list.begin(); it != list.end(); ++it )
+#define foreach_const( type, it, list )	\
+for ( std::vector<type>::const_iterator it = list.begin(); it != list.end(); ++it )
 
 class Util {
 public:

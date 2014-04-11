@@ -10,7 +10,7 @@
 #include "Texture.h"
 
 #include "Ship.h"
-#include "Bullet.h"
+#include "BulletManager.h"
 #include "Util.h"
 
 GameScene::GameScene( IPlatform* platform )
@@ -18,8 +18,8 @@ GameScene::GameScene( IPlatform* platform )
 	, mMainCam( new Camera2D( 0, static_cast<float>(cWorldWidth), 0, static_cast<float>(cWorldHeight) ) )
 	, mSpriteBatcher( new SpriteBatcher() )
 	, mShip( new Ship( static_cast<float>(cWorldWidth * 0.5f), 100.f ) )
+	, mBullets( new BulletManager() )
 {
-	mBullets.clear();
 }
 
 GameScene::~GameScene()
@@ -27,13 +27,7 @@ GameScene::~GameScene()
 	SAFE_DELETE( mMainCam );
 	SAFE_DELETE( mSpriteBatcher );
 	SAFE_DELETE( mShip );
-
-	foreach ( Bullet*, bullet, mBullets ) {
-		if ( *it != NULL ) { 
-			delete (*it);
-		}
-	}
-	mBullets.clear();
+	SAFE_DELETE( mBullets );
 }
 
 void GameScene::Resume() {
@@ -59,9 +53,9 @@ void GameScene::Update( float deltaTime ) {
 
 	ProcessTouchInput();
 	mShip->Update( deltaTime );
-	UpdateBullets( deltaTime );
-	BatchSprites();
+	mBullets->Update( deltaTime );
 	CheckCollision();
+	BatchSprites();
 }
 
 void GameScene::Render() const {
@@ -101,25 +95,9 @@ void GameScene::ProcessTouchInput() {
 	mShip->SetMoveDirection( moveDirection );
 }
 
-void GameScene::UpdateBullets( float deltaTime ) {
-	foreach ( Bullet*, it, mBullets ) {
-		(*it)->Update( deltaTime );
-	}
-
-	static float elapsedTime = 0;
-	static const float size = 10;
-	elapsedTime += deltaTime;
-	if ( mBullets.size() < 100 && elapsedTime > 1 ) {
-		elapsedTime -= 1;
-		mBullets.push_back( new Bullet( Vector2( 0, -10 ), Vector2( 0, -300 ) ) );
-	}
-}
-
 void GameScene::BatchSprites() {
 	mSpriteBatcher->Clear();
-	foreach ( Bullet*, it, mBullets ) {
-		(*it)->Render( mSpriteBatcher );
-	}
+	mBullets->Render( mSpriteBatcher );
 	mShip->Render( mSpriteBatcher );
 }
 

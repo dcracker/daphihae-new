@@ -17,6 +17,7 @@ Bullet::Bullet( Vector2 initialPosition, Vector2 initialVelocity )
 
 Bullet::~Bullet()
 {
+	SAFE_DELETE( mSprite );
 }
 
 void Bullet::Update( float deltaTime ) {
