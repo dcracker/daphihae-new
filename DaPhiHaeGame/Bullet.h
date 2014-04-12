@@ -6,11 +6,18 @@ class SpriteBatcher;
 class Bullet
 {
 public:
-	Bullet( Vector2 initialPosition, Vector2 initialVelocity );
+	Bullet();
 	~Bullet();
 
 	void Update( float deltaTime );
 	void Render( SpriteBatcher* batcher ) const;
+
+	void Init( const Vector2& initialPosition, const Vector2& initialVelocity );
+	
+	float GetLeft() const;
+	float GetRight() const;
+	float GetTop() const;
+	float GetBottom() const;
 
 private:
 	static float cSizeHalf;

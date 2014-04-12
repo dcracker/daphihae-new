@@ -1,10 +1,12 @@
 #include "stdafx.h"
 #include "BulletManager.h"
 
+#include "GameScene.h"
 #include "Bullet.h"
 #include "Util.h"
 
-float BulletManager::cSpawnInterval = 1;
+float BulletManager::cSpawnInterval = 0.1f;
+std::stack<Bullet*> BulletManager::sBulletPool;
 
 BulletManager::BulletManager()
 	: mRemainedTimeToSpawn( 0 )
@@ -24,13 +26,23 @@ BulletManager::~BulletManager()
 }
 
 void BulletManager::Update( float deltaTime ) {
-	SpawnNewBullets( deltaTime );
 	UpdateExistBullets( deltaTime );
+	SpawnNewBullets( deltaTime );
 }
 
 void BulletManager::UpdateExistBullets( float deltaTime ) {
-	foreach ( Bullet*, it, mBullets ) {
-		(*it)->Update( deltaTime );
+	int lastIndex = mBullets.size() - 1;
+	for ( int i = lastIndex; i >= 0; --i ) {
+		Bullet* bullet = mBullets[i];
+
+		bullet->Update( deltaTime );
+		if ( bullet->GetTop() <= 0 ) {
+			PoolBullet( bullet );
+			mBullets[i] = ( lastIndex == i ) ? NULL : mBullets[lastIndex];
+
+			--lastIndex;
+			mBullets.pop_back();
+		}
 	}
 }
 
@@ -38,7 +50,9 @@ void BulletManager::SpawnNewBullets( float deltaTime ) {
 	mRemainedTimeToSpawn -= deltaTime;
 	if ( mRemainedTimeToSpawn <= 0 ) {
 		mRemainedTimeToSpawn += cSpawnInterval;
-		mBullets.push_back( new Bullet( Vector2( 0, -10 ), Vector2( 0, -300 ) ) );
+		Bullet* bullet = NewBullet();
+		bullet->Init( Vector2( static_cast<float>(rand() % GameScene::cWorldWidth), GameScene::cWorldHeight + 5 ), Vector2( 0, -300 ) );
+		mBullets.push_back( bullet );
 	}
 }
 
@@ -46,4 +60,22 @@ void BulletManager::Render( SpriteBatcher* batcher ) const {
 	foreach_const ( Bullet*, it, mBullets ) {
 		(*it)->Render( batcher );
 	}
+}
+
+
+Bullet* BulletManager::NewBullet() {
+
+	Bullet* newBullet = NULL;
+	if ( sBulletPool.empty() ) {
+		newBullet = new Bullet();
+	}
+	else {
+		newBullet = sBulletPool.top();
+		sBulletPool.pop();
+	}
+	return newBullet;
+}
+
+void BulletManager::PoolBullet( Bullet* bullet ) {
+	sBulletPool.push( bullet );
 }

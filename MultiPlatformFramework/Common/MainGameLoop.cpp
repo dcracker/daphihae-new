@@ -68,7 +68,7 @@ void MainGameLoop::MainLoop()
 {
     bool renderingEnabled = true;
 
-    mTickTimer->Tick();
+//    mTickTimer->Tick();
     while (renderingEnabled) {
         pthread_mutex_lock(&_mutex);
 
@@ -86,6 +86,7 @@ void MainGameLoop::MainLoop()
 			case MSG_RESUME:
 				mListener->OnResume();
 				mGameInstance->Resume();
+				mTickTimer->Tick();
 				break;
 
 			case MSG_RENDER_LOOP_EXIT:
