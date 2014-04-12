@@ -7,10 +7,10 @@
 
 Asset::Asset( const IFileIO* fileIO )
 	: mainAtlas( new Texture( fileIO, "Atlas.png" ) )
-	, ship( new Rect( 0, 20, 0, 16 ) )
-	, oldBullet( new Rect( 20, 30, 0, 10 ) )
-	, roundBullet( new Rect( 45, 60, 0, 15 ) )
-	, arrowBullet( new Rect( 30, 45, 0, 15 ) )
+	, ship( new Rect( 0, 0.0390625f, 0, 0.03125f ) )
+	, oldBullet( new Rect( 0.0390625f, 0.05859375f, 0, 0.01953125f ) )
+	, roundBullet( new Rect( 0.087890625f, 0.1171875, 0, 0.029296875f ) )
+	, arrowBullet( new Rect( 0.05859375f, 0.087890625f, 0, 0.029296875f ) )
 {
 }
 

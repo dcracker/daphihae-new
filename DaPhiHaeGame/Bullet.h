@@ -1,6 +1,5 @@
 #pragma once
 
-class Sprite;
 class SpriteBatcher;
 
 class Bullet
@@ -25,7 +24,5 @@ private:
 private:
 	Vector2 mPosition;
 	Vector2 mVelocity;
-
-	Sprite* mSprite;
 };
 

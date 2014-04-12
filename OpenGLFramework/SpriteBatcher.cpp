@@ -21,26 +21,19 @@ void SpriteBatcher::Clear() {
 	mIndices.clear();
 }
 
-void SpriteBatcher::DrawSprite( Sprite* sprite ) {
+void SpriteBatcher::DrawSprite( Rect position, Rect texCoord ) {
 
 	VertexFormat vertex[4];
+	
+	vertex[0].position = Vector2( position.GetLeft(),	position.GetBottom() );
+	vertex[1].position = Vector2( position.GetRight(),	position.GetBottom() );
+	vertex[2].position = Vector2( position.GetRight(),	position.GetTop() );
+	vertex[3].position = Vector2( position.GetLeft(),	position.GetTop() );
 
-	// position
-	Vector2 position = sprite->GetPosition();
-	Vector2 sizeHalf = sprite->GetSize() * 0.5f;
-
-	vertex[0].position = Vector3( position.x - sizeHalf.x, position.y - sizeHalf.y, 0 );
-	vertex[1].position = Vector3( position.x + sizeHalf.x, position.y - sizeHalf.y, 0 );
-	vertex[2].position = Vector3( position.x + sizeHalf.x, position.y + sizeHalf.y, 0 );
-	vertex[3].position = Vector3( position.x - sizeHalf.x, position.y + sizeHalf.y, 0 );
-
-	// tex coord
-	Rect texCoord = sprite->GetTexCoord();
-
-	vertex[0].uv = Vector2( texCoord.GetLeft(),	 texCoord.GetTop() );
-	vertex[1].uv = Vector2( texCoord.GetRight(), texCoord.GetTop() );
-	vertex[2].uv = Vector2( texCoord.GetRight(), texCoord.GetBottom() );
-	vertex[3].uv = Vector2( texCoord.GetLeft(),	 texCoord.GetBottom() );
+	vertex[0].uv = Vector2( texCoord.GetLeft(),	 texCoord.GetBottom() );
+	vertex[1].uv = Vector2( texCoord.GetRight(), texCoord.GetBottom() );
+	vertex[2].uv = Vector2( texCoord.GetRight(), texCoord.GetTop() );
+	vertex[3].uv = Vector2( texCoord.GetLeft(),	 texCoord.GetTop() );
 
 	for ( int i=0; i < 4; ++i ) {
 		mVertices.push_back(vertex[i]);
@@ -68,8 +61,8 @@ void SpriteBatcher::Render() const {
 
 	// use &std::vector::front() instead of std::vector::data().
 	// because gcc does not support that in ndk.
-	glVertexPointer( 3, GL_FLOAT, sizeof(VertexFormat), &mVertices.front() );
-	glTexCoordPointer( 2, GL_FLOAT, sizeof(VertexFormat), ((float*)&mVertices.front()) + 3 );
+	glVertexPointer( 2, GL_FLOAT, sizeof(VertexFormat), &mVertices.front() );
+	glTexCoordPointer( 2, GL_FLOAT, sizeof(VertexFormat), ((float*)&mVertices.front()) + 2 );
 	glDrawElements( GL_TRIANGLES, (int)mIndices.size(), GL_UNSIGNED_SHORT, &mIndices.front() );
 
 	glDisableClientState( GL_TEXTURE_COORD_ARRAY );

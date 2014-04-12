@@ -1,6 +1,5 @@
 #pragma once
 
-class Sprite;
 class SpriteBatcher;
 
 class Ship
@@ -17,7 +16,6 @@ public:
 	~Ship();
 
 	void SetMoveDirection( MoveDirection direction );
-	void Resume();
 
 	void Update( float deltaTime );
 	void Render( SpriteBatcher* batcher ) const;
@@ -29,7 +27,5 @@ private:
 private:
 	float mCurrentSpeed;
 	Vector2 mCurrentPosition;
-
-	Sprite* mSprite;
 };
 

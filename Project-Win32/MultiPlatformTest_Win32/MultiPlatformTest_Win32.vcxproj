@@ -105,7 +105,6 @@
     <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IGraphics.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IInput.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IPlatform.h" />
-    <ClInclude Include="..\..\MultiPlatformFramework\OpenGLTest.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Windows\logger.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsCommon.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsFile.h" />
@@ -120,7 +119,6 @@
     <ClInclude Include="..\..\OpenGLFramework\Image.h" />
     <ClInclude Include="..\..\OpenGLFramework\OpenGLCommons.h" />
     <ClInclude Include="..\..\OpenGLFramework\Rect.h" />
-    <ClInclude Include="..\..\OpenGLFramework\Sprite.h" />
     <ClInclude Include="..\..\OpenGLFramework\SpriteBatcher.h" />
     <ClInclude Include="..\..\OpenGLFramework\Texture.h" />
     <ClInclude Include="MultiPlatformTest_Win32.h" />
@@ -139,7 +137,6 @@
     <ClCompile Include="..\..\MultiPlatformFramework\Common\CommonTouchMessageHandler.cpp" />
     <ClCompile Include="..\..\MultiPlatformFramework\Common\MainGameLoop.cpp" />
     <ClCompile Include="..\..\MultiPlatformFramework\Common\Timer.cpp" />
-    <ClCompile Include="..\..\MultiPlatformFramework\OpenGLTest.cpp" />
     <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsFile.cpp" />
     <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsFileIO.cpp" />
     <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsGraphics.cpp" />
@@ -150,7 +147,6 @@
     <ClCompile Include="..\..\OpenGLFramework\Camera2D.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\Image.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\Rect.cpp" />
-    <ClCompile Include="..\..\OpenGLFramework\Sprite.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\SpriteBatcher.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\Texture.cpp" />
     <ClCompile Include="MultiPlatformTest_Win32.cpp" />

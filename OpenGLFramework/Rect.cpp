@@ -11,8 +11,8 @@ Rect::Rect( float left, float right, float bottom, float top ) {
 }
 
 Rect::Rect( Vector2 center, Vector2 size ) {
-	SetRect( center.x - size.x / 2,	center.x + size.x / 2,
-			 center.y + size.y / 2, center.y - size.y / 2 );
+	SetRect( center.x - size.x * 0.5f,	center.x + size.x * 0.5f,
+			 center.y - size.y * 0.5f,	center.y + size.y * 0.5f );
 }
 
 Rect::~Rect() {

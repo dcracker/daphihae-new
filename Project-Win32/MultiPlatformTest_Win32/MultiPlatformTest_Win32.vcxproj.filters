@@ -117,9 +117,6 @@
     <ClInclude Include="..\..\OpenGLFramework\glmtypedef.h">
       <Filter>Framework\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\OpenGLFramework\Sprite.h">
-      <Filter>Framework\OpenGL</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\OpenGLFramework\SpriteBatcher.h">
       <Filter>Framework\OpenGL</Filter>
     </ClInclude>
@@ -146,9 +143,6 @@
     </ClInclude>
     <ClInclude Include="..\..\DaPhiHaeGame\TSingleton.hpp">
       <Filter>DaPhiHaeGame</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\MultiPlatformFramework\OpenGLTest.h">
-      <Filter>Framework</Filter>
     </ClInclude>
     <ClInclude Include="..\..\MultiPlatformFramework\Common\CommonTouchMessageHandler.h">
       <Filter>Framework\Common</Filter>
@@ -209,9 +203,6 @@
     <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsFile.cpp">
       <Filter>Framework\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\OpenGLFramework\Sprite.cpp">
-      <Filter>Framework\OpenGL</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\OpenGLFramework\SpriteBatcher.cpp">
       <Filter>Framework\OpenGL</Filter>
     </ClCompile>
@@ -232,9 +223,6 @@
     </ClCompile>
     <ClCompile Include="..\..\DaPhiHaeGame\GameScene.cpp">
       <Filter>DaPhiHaeGame</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\MultiPlatformFramework\OpenGLTest.cpp">
-      <Filter>Framework</Filter>
     </ClCompile>
     <ClCompile Include="..\..\MultiPlatformFramework\Common\CommonTouchMessageHandler.cpp">
       <Filter>Framework\Common</Filter>

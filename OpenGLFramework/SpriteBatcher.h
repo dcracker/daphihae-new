@@ -3,6 +3,7 @@
 #include <vector>
 #include "glmtypedef.h"
 #include "Common/CommonHeaders.h"
+#include "Rect.h"
 
 class Texture;
 class Sprite;
@@ -14,12 +15,12 @@ public:
 	~SpriteBatcher();
 
 	void Clear();
-	void DrawSprite( Sprite* sprite );
+	void DrawSprite( Rect position, Rect texCoord );
 	void Render() const;
 
 private:
 	struct VertexFormat {
-		Vector3 position;
+		Vector2 position;
 		Vector2 uv;
 	};
 

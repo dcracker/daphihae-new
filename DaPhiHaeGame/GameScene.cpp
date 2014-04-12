@@ -41,8 +41,6 @@ void GameScene::Resume() {
     glViewport(0, 0, graphics->GetWidth(), graphics->GetHeight());
 
     glEnable(GL_TEXTURE_2D);
-
-	mShip->Resume();
 }
 
 void GameScene::Pause() {
