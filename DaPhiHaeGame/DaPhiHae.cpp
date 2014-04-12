@@ -6,7 +6,7 @@
 
 DaPhiHae::DaPhiHae( IPlatform* platformInstance )
 	: mPlatform( platformInstance )
-	, mAsset( platformInstance->GetFileIO() )
+	, mAsset()
 	, mCurrentScene( NULL )
 {
 	mCurrentScene = new GameScene( platformInstance );
@@ -19,7 +19,7 @@ DaPhiHae::~DaPhiHae()
 }
 
 void DaPhiHae::Resume() {
-	mAsset.Resume();
+	mAsset.Resume( mPlatform->GetFileIO() );
 	mCurrentScene->Resume();
 }
 

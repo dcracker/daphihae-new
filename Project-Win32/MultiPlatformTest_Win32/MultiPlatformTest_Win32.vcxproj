@@ -119,6 +119,7 @@
     <ClInclude Include="..\..\OpenGLFramework\Image.h" />
     <ClInclude Include="..\..\OpenGLFramework\OpenGLCommons.h" />
     <ClInclude Include="..\..\OpenGLFramework\Rect.h" />
+    <ClInclude Include="..\..\OpenGLFramework\SpriteAtlas.h" />
     <ClInclude Include="..\..\OpenGLFramework\SpriteBatcher.h" />
     <ClInclude Include="..\..\OpenGLFramework\Texture.h" />
     <ClInclude Include="MultiPlatformTest_Win32.h" />
@@ -147,6 +148,7 @@
     <ClCompile Include="..\..\OpenGLFramework\Camera2D.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\Image.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\Rect.cpp" />
+    <ClCompile Include="..\..\OpenGLFramework\SpriteAtlas.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\SpriteBatcher.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\Texture.cpp" />
     <ClCompile Include="MultiPlatformTest_Win32.cpp" />

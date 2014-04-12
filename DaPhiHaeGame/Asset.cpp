@@ -1,28 +1,24 @@
 #include "stdafx.h"
 #include "Asset.h"
 
+#include "SpriteAtlas.h"
 #include "Camera2D.h"
-#include "Texture.h"
 #include "Rect.h"
 
-Asset::Asset( const IFileIO* fileIO )
-	: mainAtlas( new Texture( fileIO, "Atlas.png" ) )
-	, ship( new Rect( 0, 0.0390625f, 0, 0.03125f ) )
-	, oldBullet( new Rect( 0.0390625f, 0.05859375f, 0, 0.01953125f ) )
-	, roundBullet( new Rect( 0.087890625f, 0.1171875, 0, 0.029296875f ) )
-	, arrowBullet( new Rect( 0.05859375f, 0.087890625f, 0, 0.029296875f ) )
+Asset::Asset()
+	: mainAtlas( new SpriteAtlas( "Atlas.png" ) )
+	, ship( mainAtlas->RegisterSprite( 0, Rect( 0, 20, 0, 16 ) ) )
+	, oldBullet( mainAtlas->RegisterSprite( 1, Rect( 20, 30, 0, 10 ) ) )
+	, roundBullet( mainAtlas->RegisterSprite( 2, Rect( 45, 60, 0, 15 ) ) )
+	, arrowBullet( mainAtlas->RegisterSprite( 3, Rect( 30, 45, 0 ,15 ) ) )
 {
 }
 
 Asset::~Asset()
 {
 	delete mainAtlas;
-	delete ship;
-	delete oldBullet;
-	delete roundBullet;
-	delete arrowBullet;
 }
 
-void Asset::Resume() {
-	mainAtlas->Load();
+void Asset::Resume( const IFileIO* fileIO ) {
+	mainAtlas->Load( fileIO );
 }

@@ -162,6 +162,9 @@
     <ClInclude Include="..\..\DaPhiHaeGame\BulletManager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\OpenGLFramework\SpriteAtlas.h">
+      <Filter>Framework\OpenGL</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -235,6 +238,9 @@
     </ClCompile>
     <ClCompile Include="..\..\DaPhiHaeGame\BulletManager.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\OpenGLFramework\SpriteAtlas.cpp">
+      <Filter>Framework\OpenGL</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -3,7 +3,7 @@
 #include "TSingleton.hpp"
 
 class IFileIO;
-class Texture;
+class SpriteAtlas;
 class Rect;
 
 #define gAsset Asset::getInstancePtr()
@@ -11,13 +11,14 @@ class Rect;
 class Asset : public TSingleton<Asset>
 {
 public:
-	Asset( const IFileIO* fileIO );
+	Asset();
 	~Asset();
 
-	void Resume();
+	void Resume( const IFileIO* fileIO );
 
 public:
-	Texture* const mainAtlas;
+	SpriteAtlas* mainAtlas;
+
 	const Rect* const ship;
 	const Rect* const oldBullet;
 	const Rect* const roundBullet;

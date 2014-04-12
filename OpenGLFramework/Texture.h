@@ -7,14 +7,14 @@ class IFileIO;
 class Image;
 class Texture {
 public:
-	Texture( const IFileIO* io, const char* fileName );
-	~Texture();
+	Texture( const char* assetName );
+	virtual ~Texture();
 
 public:
 	int GetWidth() const;
 	int GetHeight() const;
 
-	void Load();
+	virtual void Load( const IFileIO* fileIO );
 	void Bind() const;
 	static void Unbind();
 
@@ -28,7 +28,6 @@ private:
 	static bool HasAlpha( GLint colorFormat );
 
 private:
-	const IFileIO* const 	cFileIO;
 	const char* const 		cFileName;
 
 	int		mWidth;

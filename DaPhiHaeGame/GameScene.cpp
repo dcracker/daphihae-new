@@ -6,7 +6,7 @@
 #include "SpriteBatcher.h"
 #include "Camera2D.h"
 
-#include "Texture.h"
+#include "SpriteAtlas.h"
 
 #include "Ship.h"
 #include "BulletManager.h"

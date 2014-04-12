@@ -5,9 +5,8 @@
 #include "Interfaces/IFileIO.h"
 #include "Image.h"
 
-Texture::Texture( const IFileIO* io, const char* fileName )
-	: cFileName( fileName )
-	, cFileIO( io )
+Texture::Texture( const char* assetName )
+	: cFileName( assetName )
 	, mWidth( 0 )
 	, mHeight( 0 )
 	, mHasAlpha( false )
@@ -23,8 +22,8 @@ Texture::~Texture() {
 	mTextureId = 0;
 }
 
-void Texture::Load() {
-	IFile* asset = cFileIO->ReadAsset( cFileName );
+void Texture::Load( const IFileIO* fileIO ) {
+	IFile* asset = fileIO->ReadAsset( cFileName );
 	Image* image = Image::LoadPNG( asset );
 
 	mTextureId = GenerateGLTexture( image );
