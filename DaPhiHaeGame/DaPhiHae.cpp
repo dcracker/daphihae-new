@@ -2,7 +2,6 @@
 #include "DaPhiHae.h"
 
 #include "Interfaces/IPlatform.h"
-#include "OpenGLTest.h"
 #include "GameScene.h"
 
 DaPhiHae::DaPhiHae( IPlatform* platformInstance )

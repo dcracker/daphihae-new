@@ -2,7 +2,6 @@
 #include "stdafx.h"
 
 #include "SpriteBatcher.h"
-#include "Sprite.h"
 #include "Rect.h"
 
 SpriteBatcher::SpriteBatcher()

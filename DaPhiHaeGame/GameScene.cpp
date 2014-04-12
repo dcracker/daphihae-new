@@ -4,7 +4,6 @@
 #include "Interfaces/IPlatform.h"
 #include "Asset.h"
 #include "SpriteBatcher.h"
-#include "Sprite.h"
 #include "Camera2D.h"
 
 #include "Texture.h"
