@@ -12,6 +12,15 @@ Asset::Asset()
 	, roundBullet( mainAtlas->RegisterSprite( 2, Rect( 45, 60, 0, 15 ) ) )
 	, arrowBullet( mainAtlas->RegisterSprite( 3, Rect( 30, 45, 0 ,15 ) ) )
 {
+	animDead[0] = mainAtlas->RegisterSprite( 10, Rect( 0, 17, 17 * 1, 17 * 2 ) );
+	animDead[1] = mainAtlas->RegisterSprite( 11, Rect( 0, 17, 17 * 2, 17 * 3 ) );
+	animDead[2] = mainAtlas->RegisterSprite( 12, Rect( 0, 17, 17 * 3, 17 * 4 ) );
+	animDead[3] = mainAtlas->RegisterSprite( 13, Rect( 0, 17, 17 * 4, 17 * 5 ) );
+	animDead[4] = mainAtlas->RegisterSprite( 14, Rect( 0, 17, 17 * 5, 17 * 6 ) );
+	animDead[5] = mainAtlas->RegisterSprite( 15, Rect( 0, 17, 17 * 6, 17 * 7 ) );
+	animDead[6] = mainAtlas->RegisterSprite( 16, Rect( 0, 17, 17 * 7, 17 * 8 ) );
+	animDead[7] = mainAtlas->RegisterSprite( 17, Rect( 0, 17, 17 * 8, 17 * 9 ) );
+	animDead[8] = mainAtlas->RegisterSprite( 18, Rect( 0, 17, 17 * 9, 17 * 10 ) );
 }
 
 Asset::~Asset()

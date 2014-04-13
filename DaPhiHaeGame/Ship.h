@@ -18,6 +18,7 @@ public:
 
 	void SetMoveDirection( MoveDirection direction );
 	bool CheckCollision( const CollisionCircle& bullet ) const;
+	bool IsAlive() const;
 	void OnDead();
 
 	void Update( float deltaTime );
@@ -32,6 +33,6 @@ private:
 	Vector2 mCurrentPosition;
 	CollisionCircle mCollider;
 
-	bool mAlive;
+	int mDeadAnimCounter;
 };
 

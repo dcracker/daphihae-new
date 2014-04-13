@@ -17,11 +17,13 @@ public:
 	void Resume( const IFileIO* fileIO );
 
 public:
-	SpriteAtlas* mainAtlas;
+	SpriteAtlas* const mainAtlas;
 
 	const Rect* const ship;
 	const Rect* const oldBullet;
 	const Rect* const roundBullet;
 	const Rect* const arrowBullet;
+
+	const Rect* animDead[9];
 };
 

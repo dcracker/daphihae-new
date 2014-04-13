@@ -12,7 +12,7 @@ Ship::Ship( float initialPositionX, float initialPositionY )
 	: mCurrentSpeed( 0 )
 	, mCurrentPosition( initialPositionX, initialPositionY )
 	, mCollider( mCurrentPosition, 3 )
-	, mAlive( true )
+	, mDeadAnimCounter( -1 )
 {
 }
 
@@ -29,24 +29,34 @@ bool Ship::CheckCollision( const CollisionCircle& bullet ) const {
 	return mCollider.CheckCollision( bullet );
 }
 
+bool Ship::IsAlive() const {
+	return mDeadAnimCounter < 0;
+}
+
 void Ship::OnDead() {
-	mAlive = false;
+	if ( IsAlive() == true ) {
+		mDeadAnimCounter = 0;
+	}
 }
 
 void Ship::Update( float deltaTime ) {
-	if ( mAlive == false ) {
-		return;
+	if ( IsAlive() == true ) {
+		mCurrentPosition.x += mCurrentSpeed * deltaTime;
+		mCurrentPosition.x = Util::Clamp( mCurrentPosition.x, cWidthHalf, static_cast<float>(GameScene::cWorldWidth) - cWidthHalf );
 	}
-
-	mCurrentPosition.x += mCurrentSpeed * deltaTime;
-	mCurrentPosition.x = Util::Clamp( mCurrentPosition.x, cWidthHalf, static_cast<float>(GameScene::cWorldWidth) - cWidthHalf );
+	else {
+		if ( mDeadAnimCounter < 8 ) {
+			++mDeadAnimCounter;
+		}
+	}
 }
 
 void Ship::Render( SpriteBatcher* batcher ) const {
-	if ( mAlive == false ) {
-		return;
+	if ( IsAlive() == true ) {
+		batcher->DrawSprite( Rect( mCurrentPosition, Vector2( 20, 15 ) ), *(gAsset->ship) );
+	//	mCollider.Render( batcher );
 	}
-
-	batcher->DrawSprite( Rect( mCurrentPosition, Vector2( 20, 15 ) ), *(gAsset->ship) );
-//	mCollider.Render( batcher );
+	else {
+		batcher->DrawSprite( Rect( mCurrentPosition, Vector2( 17, 17 ) ), *(gAsset->animDead[mDeadAnimCounter]) );
+	}
 }
