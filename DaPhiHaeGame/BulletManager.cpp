@@ -72,6 +72,13 @@ bool BulletManager::CheckCollision( const Ship* ship ) const {
 	return false;
 }
 
+void BulletManager::Reset() {
+	foreach ( Bullet*, it, mBullets ) {
+		PoolBullet( *it );
+	}
+	mBullets.clear();
+}
+
 
 Bullet* BulletManager::NewBullet() {
 

@@ -13,9 +13,10 @@ public:
 	};
 
 public:
-	Ship( float initialPositionX, float initialPositionY );
+	Ship();
 	~Ship();
 
+	void Start( float initialPositionX, float initialPositionY );
 	void SetMoveDirection( MoveDirection direction );
 	bool CheckCollision( const CollisionCircle& bullet ) const;
 	bool IsAlive() const;

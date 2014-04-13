@@ -15,6 +15,7 @@ public:
 	void Update( float deltaTime );
 	void Render( SpriteBatcher* batcher ) const;
 
+	void Reset();
 	bool CheckCollision( const Ship* ship ) const;
 
 private:

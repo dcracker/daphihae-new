@@ -16,9 +16,10 @@ GameScene::GameScene( IPlatform* platform )
 	: mPlatform( platform )
 	, mMainCam( new Camera2D( 0, static_cast<float>(cWorldWidth), 0, static_cast<float>(cWorldHeight) ) )
 	, mSpriteBatcher( new SpriteBatcher() )
-	, mShip( new Ship( static_cast<float>(cWorldWidth * 0.5f), 100.f ) )
+	, mShip( new Ship() )
 	, mBullets( new BulletManager() )
 {
+	RestartGame();
 }
 
 GameScene::~GameScene()
@@ -62,7 +63,21 @@ void GameScene::Render() const {
 	mSpriteBatcher->Render();
 }
 
+void GameScene::RestartGame() {
+	mShip->Start( static_cast<float>(cWorldWidth * 0.5f), 100.f );
+	mBullets->Reset();
+}
+
 void GameScene::ProcessTouchInput() {
+	if ( mShip->IsAlive() == true ) {
+		ProcessInputForMove();
+	}
+	else {
+		ProcessInputForRestart();
+	}
+}
+
+void GameScene::ProcessInputForMove() {
 	bool left = false;
 	bool right = false;
 
@@ -90,6 +105,17 @@ void GameScene::ProcessTouchInput() {
 		moveDirection = (left == true) ? Ship::LEFT : Ship::RIGHT;
 	}
 	mShip->SetMoveDirection( moveDirection );
+}
+
+void GameScene::ProcessInputForRestart() {
+	static bool oldTouch = true;
+	bool touched = mPlatform->GetInput()->IsTouchDown( 0 );
+
+	if ( oldTouch == false && touched == true ) {
+		RestartGame();
+	}
+
+	oldTouch = touched;
 }
 
 void GameScene::BatchSprites() {

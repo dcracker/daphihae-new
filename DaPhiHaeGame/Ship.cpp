@@ -8,9 +8,9 @@
 const float Ship::cMoveSpeed = 300.f;
 const float Ship::cWidthHalf = 10.f;
 
-Ship::Ship( float initialPositionX, float initialPositionY )
+Ship::Ship()
 	: mCurrentSpeed( 0 )
-	, mCurrentPosition( initialPositionX, initialPositionY )
+	, mCurrentPosition()
 	, mCollider( mCurrentPosition, 3 )
 	, mDeadAnimCounter( -1 )
 {
@@ -19,6 +19,12 @@ Ship::Ship( float initialPositionX, float initialPositionY )
 
 Ship::~Ship()
 {
+}
+
+void Ship::Start( float initialPositionX, float initialPositionY ) {
+	mCurrentPosition.x = initialPositionX;
+	mCurrentPosition.y = initialPositionY;
+	mDeadAnimCounter = -1;
 }
 
 void Ship::SetMoveDirection( MoveDirection direction ) {

@@ -20,7 +20,10 @@ public:
 	void Render() const;
 
 private:
+	void RestartGame();
 	void ProcessTouchInput();
+	void ProcessInputForMove();
+	void ProcessInputForRestart();
 	void BatchSprites();
 	void UpdateBullets( float deltaTime );
 	void UpdateShip( float deltaTime );
