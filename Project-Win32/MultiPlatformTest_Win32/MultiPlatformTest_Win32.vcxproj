@@ -86,6 +86,7 @@
     <ClInclude Include="..\..\DaPhiHaeGame\Asset.h" />
     <ClInclude Include="..\..\DaPhiHaeGame\Bullet.h" />
     <ClInclude Include="..\..\DaPhiHaeGame\BulletManager.h" />
+    <ClInclude Include="..\..\DaPhiHaeGame\CollisionCircle.h" />
     <ClInclude Include="..\..\DaPhiHaeGame\DaPhiHae.h" />
     <ClInclude Include="..\..\DaPhiHaeGame\GameScene.h" />
     <ClInclude Include="..\..\DaPhiHaeGame\Util.h" />
@@ -131,6 +132,7 @@
     <ClCompile Include="..\..\DaPhiHaeGame\Asset.cpp" />
     <ClCompile Include="..\..\DaPhiHaeGame\Bullet.cpp" />
     <ClCompile Include="..\..\DaPhiHaeGame\BulletManager.cpp" />
+    <ClCompile Include="..\..\DaPhiHaeGame\CollisionCircle.cpp" />
     <ClCompile Include="..\..\DaPhiHaeGame\DaPhiHae.cpp" />
     <ClCompile Include="..\..\DaPhiHaeGame\GameScene.cpp" />
     <ClCompile Include="..\..\DaPhiHaeGame\Ship.cpp" />

@@ -39,7 +39,7 @@ void GameScene::Resume() {
 	const IGraphics* graphics = mPlatform->GetGraphics();
     glViewport(0, 0, graphics->GetWidth(), graphics->GetHeight());
 
-    glEnable(GL_TEXTURE_2D);
+	glEnable(GL_TEXTURE_2D);
 }
 
 void GameScene::Pause() {
@@ -99,5 +99,7 @@ void GameScene::BatchSprites() {
 }
 
 void GameScene::CheckCollision() {
-
+	if ( mBullets->CheckCollision( mShip ) == true ) {
+		mShip->OnDead();
+	}
 }

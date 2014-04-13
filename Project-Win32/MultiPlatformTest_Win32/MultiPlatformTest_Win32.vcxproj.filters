@@ -159,11 +159,14 @@
     <ClInclude Include="..\..\DaPhiHaeGame\Bullet.h">
       <Filter>DaPhiHaeGame</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\DaPhiHaeGame\BulletManager.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\OpenGLFramework\SpriteAtlas.h">
       <Filter>Framework\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DaPhiHaeGame\CollisionCircle.h">
+      <Filter>DaPhiHaeGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DaPhiHaeGame\BulletManager.h">
+      <Filter>DaPhiHaeGame</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -236,11 +239,14 @@
     <ClCompile Include="..\..\DaPhiHaeGame\Bullet.cpp">
       <Filter>DaPhiHaeGame</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\DaPhiHaeGame\BulletManager.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\OpenGLFramework\SpriteAtlas.cpp">
       <Filter>Framework\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DaPhiHaeGame\CollisionCircle.cpp">
+      <Filter>DaPhiHaeGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DaPhiHaeGame\BulletManager.cpp">
+      <Filter>DaPhiHaeGame</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

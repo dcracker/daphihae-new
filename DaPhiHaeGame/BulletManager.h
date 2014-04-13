@@ -2,6 +2,7 @@
 #include <vector>
 #include <stack>
 
+class Ship;
 class Bullet;
 class SpriteBatcher;
 
@@ -13,6 +14,8 @@ public:
 
 	void Update( float deltaTime );
 	void Render( SpriteBatcher* batcher ) const;
+
+	bool CheckCollision( const Ship* ship ) const;
 
 private:
 	void UpdateExistBullets( float deltaTime );

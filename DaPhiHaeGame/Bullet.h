@@ -1,5 +1,7 @@
 #pragma once
+#include "CollisionCircle.h"
 
+class Ship;
 class SpriteBatcher;
 
 class Bullet
@@ -12,6 +14,7 @@ public:
 	void Render( SpriteBatcher* batcher ) const;
 
 	void Init( const Vector2& initialPosition, const Vector2& initialVelocity );
+	bool CheckCollision( const Ship* ship ) const;
 	
 	float GetLeft() const;
 	float GetRight() const;
@@ -24,5 +27,6 @@ private:
 private:
 	Vector2 mPosition;
 	Vector2 mVelocity;
+	CollisionCircle mCollider;
 };
 

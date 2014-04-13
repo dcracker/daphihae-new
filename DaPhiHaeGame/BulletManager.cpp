@@ -3,6 +3,7 @@
 
 #include "GameScene.h"
 #include "Bullet.h"
+#include "Ship.h"
 #include "Util.h"
 
 float BulletManager::cSpawnInterval = 0.1f;
@@ -60,6 +61,15 @@ void BulletManager::Render( SpriteBatcher* batcher ) const {
 	foreach_const ( Bullet*, it, mBullets ) {
 		(*it)->Render( batcher );
 	}
+}
+
+bool BulletManager::CheckCollision( const Ship* ship ) const {
+	foreach_const ( Bullet*, it, mBullets ) {
+		if ( (*it)->CheckCollision( ship ) == true ) {
+			return true;
+		}
+	}
+	return false;
 }
 
 

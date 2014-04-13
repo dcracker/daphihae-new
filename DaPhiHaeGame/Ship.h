@@ -1,4 +1,5 @@
 #pragma once
+#include "CollisionCircle.h"
 
 class SpriteBatcher;
 
@@ -16,6 +17,8 @@ public:
 	~Ship();
 
 	void SetMoveDirection( MoveDirection direction );
+	bool CheckCollision( const CollisionCircle& bullet ) const;
+	void OnDead();
 
 	void Update( float deltaTime );
 	void Render( SpriteBatcher* batcher ) const;
@@ -27,5 +30,8 @@ private:
 private:
 	float mCurrentSpeed;
 	Vector2 mCurrentPosition;
+	CollisionCircle mCollider;
+
+	bool mAlive;
 };
 
