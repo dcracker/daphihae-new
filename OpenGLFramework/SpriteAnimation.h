@@ -1,6 +1,5 @@
 #pragma once
 #include <vector>
-#include "Rect.h"
 
 class SpriteAnimation
 {

@@ -15,7 +15,7 @@ public:
 	unsigned int RegisterSprite( Rect pixelCoord );
 	Rect GetSpriteCoord( unsigned int ) const;
 
-	unsigned int RegisterAnimation( float frameDuration, unsigned int numFrames, unsigned int frames[] );
+	unsigned int RegisterAnimation( float frameDuration, Rect animArea, Vector2 frameSize );
 	Rect GetAnimationFrame( unsigned int key, float frameTime ) const;
 
 // override

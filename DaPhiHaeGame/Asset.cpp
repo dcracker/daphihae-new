@@ -12,19 +12,8 @@ Asset::Asset()
 	, oldBullet( mainAtlas->RegisterSprite( Rect( 20, 30, 0, 10 ) ) )
 	, roundBullet( mainAtlas->RegisterSprite( Rect( 45, 60, 0, 15 ) ) )
 	, arrowBullet( mainAtlas->RegisterSprite( Rect( 30, 45, 0 ,15 ) ) )
+	, animDead( mainAtlas->RegisterAnimation( 1, Rect( 0, 17, 16, 169 ), Vector2( 17, 17 ) ) )
 {
-	unsigned int frames[] = {
-		mainAtlas->RegisterSprite( Rect( 0, 17, 17 * 1, 17 *  2 - 1 ) ),
-		mainAtlas->RegisterSprite( Rect( 0, 17, 17 * 2, 17 *  3 - 1 ) ),
-		mainAtlas->RegisterSprite( Rect( 0, 17, 17 * 3, 17 *  4 - 1 ) ),
-		mainAtlas->RegisterSprite( Rect( 0, 17, 17 * 4, 17 *  5 - 1 ) ),
-		mainAtlas->RegisterSprite( Rect( 0, 17, 17 * 5, 17 *  6 - 1 ) ),
-		mainAtlas->RegisterSprite( Rect( 0, 17, 17 * 6, 17 *  7 - 1 ) ),
-		mainAtlas->RegisterSprite( Rect( 0, 17, 17 * 7, 17 *  8 - 1 ) ),
-		mainAtlas->RegisterSprite( Rect( 0, 17, 17 * 8, 17 *  9 - 1 ) ),
-		mainAtlas->RegisterSprite( Rect( 0, 17, 17 * 9, 17 * 10 - 1 ) )
-	};
-	animDead = mainAtlas->RegisterAnimation( 0.033f, 9, frames );
 }
 
 Asset::~Asset()

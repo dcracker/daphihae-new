@@ -1,11 +1,11 @@
 #include "stdafx.h"
 #include "Ship.h"
+
 #include "GameScene.h"
-#include "Util.h"
 #include "SpriteBatcher.h"
 #include "Asset.h"
-#include "SpriteAnimation.h"
-#include "SpriteAtlas.h"
+
+#include "Util.h"	// for clamp
 
 const float Ship::cMoveSpeed = 300.f;
 const float Ship::cWidthHalf = 10.f;

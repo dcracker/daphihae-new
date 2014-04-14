@@ -169,7 +169,7 @@
       <Filter>DaPhiHaeGame</Filter>
     </ClInclude>
     <ClInclude Include="..\..\OpenGLFramework\SpriteAnimation.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>Framework\OpenGL</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -252,7 +252,7 @@
       <Filter>DaPhiHaeGame</Filter>
     </ClCompile>
     <ClCompile Include="..\..\OpenGLFramework\SpriteAnimation.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>Framework\OpenGL</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

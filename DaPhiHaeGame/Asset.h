@@ -25,6 +25,6 @@ public:
 	const unsigned int roundBullet;
 	const unsigned int arrowBullet;
 
-	unsigned int animDead;
+	const unsigned int animDead;
 };
 

@@ -29,11 +29,22 @@ Rect SpriteAtlas::GetSpriteCoord( unsigned int key ) const {
 	return mSpriteCoords[key];
 }
 
-unsigned int SpriteAtlas::RegisterAnimation( float frameDuration, unsigned int numFrames, unsigned int frames[] ) {
+unsigned int SpriteAtlas::RegisterAnimation( float frameDuration, Rect animArea, Vector2 frameSize ) {
 	SpriteAnimation anim( frameDuration );
 
-	for ( unsigned int i=0; i < numFrames; ++i ) {
-		anim.AddFrame( frames[i] );
+	int numHorizontal = static_cast<int>(animArea.GetWidth() / frameSize.x);
+	int numVertical = static_cast<int>(animArea.GetHeight() / frameSize.y);
+
+	Vector2 start( animArea.GetLeft(), animArea.GetBottom() );
+
+	for ( int v=0; v < numVertical; ++v ) {
+		for ( int h=0; h < numHorizontal; ++h ) {
+			Rect frame( start.x + frameSize.x * h,
+						start.x + frameSize.x * (h + 1),
+						start.y + frameSize.y * v,
+						start.y + frameSize.y * (v + 1) );
+			anim.AddFrame( RegisterSprite( frame ) );
+		}
 	}
 	mSpriteAnimation.push_back( anim );
 	return mSpriteAnimation.size() - 1;

@@ -18,7 +18,7 @@ void SpriteAnimation::AddFrame( unsigned int keyframe ) {
 }
 
 unsigned int SpriteAnimation::GetCurrentFrame( float frameTime ) const {
-	unsigned int currentFrame = frameTime / cFrameDuration;
+	unsigned int currentFrame = static_cast<unsigned int>(frameTime / cFrameDuration);
 	if ( currentFrame >= mFrames.size() ) {
 		currentFrame = mFrames.size() - 1;
 	}
