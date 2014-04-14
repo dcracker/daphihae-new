@@ -12,7 +12,7 @@ Asset::Asset()
 	, oldBullet( mainAtlas->RegisterSprite( Rect( 20, 30, 0, 10 ) ) )
 	, roundBullet( mainAtlas->RegisterSprite( Rect( 45, 60, 0, 15 ) ) )
 	, arrowBullet( mainAtlas->RegisterSprite( Rect( 30, 45, 0 ,15 ) ) )
-	, animDead( mainAtlas->RegisterAnimation( 1, Rect( 0, 17, 16, 169 ), Vector2( 17, 17 ) ) )
+	, animDead( mainAtlas->RegisterAnimation( 0.033f, Rect( 0, 17, 16, 169 ), Vector2( 17, 17 ) ) )
 {
 }
 
