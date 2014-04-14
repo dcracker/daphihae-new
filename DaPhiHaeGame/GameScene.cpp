@@ -6,8 +6,6 @@
 #include "SpriteBatcher.h"
 #include "Camera2D.h"
 
-#include "SpriteAtlas.h"
-
 #include "Ship.h"
 #include "BulletManager.h"
 #include "Util.h"
@@ -15,7 +13,7 @@
 GameScene::GameScene( IPlatform* platform )
 	: mPlatform( platform )
 	, mMainCam( new Camera2D( 0, static_cast<float>(cWorldWidth), 0, static_cast<float>(cWorldHeight) ) )
-	, mSpriteBatcher( new SpriteBatcher() )
+	, mSpriteBatcher( new SpriteBatcher( gAsset->mainAtlas ) )
 	, mShip( new Ship() )
 	, mBullets( new BulletManager() )
 {
@@ -58,7 +56,6 @@ void GameScene::Update( float deltaTime ) {
 
 void GameScene::Render() const {
     glClear( GL_COLOR_BUFFER_BIT );
-	gAsset->mainAtlas->Bind();
 	mMainCam->Bind();
 	mSpriteBatcher->Render();
 }

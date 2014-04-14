@@ -5,18 +5,21 @@
 #include "Common/CommonHeaders.h"
 #include "Rect.h"
 
-class Texture;
-class Sprite;
+class SpriteAtlas;
 
 class SpriteBatcher
 {
 public:
-	SpriteBatcher();
+	SpriteBatcher( const SpriteAtlas* atlas );
 	~SpriteBatcher();
 
 	void Clear();
-	void DrawSprite( Rect position, Rect texCoord );
+	void DrawSprite( Rect position, unsigned int spriteHandle );
+	void DrawSprite( Rect position, unsigned int animationHandle, float frameTime );
 	void Render() const;
+
+private:
+	void DrawSprite( Rect position, Rect texCoord );
 
 private:
 	struct VertexFormat {
@@ -27,4 +30,5 @@ private:
 	std::vector<VertexFormat> mVertices;
 	std::vector<GLushort> mIndices;
 	int mNumSprite;
+	const SpriteAtlas* const mAtlas;
 };

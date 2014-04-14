@@ -1,10 +1,11 @@
-
 #include "stdafx.h"
-
 #include "SpriteBatcher.h"
+
+#include "SpriteAtlas.h"
 #include "Rect.h"
 
-SpriteBatcher::SpriteBatcher()
+SpriteBatcher::SpriteBatcher( const SpriteAtlas* atlas )
+	: mAtlas( atlas )
 {
 	Clear();
 }
@@ -18,6 +19,14 @@ void SpriteBatcher::Clear() {
 	mNumSprite = 0;
 	mVertices.clear();
 	mIndices.clear();
+}
+
+void SpriteBatcher::DrawSprite( Rect position, unsigned int spriteHandle ) {
+	DrawSprite( position, mAtlas->GetSpriteCoord( spriteHandle ) );
+}
+
+void SpriteBatcher::DrawSprite( Rect position, unsigned int animationHandle, float frameTime ) {
+	DrawSprite( position, mAtlas->GetAnimationFrame( animationHandle, frameTime ) );
 }
 
 void SpriteBatcher::DrawSprite( Rect position, Rect texCoord ) {
@@ -54,6 +63,8 @@ void SpriteBatcher::Render() const {
 	if ( mNumSprite <= 0 ) {
 		return; 
 	}
+
+	mAtlas->Bind();
 
 	glEnableClientState( GL_VERTEX_ARRAY );
 	glEnableClientState( GL_TEXTURE_COORD_ARRAY );

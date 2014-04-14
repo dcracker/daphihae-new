@@ -59,10 +59,10 @@ void Ship::Update( float deltaTime ) {
 
 void Ship::Render( SpriteBatcher* batcher ) const {
 	if ( IsAlive() == true ) {
-		batcher->DrawSprite( Rect( mCurrentPosition, Vector2( 20, 15 ) ), gAsset->mainAtlas->GetSpriteCoord( gAsset->ship ) );
+		batcher->DrawSprite( Rect( mCurrentPosition, Vector2( 20, 15 ) ), gAsset->ship );
 	//	mCollider.Render( batcher );
 	}
 	else {
-		batcher->DrawSprite( Rect( mCurrentPosition, Vector2( 17, 17 ) ), gAsset->mainAtlas->GetAnimationFrame( gAsset->animDead, mDeadAnimCounter ) );
+		batcher->DrawSprite( Rect( mCurrentPosition, Vector2( 17, 17 ) ), gAsset->animDead, mDeadAnimCounter );
 	}
 }

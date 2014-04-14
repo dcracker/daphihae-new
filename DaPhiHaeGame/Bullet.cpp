@@ -5,8 +5,6 @@
 #include "SpriteBatcher.h"
 #include "Asset.h"
 
-#include "SpriteAtlas.h"
-
 float Bullet::cSizeHalf = 5.f;
 
 Bullet::Bullet()
@@ -26,7 +24,7 @@ void Bullet::Update( float deltaTime ) {
 
 void Bullet::Render( SpriteBatcher* batcher ) const {
 //	mCollider.Render( batcher );
-	batcher->DrawSprite( Rect( mPosition, Vector2( cSizeHalf * 2, cSizeHalf * 2 ) ), gAsset->mainAtlas->GetSpriteCoord( gAsset->oldBullet ) );
+	batcher->DrawSprite( Rect( mPosition, Vector2( cSizeHalf * 2, cSizeHalf * 2 ) ), gAsset->oldBullet );
 }
 
 void Bullet::Init( const Vector2& initialPosition, const Vector2& initialVelocity ) {
