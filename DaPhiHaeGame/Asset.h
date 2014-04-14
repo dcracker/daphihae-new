@@ -5,6 +5,7 @@
 class IFileIO;
 class SpriteAtlas;
 class Rect;
+class SpriteAnimation;
 
 #define gAsset Asset::getInstancePtr()
 
@@ -24,6 +25,6 @@ public:
 	const Rect* const roundBullet;
 	const Rect* const arrowBullet;
 
-	const Rect* animDead[9];
+	SpriteAnimation* const animDead;
 };
 

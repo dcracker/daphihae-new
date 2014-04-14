@@ -2,6 +2,7 @@
 #include "CollisionCircle.h"
 
 class SpriteBatcher;
+class SpriteAnimation;
 
 class Ship
 {
@@ -34,6 +35,7 @@ private:
 	Vector2 mCurrentPosition;
 	CollisionCircle mCollider;
 
-	int mDeadAnimCounter;
+	bool mAlive;
+	SpriteAnimation* mDeadAnim;
 };
 

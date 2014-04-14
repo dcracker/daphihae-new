@@ -23,11 +23,11 @@ const Rect* SpriteAtlas::RegisterSprite( int key, Rect pixelCoord ) {
 	return &(mSpriteCoords[key]);
 }
 
-Rect SpriteAtlas::GetSpriteCoord( int key ) const {
+const Rect* SpriteAtlas::GetSpriteCoord( int key ) const {
 	std::map<int, Rect>::const_iterator found = mSpriteCoords.find( key );
 	assert( found != mSpriteCoords.end() );
 
-	return found->second;
+	return &(found->second);
 }
 void SpriteAtlas::Load( const IFileIO* fileIO ) {
 	bool notInitializedYet = !TextureHasLoaded();

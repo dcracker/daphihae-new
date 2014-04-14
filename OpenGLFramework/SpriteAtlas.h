@@ -12,7 +12,7 @@ public:
 	~SpriteAtlas();
 
 	const Rect* RegisterSprite( int key, Rect pixelCoord );
-	Rect GetSpriteCoord( int key ) const;
+	const Rect* GetSpriteCoord( int key ) const;
 
 // override
 	void Load( const IFileIO* fileIO );

@@ -4,6 +4,7 @@
 #include "Util.h"
 #include "SpriteBatcher.h"
 #include "Asset.h"
+#include "SpriteAnimation.h"
 
 const float Ship::cMoveSpeed = 300.f;
 const float Ship::cWidthHalf = 10.f;
@@ -12,7 +13,8 @@ Ship::Ship()
 	: mCurrentSpeed( 0 )
 	, mCurrentPosition()
 	, mCollider( mCurrentPosition, 3 )
-	, mDeadAnimCounter( -1 )
+	, mAlive( true )
+	, mDeadAnim( new SpriteAnimation( *(gAsset->animDead) ) )
 {
 }
 
@@ -24,7 +26,8 @@ Ship::~Ship()
 void Ship::Start( float initialPositionX, float initialPositionY ) {
 	mCurrentPosition.x = initialPositionX;
 	mCurrentPosition.y = initialPositionY;
-	mDeadAnimCounter = -1;
+	mAlive = true;
+	mDeadAnim->Reset();
 }
 
 void Ship::SetMoveDirection( MoveDirection direction ) {
@@ -36,12 +39,12 @@ bool Ship::CheckCollision( const CollisionCircle& bullet ) const {
 }
 
 bool Ship::IsAlive() const {
-	return mDeadAnimCounter < 0;
+	return mAlive;
 }
 
 void Ship::OnDead() {
 	if ( IsAlive() == true ) {
-		mDeadAnimCounter = 0;
+		mAlive = false;
 	}
 }
 
@@ -51,9 +54,7 @@ void Ship::Update( float deltaTime ) {
 		mCurrentPosition.x = Util::Clamp( mCurrentPosition.x, cWidthHalf, static_cast<float>(GameScene::cWorldWidth) - cWidthHalf );
 	}
 	else {
-		if ( mDeadAnimCounter < 8 ) {
-			++mDeadAnimCounter;
-		}
+		mDeadAnim->Update( deltaTime );
 	}
 }
 
@@ -63,6 +64,6 @@ void Ship::Render( SpriteBatcher* batcher ) const {
 	//	mCollider.Render( batcher );
 	}
 	else {
-		batcher->DrawSprite( Rect( mCurrentPosition, Vector2( 17, 17 ) ), *(gAsset->animDead[mDeadAnimCounter]) );
+		batcher->DrawSprite( Rect( mCurrentPosition, Vector2( 17, 17 ) ), *(mDeadAnim->GetCurrentFrame()) );
 	}
 }

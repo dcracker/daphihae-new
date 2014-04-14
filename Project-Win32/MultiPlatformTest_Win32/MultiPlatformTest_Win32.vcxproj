@@ -120,6 +120,7 @@
     <ClInclude Include="..\..\OpenGLFramework\Image.h" />
     <ClInclude Include="..\..\OpenGLFramework\OpenGLCommons.h" />
     <ClInclude Include="..\..\OpenGLFramework\Rect.h" />
+    <ClInclude Include="..\..\OpenGLFramework\SpriteAnimation.h" />
     <ClInclude Include="..\..\OpenGLFramework\SpriteAtlas.h" />
     <ClInclude Include="..\..\OpenGLFramework\SpriteBatcher.h" />
     <ClInclude Include="..\..\OpenGLFramework\Texture.h" />
@@ -150,6 +151,7 @@
     <ClCompile Include="..\..\OpenGLFramework\Camera2D.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\Image.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\Rect.cpp" />
+    <ClCompile Include="..\..\OpenGLFramework\SpriteAnimation.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\SpriteAtlas.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\SpriteBatcher.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\Texture.cpp" />
