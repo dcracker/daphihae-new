@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "SpriteAtlas.h"
 #include "Texture.h"
+#include "Util.h"
 
 SpriteAtlas::SpriteAtlas( const char* assetName )
 	: Texture( assetName )
@@ -13,22 +14,36 @@ SpriteAtlas::~SpriteAtlas()
 	mSpriteCoords.clear();
 }
 
-const Rect* SpriteAtlas::RegisterSprite( int key, Rect pixelCoord ) {
+unsigned int SpriteAtlas::RegisterSprite( Rect pixelCoord ) {
 	if ( TextureHasLoaded() == false ) {
-		mSpriteCoords[key] = pixelCoord;
+		mSpriteCoords.push_back( pixelCoord );
 	}
 	else {
-		mSpriteCoords[key] = AdjustCoordinate( pixelCoord, static_cast<float>(GetWidth()), static_cast<float>(GetHeight()) );
+		mSpriteCoords.push_back( AdjustCoordinate( pixelCoord, static_cast<float>(GetWidth()), static_cast<float>(GetHeight()) ) );
 	}
-	return &(mSpriteCoords[key]);
+	return mSpriteCoords.size() - 1;
 }
 
-const Rect* SpriteAtlas::GetSpriteCoord( int key ) const {
-	std::map<int, Rect>::const_iterator found = mSpriteCoords.find( key );
-	assert( found != mSpriteCoords.end() );
-
-	return &(found->second);
+Rect SpriteAtlas::GetSpriteCoord( unsigned int key ) const {
+	assert( key >= 0 && key < mSpriteCoords.size() );
+	return mSpriteCoords[key];
 }
+
+unsigned int SpriteAtlas::RegisterAnimation( float frameDuration, unsigned int numFrames, unsigned int frames[] ) {
+	SpriteAnimation anim( frameDuration );
+
+	for ( unsigned int i=0; i < numFrames; ++i ) {
+		anim.AddFrame( frames[i] );
+	}
+	mSpriteAnimation.push_back( anim );
+	return mSpriteAnimation.size() - 1;
+}
+
+Rect SpriteAtlas::GetAnimationFrame( unsigned int key, float frameTime ) const {
+	assert( key >= 0 && key < mSpriteAnimation.size() );
+	return mSpriteCoords[mSpriteAnimation[key].GetCurrentFrame( frameTime )];
+}
+
 void SpriteAtlas::Load( const IFileIO* fileIO ) {
 	bool notInitializedYet = !TextureHasLoaded();
 	Texture::Load( fileIO );
@@ -36,8 +51,8 @@ void SpriteAtlas::Load( const IFileIO* fileIO ) {
 	if ( notInitializedYet ) {
 		float width = static_cast<float>(GetWidth());
 		float height = static_cast<float>(GetHeight());
-		for ( std::map<int, Rect>::iterator it = mSpriteCoords.begin(); it != mSpriteCoords.end(); ++it ) {
-			it->second = AdjustCoordinate( it->second, width, height );
+		foreach ( Rect, it, mSpriteCoords ) {
+			(*it) = AdjustCoordinate( *it, width, height );
 		}
 	}
 }

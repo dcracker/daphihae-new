@@ -35,7 +35,6 @@ private:
 	Vector2 mCurrentPosition;
 	CollisionCircle mCollider;
 
-	bool mAlive;
-	SpriteAnimation* mDeadAnim;
+	float mDeadAnimCounter;
 };
 

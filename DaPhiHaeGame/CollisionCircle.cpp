@@ -24,5 +24,5 @@ bool CollisionCircle::CheckCollision( const CollisionCircle& subject ) const {
 
 void CollisionCircle::Render( SpriteBatcher* batcher ) const {
 	Rect position( mPosition, Vector2( mRadius * 2, mRadius * 2 ) );
-	batcher->DrawSprite( position, *(gAsset->roundBullet) );
+//	batcher->DrawSprite( position, *(gAsset->roundBullet) );
 }

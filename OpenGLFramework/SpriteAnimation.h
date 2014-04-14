@@ -1,29 +1,19 @@
 #pragma once
 #include <vector>
-
-class Rect;
+#include "Rect.h"
 
 class SpriteAnimation
 {
-private:
-	struct Keyframe {
-		const Rect* const frame;
-		const float duration;
-	};
 public:
-	SpriteAnimation();
-	SpriteAnimation( const SpriteAnimation& source );
+	SpriteAnimation( float frameDuration );
 	~SpriteAnimation();
 
-	void AddFrame( const Rect* keyframe, float frameDuration );
-	void Reset();
+	void AddFrame( unsigned int frame );
 
-	void Update( float deltaTime );
-	const Rect* GetCurrentFrame() const;
+	unsigned int GetCurrentFrame( float frameTime ) const;
 
 private:
-	std::vector<Keyframe> mKeyFrames;
-	float mCurrentTime;
-	unsigned int mCurrentFrame;
+	std::vector<unsigned int> mFrames;
+	const float cFrameDuration;
 };
 

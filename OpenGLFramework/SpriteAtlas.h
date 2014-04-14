@@ -1,7 +1,8 @@
 #pragma once
-#include <map>
-#include "Rect.h"
+#include <vector>
 #include "Texture.h"
+#include "Rect.h"
+#include "SpriteAnimation.h"
 
 class IFileIO;
 
@@ -11,8 +12,11 @@ public:
 	SpriteAtlas( const char* assetName );
 	~SpriteAtlas();
 
-	const Rect* RegisterSprite( int key, Rect pixelCoord );
-	const Rect* GetSpriteCoord( int key ) const;
+	unsigned int RegisterSprite( Rect pixelCoord );
+	Rect GetSpriteCoord( unsigned int ) const;
+
+	unsigned int RegisterAnimation( float frameDuration, unsigned int numFrames, unsigned int frames[] );
+	Rect GetAnimationFrame( unsigned int key, float frameTime ) const;
 
 // override
 	void Load( const IFileIO* fileIO );
@@ -22,6 +26,7 @@ private:
 	bool TextureHasLoaded();
 
 private:
-	std::map<int, Rect> mSpriteCoords;
+	std::vector<const Rect> mSpriteCoords;
+	std::vector<const SpriteAnimation> mSpriteAnimation;
 };
 

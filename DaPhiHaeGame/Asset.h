@@ -20,11 +20,11 @@ public:
 public:
 	SpriteAtlas* const mainAtlas;
 
-	const Rect* const ship;
-	const Rect* const oldBullet;
-	const Rect* const roundBullet;
-	const Rect* const arrowBullet;
+	const unsigned int ship;
+	const unsigned int oldBullet;
+	const unsigned int roundBullet;
+	const unsigned int arrowBullet;
 
-	SpriteAnimation* const animDead;
+	unsigned int animDead;
 };
 

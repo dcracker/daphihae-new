@@ -2,46 +2,25 @@
 #include "SpriteAnimation.h"
 
 
-SpriteAnimation::SpriteAnimation()
-	: mCurrentTime( 0 )
-	, mCurrentFrame( 0 )
+SpriteAnimation::SpriteAnimation( float frameDuration )
+	: cFrameDuration( frameDuration )
 {
-	mKeyFrames.clear();
-}
-
-SpriteAnimation::SpriteAnimation( const SpriteAnimation& source )
-	: mKeyFrames( source.mKeyFrames )
-{
+	mFrames.clear();
 }
 
 SpriteAnimation::~SpriteAnimation()
 {
+	mFrames.clear();
 }
 
-void SpriteAnimation::AddFrame( const Rect* keyframe, float frameDuration ) {
-	mKeyFrames.push_back( { keyframe, frameDuration } );
+void SpriteAnimation::AddFrame( unsigned int keyframe ) {
+	mFrames.push_back( keyframe );
 }
 
-void SpriteAnimation::Reset() {
-	mCurrentTime = 0;
-	mCurrentFrame = 0;
-}
-
-void SpriteAnimation::Update( float deltaTime ) {
-	if ( mCurrentFrame >= mKeyFrames.size() - 1 ) {
-		return;
+unsigned int SpriteAnimation::GetCurrentFrame( float frameTime ) const {
+	unsigned int currentFrame = frameTime / cFrameDuration;
+	if ( currentFrame >= mFrames.size() ) {
+		currentFrame = mFrames.size() - 1;
 	}
-
-	mCurrentTime += deltaTime;
-	while ( mCurrentFrame < mKeyFrames.size() - 1
-		&& mCurrentTime >= mKeyFrames[mCurrentFrame].duration )
-	{
-		mCurrentTime -= mKeyFrames[mCurrentFrame].duration;
-		++mCurrentFrame;
-	}
-}
-
-const Rect* SpriteAnimation::GetCurrentFrame() const {
-	assert( mCurrentFrame < mKeyFrames.size() );
-	return mKeyFrames[mCurrentFrame].frame;
+	return mFrames[currentFrame];
 }
