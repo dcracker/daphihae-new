@@ -6,11 +6,11 @@ class Ship;
 class Bullet;
 class SpriteBatcher;
 
-class BulletManager
+class BulletSpawner
 {
 public:
-	BulletManager();
-	~BulletManager();
+	BulletSpawner( float spawnInterval, Vector2 initialSpeed );
+	~BulletSpawner();
 
 	void Update( float deltaTime );
 	void Render( SpriteBatcher* batcher ) const;
@@ -23,15 +23,10 @@ private:
 	void SpawnNewBullets( float deltaTime );
 
 private:
-	static Bullet* NewBullet();
-	static void PoolBullet( Bullet* bullet );
-	
-private:
-	static float cSpawnInterval;
-	static std::stack<Bullet*> sBulletPool;
-
-private:
 	std::vector<Bullet*> mBullets;
+	
+	float mSpawnInterval;
+	Vector2 mInitialSpeed;
 
 	float mRemainedTimeToSpawn;
 };

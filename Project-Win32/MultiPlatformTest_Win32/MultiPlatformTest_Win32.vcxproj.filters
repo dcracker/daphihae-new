@@ -165,11 +165,14 @@
     <ClInclude Include="..\..\DaPhiHaeGame\CollisionCircle.h">
       <Filter>DaPhiHaeGame</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\DaPhiHaeGame\BulletManager.h">
-      <Filter>DaPhiHaeGame</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\OpenGLFramework\SpriteAnimation.h">
       <Filter>Framework\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DaPhiHaeGame\BulletSpawner.h">
+      <Filter>DaPhiHaeGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DaPhiHaeGame\BulletPool.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -248,11 +251,14 @@
     <ClCompile Include="..\..\DaPhiHaeGame\CollisionCircle.cpp">
       <Filter>DaPhiHaeGame</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\DaPhiHaeGame\BulletManager.cpp">
-      <Filter>DaPhiHaeGame</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\OpenGLFramework\SpriteAnimation.cpp">
       <Filter>Framework\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DaPhiHaeGame\BulletSpawner.cpp">
+      <Filter>DaPhiHaeGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DaPhiHaeGame\BulletPool.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

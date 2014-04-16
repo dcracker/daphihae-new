@@ -7,7 +7,8 @@
 #include "Camera2D.h"
 
 #include "Ship.h"
-#include "BulletManager.h"
+#include "BulletSpawner.h"
+#include "BulletPool.h"
 #include "Util.h"
 
 GameScene::GameScene( IPlatform* platform )
@@ -15,8 +16,11 @@ GameScene::GameScene( IPlatform* platform )
 	, mMainCam( new Camera2D( 0, static_cast<float>(cWorldWidth), 0, static_cast<float>(cWorldHeight) ) )
 	, mSpriteBatcher( new SpriteBatcher( gAsset->mainAtlas ) )
 	, mShip( new Ship() )
-	, mBullets( new BulletManager() )
+	, mBulletPool( new BulletPool() )
 {
+	mSpawners.clear();
+	mSpawners.push_back( new BulletSpawner( 0.1f, Vector2( 0, -300 ) ) );
+	mSpawners.push_back( new BulletSpawner( 0.5f, Vector2( 0, -700 ) ) );
 	RestartGame();
 }
 
@@ -25,7 +29,13 @@ GameScene::~GameScene()
 	SAFE_DELETE( mMainCam );
 	SAFE_DELETE( mSpriteBatcher );
 	SAFE_DELETE( mShip );
-	SAFE_DELETE( mBullets );
+
+	foreach ( BulletSpawner*, it, mSpawners ) {
+		delete *it;
+	}
+	mSpawners.clear();
+
+	SAFE_DELETE( mBulletPool );
 }
 
 void GameScene::Resume() {
@@ -49,7 +59,7 @@ void GameScene::Update( float deltaTime ) {
 
 	ProcessTouchInput();
 	mShip->Update( deltaTime );
-	mBullets->Update( deltaTime );
+	UpdateBullets( deltaTime );
 	CheckCollision();
 	BatchSprites();
 }
@@ -62,7 +72,9 @@ void GameScene::Render() const {
 
 void GameScene::RestartGame() {
 	mShip->Start( static_cast<float>(cWorldWidth * 0.5f), 100.f );
-	mBullets->Reset();
+	foreach ( BulletSpawner*, it, mSpawners ) {
+		(*it)->Reset();
+	}
 }
 
 void GameScene::ProcessTouchInput() {
@@ -115,14 +127,24 @@ void GameScene::ProcessInputForRestart() {
 	oldTouch = touched;
 }
 
+void GameScene::UpdateBullets( float deltaTime ) {
+	foreach ( BulletSpawner*, it, mSpawners ) {
+		(*it)->Update( deltaTime );
+	}
+}
 void GameScene::BatchSprites() {
 	mSpriteBatcher->Clear();
-	mBullets->Render( mSpriteBatcher );
+	foreach ( BulletSpawner*, it, mSpawners ) {
+		(*it)->Render( mSpriteBatcher );
+	}
 	mShip->Render( mSpriteBatcher );
 }
 
 void GameScene::CheckCollision() {
-	if ( mBullets->CheckCollision( mShip ) == true ) {
-		mShip->OnDead();
+	foreach ( BulletSpawner*, it, mSpawners ) {
+		if ( (*it)->CheckCollision( mShip ) == true ) {
+			mShip->OnDead();
+			return;
+		}
 	}
 }

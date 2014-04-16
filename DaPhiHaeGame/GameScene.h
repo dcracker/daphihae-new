@@ -1,12 +1,14 @@
 #pragma once
 #include "Interfaces/IGame.h"
+#include <vector>
 
 class IPlatform;
 class Camera2D;
 class SpriteBatcher;
 class Sprite;
 class Ship;
-class BulletManager;
+class BulletSpawner;
+class BulletPool;
 
 class GameScene : public IGame
 {
@@ -26,7 +28,6 @@ private:
 	void ProcessInputForRestart();
 	void BatchSprites();
 	void UpdateBullets( float deltaTime );
-	void UpdateShip( float deltaTime );
 	void CheckCollision();
 
 public:
@@ -41,8 +42,9 @@ private:
 
 	Camera2D* mMainCam;
 	SpriteBatcher* mSpriteBatcher;
+	BulletPool*		mBulletPool;
 
-	BulletManager*	mBullets;
 	Ship*			mShip;
+	std::vector<BulletSpawner*>	mSpawners;
 };
 
