@@ -1,3 +1,6 @@
+#ifndef Util_H_
+#define Util_H_
+
 #define foreach( type, it, list )	\
 for ( std::vector<type>::iterator it = list.begin(); it != list.end(); ++it )
 #define foreach_const( type, it, list )	\
@@ -19,9 +22,11 @@ public:
 
 	template <typename T>
 	static void FreePointerVector( std::vector<T>& container ) {
-		foreach ( T, it, container ) {
+		for ( typename std::vector<T>::iterator it = container.begin(); it != container.end(); ++it ) {
 			delete *it;
 		}
 		container.clear();
 	}
 };
+
+#endif	// Util_H_

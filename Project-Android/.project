@@ -213,6 +213,56 @@
 			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/Asset.h</locationURI>
 		</link>
 		<link>
+			<name>jni/DaPhiHaeGame/Bullet.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/Bullet.cpp</locationURI>
+		</link>
+		<link>
+			<name>jni/DaPhiHaeGame/Bullet.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/Bullet.h</locationURI>
+		</link>
+		<link>
+			<name>jni/DaPhiHaeGame/BulletManager.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/BulletManager.cpp</locationURI>
+		</link>
+		<link>
+			<name>jni/DaPhiHaeGame/BulletManager.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/BulletManager.h</locationURI>
+		</link>
+		<link>
+			<name>jni/DaPhiHaeGame/BulletPool.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/BulletPool.cpp</locationURI>
+		</link>
+		<link>
+			<name>jni/DaPhiHaeGame/BulletPool.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/BulletPool.h</locationURI>
+		</link>
+		<link>
+			<name>jni/DaPhiHaeGame/BulletSpawner.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/BulletSpawner.cpp</locationURI>
+		</link>
+		<link>
+			<name>jni/DaPhiHaeGame/BulletSpawner.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/BulletSpawner.h</locationURI>
+		</link>
+		<link>
+			<name>jni/DaPhiHaeGame/CollisionCircle.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/CollisionCircle.cpp</locationURI>
+		</link>
+		<link>
+			<name>jni/DaPhiHaeGame/CollisionCircle.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/CollisionCircle.h</locationURI>
+		</link>
+		<link>
 			<name>jni/DaPhiHaeGame/DaPhiHae.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/DaPhiHae.cpp</locationURI>
@@ -233,9 +283,34 @@
 			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/GameScene.h</locationURI>
 		</link>
 		<link>
+			<name>jni/DaPhiHaeGame/Ship.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/Ship.cpp</locationURI>
+		</link>
+		<link>
+			<name>jni/DaPhiHaeGame/Ship.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/Ship.h</locationURI>
+		</link>
+		<link>
+			<name>jni/DaPhiHaeGame/StageInformation.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/StageInformation.cpp</locationURI>
+		</link>
+		<link>
+			<name>jni/DaPhiHaeGame/StageInformation.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/StageInformation.h</locationURI>
+		</link>
+		<link>
 			<name>jni/DaPhiHaeGame/TSingleton.hpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/TSingleton.hpp</locationURI>
+		</link>
+		<link>
+			<name>jni/DaPhiHaeGame/Util.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/Util.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Interfaces/IAudio.h</name>
@@ -318,14 +393,24 @@
 			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/Rect.h</locationURI>
 		</link>
 		<link>
-			<name>jni/OpenGLFramework/Sprite.cpp</name>
+			<name>jni/OpenGLFramework/SpriteAnimation.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/Sprite.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/SpriteAnimation.cpp</locationURI>
 		</link>
 		<link>
-			<name>jni/OpenGLFramework/Sprite.h</name>
+			<name>jni/OpenGLFramework/SpriteAnimation.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/Sprite.h</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/SpriteAnimation.h</locationURI>
+		</link>
+		<link>
+			<name>jni/OpenGLFramework/SpriteAtlas.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/SpriteAtlas.cpp</locationURI>
+		</link>
+		<link>
+			<name>jni/OpenGLFramework/SpriteAtlas.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/SpriteAtlas.h</locationURI>
 		</link>
 		<link>
 			<name>jni/OpenGLFramework/SpriteBatcher.cpp</name>

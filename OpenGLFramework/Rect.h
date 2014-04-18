@@ -1,6 +1,6 @@
 #pragma once
-#include "glm/vec2.hpp"
 #include "glmtypedef.h"
+#include "glm/vec2.hpp"
 
 class Rect {
 public:

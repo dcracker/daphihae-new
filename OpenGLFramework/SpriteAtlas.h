@@ -1,4 +1,6 @@
-#pragma once
+#ifndef SpriteAtlas_H_
+#define SpriteAtlas_H_
+
 #include <vector>
 #include "Texture.h"
 #include "Rect.h"
@@ -26,7 +28,9 @@ private:
 	bool TextureHasLoaded();
 
 private:
-	std::vector<const Rect> mSpriteCoords;
-	std::vector<const SpriteAnimation> mSpriteAnimation;
+	std::vector<Rect> mSpriteCoords;
+	std::vector<SpriteAnimation> mSpriteAnimation;
 };
 
+
+#endif	// SpriteAtlas_H_

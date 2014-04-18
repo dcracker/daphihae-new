@@ -19,6 +19,7 @@ FILE_LIST += $(wildcard $(LOCAL_PATH)/../../OpenGLFramework/*.cpp)
 FILE_LIST += $(wildcard $(LOCAL_PATH)/../../DaPhiHaeGame/*.cpp)
 LOCAL_SRC_FILES := $(FILE_LIST:$(LOCAL_PATH)/%=%)
 LOCAL_STATIC_LIBRARIES := png
+#LOCAL_CPPFLAGS  := -std=c++11
 
 include $(BUILD_SHARED_LIBRARY)
 
