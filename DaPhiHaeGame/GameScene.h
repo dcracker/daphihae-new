@@ -7,8 +7,7 @@ class Camera2D;
 class SpriteBatcher;
 class Sprite;
 class Ship;
-class BulletSpawner;
-class BulletPool;
+class BulletManager;
 
 class GameScene : public IGame
 {
@@ -40,11 +39,10 @@ private:
 private:
 	IPlatform* mPlatform;
 
-	Camera2D* mMainCam;
-	SpriteBatcher* mSpriteBatcher;
-	BulletPool*		mBulletPool;
+	Camera2D*		mMainCam;
+	SpriteBatcher*	mSpriteBatcher;
 
 	Ship*			mShip;
-	std::vector<BulletSpawner*>	mSpawners;
+	BulletManager*	mBulletManager;
 };
 

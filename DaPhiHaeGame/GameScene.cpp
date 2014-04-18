@@ -7,8 +7,7 @@
 #include "Camera2D.h"
 
 #include "Ship.h"
-#include "BulletSpawner.h"
-#include "BulletPool.h"
+#include "BulletManager.h"
 #include "Util.h"
 
 GameScene::GameScene( IPlatform* platform )
@@ -16,11 +15,8 @@ GameScene::GameScene( IPlatform* platform )
 	, mMainCam( new Camera2D( 0, static_cast<float>(cWorldWidth), 0, static_cast<float>(cWorldHeight) ) )
 	, mSpriteBatcher( new SpriteBatcher( gAsset->mainAtlas ) )
 	, mShip( new Ship() )
-	, mBulletPool( new BulletPool() )
+	, mBulletManager( new BulletManager() )
 {
-	mSpawners.clear();
-	mSpawners.push_back( new BulletSpawner( 0.1f, Vector2( 0, -300 ) ) );
-	mSpawners.push_back( new BulletSpawner( 0.5f, Vector2( 0, -700 ) ) );
 	RestartGame();
 }
 
@@ -29,13 +25,7 @@ GameScene::~GameScene()
 	SAFE_DELETE( mMainCam );
 	SAFE_DELETE( mSpriteBatcher );
 	SAFE_DELETE( mShip );
-
-	foreach ( BulletSpawner*, it, mSpawners ) {
-		delete *it;
-	}
-	mSpawners.clear();
-
-	SAFE_DELETE( mBulletPool );
+	SAFE_DELETE( mBulletManager );
 }
 
 void GameScene::Resume() {
@@ -72,9 +62,7 @@ void GameScene::Render() const {
 
 void GameScene::RestartGame() {
 	mShip->Start( static_cast<float>(cWorldWidth * 0.5f), 100.f );
-	foreach ( BulletSpawner*, it, mSpawners ) {
-		(*it)->Reset();
-	}
+	mBulletManager->Reset();
 }
 
 void GameScene::ProcessTouchInput() {
@@ -128,23 +116,16 @@ void GameScene::ProcessInputForRestart() {
 }
 
 void GameScene::UpdateBullets( float deltaTime ) {
-	foreach ( BulletSpawner*, it, mSpawners ) {
-		(*it)->Update( deltaTime );
-	}
+	mBulletManager->Update( deltaTime );
 }
 void GameScene::BatchSprites() {
 	mSpriteBatcher->Clear();
-	foreach ( BulletSpawner*, it, mSpawners ) {
-		(*it)->Render( mSpriteBatcher );
-	}
+	mBulletManager->Render( mSpriteBatcher );
 	mShip->Render( mSpriteBatcher );
 }
 
 void GameScene::CheckCollision() {
-	foreach ( BulletSpawner*, it, mSpawners ) {
-		if ( (*it)->CheckCollision( mShip ) == true ) {
-			mShip->OnDead();
-			return;
-		}
+	if ( mBulletManager->CheckCollision( mShip ) == true ) {
+		mShip->OnDead();
 	}
 }

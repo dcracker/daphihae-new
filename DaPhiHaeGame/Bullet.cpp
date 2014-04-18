@@ -36,6 +36,10 @@ bool Bullet::CheckCollision( const Ship* ship ) const {
 	return ship->CheckCollision( mCollider );
 }
 
+bool Bullet::IsAlive() const {
+	return GetTop() > 0;
+}
+
 float Bullet::GetLeft() const {
 	return mPosition.x - cSizeHalf;
 }

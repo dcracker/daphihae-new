@@ -174,6 +174,12 @@
     <ClInclude Include="..\..\DaPhiHaeGame\BulletPool.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\DaPhiHaeGame\BulletManager.h">
+      <Filter>DaPhiHaeGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DaPhiHaeGame\StageInformation.h">
+      <Filter>DaPhiHaeGame</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -259,6 +265,12 @@
     </ClCompile>
     <ClCompile Include="..\..\DaPhiHaeGame\BulletPool.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DaPhiHaeGame\BulletManager.cpp">
+      <Filter>DaPhiHaeGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DaPhiHaeGame\StageInformation.cpp">
+      <Filter>DaPhiHaeGame</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

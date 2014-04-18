@@ -16,4 +16,12 @@ public:
 
 		return value;
 	}
+
+	template <typename T>
+	static void FreePointerVector( std::vector<T>& container ) {
+		foreach ( T, it, container ) {
+			delete *it;
+		}
+		container.clear();
+	}
 };

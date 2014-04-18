@@ -15,6 +15,7 @@ public:
 
 	void Init( const Vector2& initialPosition, const Vector2& initialVelocity );
 	bool CheckCollision( const Ship* ship ) const;
+	bool IsAlive() const;
 	
 	float GetLeft() const;
 	float GetRight() const;

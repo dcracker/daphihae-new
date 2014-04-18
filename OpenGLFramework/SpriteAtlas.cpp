@@ -3,6 +3,9 @@
 #include "Texture.h"
 #include "Util.h"
 
+/*	TODO
+	Register 후에 index 값을 바로 반환하지 않고 핸들로 반환하도록 구현.
+*/
 SpriteAtlas::SpriteAtlas( const char* assetName )
 	: Texture( assetName )
 {
