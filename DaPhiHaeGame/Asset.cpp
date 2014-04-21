@@ -8,11 +8,12 @@
 
 Asset::Asset()
 	: mainAtlas( new SpriteAtlas( "Atlas.png" ) )
-	, ship( mainAtlas->RegisterSprite( Rect( 0, 20, 0, 16 ) ) )
-	, oldBullet( mainAtlas->RegisterSprite( Rect( 20, 30, 0, 10 ) ) )
-	, roundBullet( mainAtlas->RegisterSprite( Rect( 45, 60, 0, 15 ) ) )
-	, arrowBullet( mainAtlas->RegisterSprite( Rect( 30, 45, 0 ,15 ) ) )
-	, animDead( mainAtlas->RegisterAnimation( 0.033f, Rect( 0, 17, 16, 169 ), Vector2( 17, 17 ) ) )
+	, ship( mainAtlas->RegisterSprite( 0, 0, 20, 16 ) )
+	, oldBullet( mainAtlas->RegisterSprite( 20, 0, 30, 10 ) )
+	, roundBullet( mainAtlas->RegisterSprite( 45, 0, 60, 15 ) )
+	, arrowBullet( mainAtlas->RegisterSprite( 30, 0, 45, 15 ) )
+	, animDead( mainAtlas->RegisterAnimation( 0.033f, 0, 16, 153, 33, Vector2( 17, 17 ) ) )
+//	, animDead( mainAtlas->RegisterAnimation( 0.033f, 0, 33, 100, 51, Vector2( 10, 18 ) ) )
 {
 }
 

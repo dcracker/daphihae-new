@@ -17,7 +17,9 @@ SpriteAtlas::~SpriteAtlas()
 	mSpriteCoords.clear();
 }
 
-unsigned int SpriteAtlas::RegisterSprite( Rect pixelCoord ) {
+unsigned int SpriteAtlas::RegisterSprite( float left, float top, float right, float bottom ) {
+	Rect pixelCoord( left, right, bottom, top );
+
 	if ( TextureHasLoaded() == false ) {
 		mSpriteCoords.push_back( pixelCoord );
 	}
@@ -32,21 +34,21 @@ Rect SpriteAtlas::GetSpriteCoord( unsigned int key ) const {
 	return mSpriteCoords[key];
 }
 
-unsigned int SpriteAtlas::RegisterAnimation( float frameDuration, Rect animArea, Vector2 frameSize ) {
+unsigned int SpriteAtlas::RegisterAnimation( float frameDuration, float left, float top, float right, float bottom, Vector2 frameSize ) {
+	Rect animArea( left, right, bottom, top );
 	SpriteAnimation anim( frameDuration );
 
 	int numHorizontal = static_cast<int>(animArea.GetWidth() / frameSize.x);
-	int numVertical = static_cast<int>(animArea.GetHeight() / frameSize.y);
-
-	Vector2 start( animArea.GetLeft(), animArea.GetBottom() );
+	int numVertical = static_cast<int>(-1 * animArea.GetHeight() / frameSize.y);
+	assert( numHorizontal > 0 && numVertical > 0 );
+	Vector2 start( animArea.GetLeft(), animArea.GetTop() );
 
 	for ( int v=0; v < numVertical; ++v ) {
 		for ( int h=0; h < numHorizontal; ++h ) {
-			Rect frame( start.x + frameSize.x * h,
-						start.x + frameSize.x * (h + 1),
-						start.y + frameSize.y * v,
-						start.y + frameSize.y * (v + 1) );
-			anim.AddFrame( RegisterSprite( frame ) );
+			anim.AddFrame( RegisterSprite(	start.x + frameSize.x * h,
+											start.y + frameSize.y * v,
+											start.x + frameSize.x * (h + 1),
+											start.y + frameSize.y * (v + 1) ) );
 		}
 	}
 	mSpriteAnimation.push_back( anim );
@@ -72,8 +74,11 @@ void SpriteAtlas::Load( const IFileIO* fileIO ) {
 }
 
 Rect SpriteAtlas::AdjustCoordinate( Rect originalCoord, float width, float height ) {
-	return Rect (	originalCoord.GetLeft() / width,	originalCoord.GetRight() / width,
-					originalCoord.GetBottom() / height,	originalCoord.GetTop() / height );
+	return Rect (	originalCoord.GetLeft() / width,
+					originalCoord.GetRight() / width,
+					// reverse Y coordinates
+					(height - originalCoord.GetBottom()) / height,
+					(height - originalCoord.GetTop()) / height );
 }
 
 bool SpriteAtlas::TextureHasLoaded() {

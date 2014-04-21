@@ -14,10 +14,10 @@ public:
 	SpriteAtlas( const char* assetName );
 	~SpriteAtlas();
 
-	unsigned int RegisterSprite( Rect pixelCoord );
+	unsigned int RegisterSprite( float left, float top, float right, float bottom );
 	Rect GetSpriteCoord( unsigned int ) const;
 
-	unsigned int RegisterAnimation( float frameDuration, Rect animArea, Vector2 frameSize );
+	unsigned int RegisterAnimation( float frameDuration, float left, float top, float right, float bottom, Vector2 frameSize );
 	Rect GetAnimationFrame( unsigned int key, float frameTime ) const;
 
 // override
