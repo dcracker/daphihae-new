@@ -117,6 +117,7 @@
     <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsInput.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsPlatform.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsTimer.h" />
+    <ClInclude Include="..\..\OpenGLFramework\BitmapFont.h" />
     <ClInclude Include="..\..\OpenGLFramework\Camera.h" />
     <ClInclude Include="..\..\OpenGLFramework\Camera2D.h" />
     <ClInclude Include="..\..\OpenGLFramework\glmtypedef.h" />
@@ -153,6 +154,7 @@
     <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsInput.cpp" />
     <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsPlatform.cpp" />
     <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsTimer.cpp" />
+    <ClCompile Include="..\..\OpenGLFramework\BitmapFont.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\Camera.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\Camera2D.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\Image.cpp" />

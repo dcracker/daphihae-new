@@ -6,6 +6,7 @@ class IFileIO;
 class SpriteAtlas;
 class Rect;
 class SpriteAnimation;
+class BitmapFont;
 
 #define gAsset Asset::getInstancePtr()
 
@@ -19,6 +20,7 @@ public:
 
 public:
 	SpriteAtlas* const mainAtlas;
+	BitmapFont* const font;
 
 	const unsigned int ship;
 	const unsigned int oldBullet;

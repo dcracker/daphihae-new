@@ -7,6 +7,7 @@
 #include "SpriteAnimation.h"
 
 class IFileIO;
+class BitmapFont;
 
 class SpriteAtlas : public Texture
 {
@@ -19,6 +20,8 @@ public:
 
 	unsigned int RegisterAnimation( float frameDuration, float left, float top, float right, float bottom, Vector2 frameSize );
 	Rect GetAnimationFrame( unsigned int key, float frameTime ) const;
+
+	BitmapFont* RegisterBitmapFont( float left, float top, float right, float bottom, Vector2 glyphSize );
 
 // override
 	void Load( const IFileIO* fileIO );

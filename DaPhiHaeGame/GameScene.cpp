@@ -5,6 +5,7 @@
 #include "Asset.h"
 #include "SpriteBatcher.h"
 #include "Camera2D.h"
+#include "BitmapFont.h"
 
 #include "Ship.h"
 #include "BulletManager.h"
@@ -122,6 +123,7 @@ void GameScene::BatchSprites() {
 	mSpriteBatcher->Clear();
 	mBulletManager->Render( mSpriteBatcher );
 	mShip->Render( mSpriteBatcher );
+	gAsset->font->DrawTexts( "7538691420123456789", 10, 10, mSpriteBatcher );
 }
 
 void GameScene::CheckCollision() {
