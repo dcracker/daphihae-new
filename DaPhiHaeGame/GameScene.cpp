@@ -4,11 +4,14 @@
 #include "Interfaces/IPlatform.h"
 #include "Asset.h"
 #include "SpriteBatcher.h"
+#include "GUI.h"
 #include "Camera2D.h"
 #include "BitmapFont.h"
 
 #include "Ship.h"
 #include "BulletManager.h"
+#include "StageInformation.h"
+#include "Score.h"
 #include "Util.h"
 
 GameScene::GameScene( IPlatform* platform )
@@ -16,17 +19,25 @@ GameScene::GameScene( IPlatform* platform )
 	, mMainCam( new Camera2D( 0, static_cast<float>(cWorldWidth), 0, static_cast<float>(cWorldHeight) ) )
 	, mSpriteBatcher( new SpriteBatcher( gAsset->mainAtlas ) )
 	, mShip( new Ship() )
+	, mStageInfo( new StageInformation() )
 	, mBulletManager( new BulletManager() )
+	, mGUI( new GUI( cWorldWidth, cWorldHeight ) )
+	, mScore( new Score() )
+	, mScoreTimer( 1 )
 {
 	RestartGame();
+	mScore->Load();
 }
 
 GameScene::~GameScene()
 {
 	SAFE_DELETE( mMainCam );
 	SAFE_DELETE( mSpriteBatcher );
+	SAFE_DELETE( mGUI );
 	SAFE_DELETE( mShip );
 	SAFE_DELETE( mBulletManager );
+	SAFE_DELETE( mStageInfo );
+	SAFE_DELETE( mScore );
 }
 
 void GameScene::Resume() {
@@ -43,7 +54,7 @@ void GameScene::Resume() {
 }
 
 void GameScene::Pause() {
-
+	mScore->Save();
 }
 
 void GameScene::Update( float deltaTime ) {
@@ -53,6 +64,12 @@ void GameScene::Update( float deltaTime ) {
 	UpdateBullets( deltaTime );
 	CheckCollision();
 	BatchSprites();
+
+	mScoreTimer -= deltaTime;
+	if ( (mShip->IsAlive() == true) && (mScoreTimer < 0) ) {
+		mScore->AddScore( 1 );
+		mScoreTimer += 1;
+	}
 }
 
 void GameScene::Render() const {
@@ -64,6 +81,9 @@ void GameScene::Render() const {
 void GameScene::RestartGame() {
 	mShip->Start( static_cast<float>(cWorldWidth * 0.5f), 100.f );
 	mBulletManager->Reset();
+	mStageInfo->Retry();	// need to call after mBulletManager::Reset();
+	mScore->GameStart();
+	mScoreTimer = 1;
 }
 
 void GameScene::ProcessTouchInput() {
@@ -118,16 +138,18 @@ void GameScene::ProcessInputForRestart() {
 
 void GameScene::UpdateBullets( float deltaTime ) {
 	mBulletManager->Update( deltaTime );
+	mStageInfo->Update( deltaTime );
 }
 void GameScene::BatchSprites() {
 	mSpriteBatcher->Clear();
 	mBulletManager->Render( mSpriteBatcher );
 	mShip->Render( mSpriteBatcher );
-	gAsset->font->DrawTexts( "7538691420123456789", 10, 10, mSpriteBatcher );
+	mGUI->DrawGUI( mScore->GetCurrentScore(), mScore->GetHighScore( 1 ), mStageInfo->GetCurrentLevel(), mSpriteBatcher );
 }
 
 void GameScene::CheckCollision() {
 	if ( mBulletManager->CheckCollision( mShip ) == true ) {
 		mShip->OnDead();
+		mScore->GameFinished();
 	}
 }

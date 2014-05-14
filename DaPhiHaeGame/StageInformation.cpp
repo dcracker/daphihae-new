@@ -96,3 +96,8 @@ void StageInformation::Retry() {
 void StageInformation::NewSpawner( const SpawnerData& spawnerData ) {
 	BulletManager::getInstancePtr()->AddSpawner( spawnerData.interval, spawnerData.initialSpeed, spawnerData.lifeTime );
 }
+
+int StageInformation::GetCurrentLevel() const {
+	// TODO : This value cannot use to level number
+	return mNextSpawnerIndex;
+}

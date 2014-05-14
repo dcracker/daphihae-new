@@ -4,12 +4,10 @@
 #include "Bullet.h"
 #include "BulletPool.h"
 #include "BulletSpawner.h"
-#include "StageInformation.h"
 #include "Util.h"
 
 BulletManager::BulletManager()
 	: mBulletPool( new BulletPool() )
-	, mStageInfo( new StageInformation() )
 {
 }
 
@@ -18,7 +16,6 @@ BulletManager::~BulletManager()
 	Util::FreePointerVector( mSpawners );
 	Util::FreePointerVector( mBullets );
 	SAFE_DELETE( mBulletPool );
-	SAFE_DELETE( mStageInfo );
 }
 
 void BulletManager::Update( float deltaTime ) {
@@ -34,7 +31,6 @@ void BulletManager::Render( SpriteBatcher* batcher ) const {
 
 void BulletManager::Reset() {
 	Clear();
-	Init();
 }
 
 void BulletManager::AddBullet( const Vector2& initialPosition, const Vector2& initialVelocity ) {
@@ -67,10 +63,6 @@ void BulletManager::Clear() {
 	Util::FreePointerVector( mSpawners );
 }
 
-void BulletManager::Init() {
-	mStageInfo->Retry();
-}
-
 void BulletManager::UpdateBullets( float deltaTime ) {
 	int lastIndex = mBullets.size() - 1;
 	for ( int i = lastIndex; i >= 0; --i ) {
@@ -101,6 +93,4 @@ void BulletManager::UpdateSpawners( float deltaTime ) {
 			mSpawners.pop_back();
 		}
 	}
-
-	mStageInfo->Update( deltaTime );
 }

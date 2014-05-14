@@ -12,7 +12,7 @@ public:
 	~BitmapFont();
 
 	void RegisterGlyph( char character, SpriteHandle sprite );
-	void DrawTexts( const char* string, float x, float y, SpriteBatcher* batcher );
+	void DrawTexts( const char* string, Vector2 position, SpriteBatcher* batcher );
 
 private:
 	SpriteAtlas*					mAtlas;

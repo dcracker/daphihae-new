@@ -5,9 +5,12 @@
 class IPlatform;
 class Camera2D;
 class SpriteBatcher;
+class GUI;
 class Sprite;
 class Ship;
 class BulletManager;
+class StageInformation;
+class Score;
 
 class GameScene : public IGame
 {
@@ -41,8 +44,13 @@ private:
 
 	Camera2D*		mMainCam;
 	SpriteBatcher*	mSpriteBatcher;
+	GUI*			mGUI;
 
 	Ship*			mShip;
 	BulletManager*	mBulletManager;
+	StageInformation*	mStageInfo;
+	Score*			mScore;
+
+	float			mScoreTimer;
 };
 

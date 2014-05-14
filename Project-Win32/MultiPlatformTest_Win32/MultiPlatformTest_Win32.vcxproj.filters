@@ -174,14 +174,20 @@
     <ClInclude Include="..\..\DaPhiHaeGame\BulletManager.h">
       <Filter>DaPhiHaeGame</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\DaPhiHaeGame\StageInformation.h">
-      <Filter>DaPhiHaeGame</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\DaPhiHaeGame\BulletPool.h">
       <Filter>DaPhiHaeGame</Filter>
     </ClInclude>
     <ClInclude Include="..\..\OpenGLFramework\BitmapFont.h">
       <Filter>Framework\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DaPhiHaeGame\StageInformation.h">
+      <Filter>DaPhiHaeGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Score.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -269,14 +275,20 @@
     <ClCompile Include="..\..\DaPhiHaeGame\BulletManager.cpp">
       <Filter>DaPhiHaeGame</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\DaPhiHaeGame\StageInformation.cpp">
-      <Filter>DaPhiHaeGame</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\DaPhiHaeGame\BulletPool.cpp">
       <Filter>DaPhiHaeGame</Filter>
     </ClCompile>
     <ClCompile Include="..\..\OpenGLFramework\BitmapFont.cpp">
       <Filter>Framework\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DaPhiHaeGame\StageInformation.cpp">
+      <Filter>DaPhiHaeGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Score.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

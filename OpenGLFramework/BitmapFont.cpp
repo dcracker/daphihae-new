@@ -20,7 +20,7 @@ void BitmapFont::RegisterGlyph( char character, SpriteHandle sprite ) {
 	mFontMap[character] = sprite;
 }
 
-void BitmapFont::DrawTexts( const char* string, float x, float y, SpriteBatcher* batcher ) {
+void BitmapFont::DrawTexts( const char* string, Vector2 startPosition, SpriteBatcher* batcher ) {
 	int length = strlen( string );
 	for ( int i=0; i < length; ++i ) {
 		char character = string[i];
@@ -31,8 +31,8 @@ void BitmapFont::DrawTexts( const char* string, float x, float y, SpriteBatcher*
 		Rect size = mAtlas->GetSpriteCoord( found->second );
 		float glyphWidth = size.GetWidth() * mAtlas->GetWidth();
 		float glyphHeight = size.GetHeight() * mAtlas->GetHeight();
-		Rect position( Vector2( x, y ), Vector2( glyphWidth, glyphHeight ) );
+		Rect position( startPosition, Vector2( glyphWidth, glyphHeight ) );
 		batcher->DrawSprite( position, found->second );
-		x += glyphWidth;
+		startPosition.x += glyphWidth;
 	}
 }

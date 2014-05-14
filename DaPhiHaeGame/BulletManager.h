@@ -7,7 +7,6 @@ class BulletPool;
 class BulletSpawner;
 class SpriteBatcher;
 class Ship;
-class StageInformation;
 
 class BulletManager : public TSingleton<BulletManager>
 {
@@ -25,13 +24,11 @@ public:
 
 private:
 	void Clear();
-	void Init();
 	void UpdateBullets( float deltaTime );
 	void UpdateSpawners( float deltaTime );
 
 private:
 	BulletPool*			mBulletPool;
-	StageInformation*	mStageInfo;
 
 	std::vector<Bullet*> mBullets;
 	std::vector<BulletSpawner*> mSpawners;

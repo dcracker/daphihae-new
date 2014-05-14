@@ -17,6 +17,7 @@ public:
 
 	void Update( float deltaTime );
 	void Retry();
+	int GetCurrentLevel() const;
 
 private:
 	static void NewSpawner( const SpawnerData& spawnerData );
