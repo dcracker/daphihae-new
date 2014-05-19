@@ -2,7 +2,7 @@
 #include "GUI.h"
 #include "Asset.h"
 #include "BitmapFont.h"
-#include "Score.h"
+#include "GameStatistics.h"
 #include "StageInformation.h"
 
 GUI::GUI( int screenWidth, int screenHeight )
@@ -17,13 +17,13 @@ GUI::~GUI()
 {
 }
 
-void GUI::DrawGUI( int currentScore, int highestScore, int level, SpriteBatcher* batcher ) const {
+void GUI::DrawGUI( SpriteBatcher* batcher ) const {
 	const int bufferSize = 10;
 	char buf[bufferSize];
-	_itoa_s( highestScore, buf, bufferSize, 10 );
+	_itoa_s( gGameStatistics->GetHighScore( 1 ), buf, bufferSize, 10 );
 	gAsset->font->DrawTexts( buf, cHighScorePosition, batcher );
-	_itoa_s( currentScore, buf, bufferSize, 10 );
+	_itoa_s( gGameStatistics->GetCurrentScore(), buf, bufferSize, 10 );
 	gAsset->font->DrawTexts( buf, cCurrentScorePosition, batcher );
-	_itoa_s( level, buf, bufferSize, 10 );
+	_itoa_s( gGameStatistics->GetCurrentLevel(), buf, bufferSize, 10 );
 	gAsset->font->DrawTexts( buf, cLevelNumberPosition, batcher );
 }

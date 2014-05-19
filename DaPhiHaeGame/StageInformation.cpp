@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "StageInformation.h"
 #include "BulletManager.h"
+#include "GameStatistics.h"
 
 StageInformation::StageInformation()
 	: mNextSpawnerIndex( 0 )
@@ -84,7 +85,11 @@ void StageInformation::Update( float deltaTime ) {
 	for ( i = mNextSpawnerIndex; i < mSpawnerDatas.size() && mSpawnerDatas[i].startTime <= mStageElapsedSeconds; ++i ) {
 		NewSpawner( mSpawnerDatas[i] );
 	}
-	mNextSpawnerIndex = i;
+
+	if ( mNextSpawnerIndex != i ) {
+		gGameStatistics->LevelUp();
+		mNextSpawnerIndex = i;
+	}
 }
 
 void StageInformation::Retry() {

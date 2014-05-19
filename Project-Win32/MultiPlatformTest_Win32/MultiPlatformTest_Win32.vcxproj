@@ -91,6 +91,8 @@
     <ClInclude Include="..\..\DaPhiHaeGame\CollisionCircle.h" />
     <ClInclude Include="..\..\DaPhiHaeGame\DaPhiHae.h" />
     <ClInclude Include="..\..\DaPhiHaeGame\GameScene.h" />
+    <ClInclude Include="..\..\DaPhiHaeGame\GUI.h" />
+    <ClInclude Include="..\..\DaPhiHaeGame\GameStatistics.h" />
     <ClInclude Include="..\..\DaPhiHaeGame\StageInformation.h" />
     <ClInclude Include="..\..\DaPhiHaeGame\Util.h" />
     <ClInclude Include="..\..\DaPhiHaeGame\Ship.h" />
@@ -128,8 +130,6 @@
     <ClInclude Include="..\..\OpenGLFramework\SpriteAtlas.h" />
     <ClInclude Include="..\..\OpenGLFramework\SpriteBatcher.h" />
     <ClInclude Include="..\..\OpenGLFramework\Texture.h" />
-    <ClInclude Include="GUI.h" />
-    <ClInclude Include="Score.h" />
     <ClInclude Include="MultiPlatformTest_Win32.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
@@ -144,6 +144,8 @@
     <ClCompile Include="..\..\DaPhiHaeGame\CollisionCircle.cpp" />
     <ClCompile Include="..\..\DaPhiHaeGame\DaPhiHae.cpp" />
     <ClCompile Include="..\..\DaPhiHaeGame\GameScene.cpp" />
+    <ClCompile Include="..\..\DaPhiHaeGame\GUI.cpp" />
+    <ClCompile Include="..\..\DaPhiHaeGame\GameStatistics.cpp" />
     <ClCompile Include="..\..\DaPhiHaeGame\Ship.cpp" />
     <ClCompile Include="..\..\DaPhiHaeGame\StageInformation.cpp" />
     <ClCompile Include="..\..\MultiPlatformFramework\Common\CommonInput.cpp" />
@@ -165,8 +167,6 @@
     <ClCompile Include="..\..\OpenGLFramework\SpriteAtlas.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\SpriteBatcher.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\Texture.cpp" />
-    <ClCompile Include="GUI.cpp" />
-    <ClCompile Include="Score.cpp" />
     <ClCompile Include="MultiPlatformTest_Win32.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

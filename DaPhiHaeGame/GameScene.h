@@ -10,7 +10,7 @@ class Sprite;
 class Ship;
 class BulletManager;
 class StageInformation;
-class Score;
+class GameStatistics;
 
 class GameScene : public IGame
 {
@@ -24,12 +24,13 @@ public:
 	void Render() const;
 
 private:
+	bool IsGameRunning() const;
+
 	void RestartGame();
 	void ProcessTouchInput();
 	void ProcessInputForMove();
 	void ProcessInputForRestart();
 	void BatchSprites();
-	void UpdateBullets( float deltaTime );
 	void CheckCollision();
 
 public:
@@ -40,17 +41,14 @@ private:
 	static const int cMaxNumFingers = 2;
 
 private:
-	IPlatform* mPlatform;
+	IPlatform*			mPlatform;
 
-	Camera2D*		mMainCam;
-	SpriteBatcher*	mSpriteBatcher;
-	GUI*			mGUI;
-
-	Ship*			mShip;
-	BulletManager*	mBulletManager;
+	Camera2D*			mMainCam;
+	SpriteBatcher*		mSpriteBatcher;
+	GUI*				mGUI;
+	GameStatistics*		mGameStatistics;
 	StageInformation*	mStageInfo;
-	Score*			mScore;
-
-	float			mScoreTimer;
+	Ship*				mShip;
+	BulletManager*		mBulletManager;
 };
 

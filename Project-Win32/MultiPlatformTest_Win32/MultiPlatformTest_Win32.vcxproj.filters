@@ -183,11 +183,11 @@
     <ClInclude Include="..\..\DaPhiHaeGame\StageInformation.h">
       <Filter>DaPhiHaeGame</Filter>
     </ClInclude>
-    <ClInclude Include="Score.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="..\..\DaPhiHaeGame\GUI.h">
+      <Filter>DaPhiHaeGame</Filter>
     </ClInclude>
-    <ClInclude Include="GUI.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="..\..\DaPhiHaeGame\GameStatistics.h">
+      <Filter>DaPhiHaeGame</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -284,11 +284,11 @@
     <ClCompile Include="..\..\DaPhiHaeGame\StageInformation.cpp">
       <Filter>DaPhiHaeGame</Filter>
     </ClCompile>
-    <ClCompile Include="Score.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="..\..\DaPhiHaeGame\GUI.cpp">
+      <Filter>DaPhiHaeGame</Filter>
     </ClCompile>
-    <ClCompile Include="GUI.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="..\..\DaPhiHaeGame\GameStatistics.cpp">
+      <Filter>DaPhiHaeGame</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

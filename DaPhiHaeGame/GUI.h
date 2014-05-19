@@ -1,7 +1,7 @@
 #pragma once
 
 class SpriteBatcher;
-class Score;
+class GameStatistics;
 class StageInformation;
 
 class GUI
@@ -10,7 +10,7 @@ public:
 	GUI( int screenWidth, int screenHeight );
 	~GUI();
 
-	void DrawGUI( int currentScore, int highestScore, int level, SpriteBatcher* batcher ) const;
+	void DrawGUI( SpriteBatcher* batcher ) const;
 
 private:
 	const Vector2 cHighScorePosition;
