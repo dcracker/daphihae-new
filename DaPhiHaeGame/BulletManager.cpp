@@ -13,8 +13,8 @@ BulletManager::BulletManager()
 
 BulletManager::~BulletManager()
 {
-	Util::FreePointerVector( mSpawners );
-	Util::FreePointerVector( mBullets );
+	Util::FreePointerArray( mSpawners );
+	Util::FreePointerArray( mBullets );
 	SAFE_DELETE( mBulletPool );
 }
 
@@ -40,7 +40,7 @@ void BulletManager::AddBullet( const Vector2& initialPosition, const Vector2& in
 }
 
 void BulletManager::AddSpawner( float spawnInterval, const Vector2& initialSpeed, float lifeTime ) {
-	mSpawners.push_back( new BulletSpawner( spawnInterval, initialSpeed, lifeTime ) );
+	mSpawners.push_back( new BulletSpawner( this, spawnInterval, initialSpeed, lifeTime ) );
 }
 
 bool BulletManager::CheckCollision( const Ship* ship ) const {
@@ -60,7 +60,7 @@ void BulletManager::Clear() {
 	}
 	mBullets.clear();
 
-	Util::FreePointerVector( mSpawners );
+	Util::FreePointerArray( mSpawners );
 }
 
 void BulletManager::UpdateBullets( float deltaTime ) {

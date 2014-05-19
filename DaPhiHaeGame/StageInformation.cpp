@@ -3,9 +3,10 @@
 #include "BulletManager.h"
 #include "GameStatistics.h"
 
-StageInformation::StageInformation()
+StageInformation::StageInformation( BulletManager* bulletManager )
 	: mNextSpawnerIndex( 0 )
 	, mStageElapsedSeconds( 0 )
+	, mBulletManager( bulletManager )
 {
 	// level 1
 	float time = 0;
@@ -99,10 +100,5 @@ void StageInformation::Retry() {
 }
 
 void StageInformation::NewSpawner( const SpawnerData& spawnerData ) {
-	BulletManager::getInstancePtr()->AddSpawner( spawnerData.interval, spawnerData.initialSpeed, spawnerData.lifeTime );
-}
-
-int StageInformation::GetCurrentLevel() const {
-	// TODO : This value cannot use to level number
-	return mNextSpawnerIndex;
+	mBulletManager->AddSpawner( spawnerData.interval, spawnerData.initialSpeed, spawnerData.lifeTime );
 }

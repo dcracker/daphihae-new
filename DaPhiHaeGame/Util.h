@@ -21,7 +21,7 @@ public:
 	}
 
 	template <typename T>
-	static void FreePointerVector( std::vector<T>& container ) {
+	static void FreePointerArray( std::vector<T>& container ) {
 		for ( typename std::vector<T>::iterator it = container.begin(); it != container.end(); ++it ) {
 			delete *it;
 		}

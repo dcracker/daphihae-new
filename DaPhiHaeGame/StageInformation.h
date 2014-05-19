@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+class BulletManager;
 
 class StageInformation
 {
@@ -12,19 +13,21 @@ private:
 		Vector2 initialSpeed;
 	};
 public:
-	StageInformation();
+	StageInformation( BulletManager* bulletManager );
 	~StageInformation();
 
 	void Update( float deltaTime );
 	void Retry();
-	int GetCurrentLevel() const;
 
 private:
-	static void NewSpawner( const SpawnerData& spawnerData );
+	void NewSpawner( const SpawnerData& spawnerData );
 
 private:
 	std::vector<SpawnerData> mSpawnerDatas;
 	
 	int		mNextSpawnerIndex;
 	float	mStageElapsedSeconds;
+
+	BulletManager* const mBulletManager;
+
 };

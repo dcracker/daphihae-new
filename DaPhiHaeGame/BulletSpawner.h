@@ -3,11 +3,12 @@
 #include <stack>
 
 class SpriteBatcher;
+class BulletManager;
 
 class BulletSpawner
 {
 public:
-	BulletSpawner( float spawnInterval, Vector2 initialSpeed, float lifeTime );
+	BulletSpawner( BulletManager* manager, float spawnInterval, Vector2 initialSpeed, float lifeTime );
 	~BulletSpawner();
 
 	void Update( float deltaTime );
@@ -23,5 +24,7 @@ private:
 
 	float mRemainedTimeToSpawn;
 	float mRemainedLifeTime;
+
+	BulletManager* const mBulletManager;
 };
 

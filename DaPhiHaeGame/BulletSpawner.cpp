@@ -4,11 +4,12 @@
 #include "GameScene.h"
 #include "BulletManager.h"
 
-BulletSpawner::BulletSpawner( float spawnInterval, Vector2 initialSpeed, float lifeTime )
+BulletSpawner::BulletSpawner( BulletManager* manager, float spawnInterval, Vector2 initialSpeed, float lifeTime )
 	: mRemainedTimeToSpawn( 0 )
 	, mSpawnInterval( spawnInterval )
 	, mInitialSpeed( initialSpeed )
 	, mRemainedLifeTime( lifeTime )
+	, mBulletManager( manager )
 {
 }
 
@@ -26,7 +27,7 @@ void BulletSpawner::SpawnNewBullets( float deltaTime ) {
 	mRemainedTimeToSpawn -= deltaTime;
 	if ( mRemainedTimeToSpawn <= 0 ) {
 		mRemainedTimeToSpawn += mSpawnInterval;
-		BulletManager::getInstancePtr()->AddBullet( Vector2( static_cast<float>(rand() % GameScene::cWorldWidth), GameScene::cWorldHeight + 5 ), mInitialSpeed );
+		mBulletManager->AddBullet( Vector2( static_cast<float>(rand() % GameScene::cWorldWidth), GameScene::cWorldHeight + 5 ), mInitialSpeed );
 	}
 }
 

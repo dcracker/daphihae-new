@@ -1,6 +1,5 @@
 #pragma once
 #include <vector>
-#include "TSingleton.hpp"
 
 class Bullet;
 class BulletPool;
@@ -8,7 +7,7 @@ class BulletSpawner;
 class SpriteBatcher;
 class Ship;
 
-class BulletManager : public TSingleton<BulletManager>
+class BulletManager
 {
 public:
 	BulletManager();
@@ -21,7 +20,7 @@ public:
 	void AddBullet( const Vector2& initialPosition, const Vector2& initialVelocity );
 	void AddSpawner( float spawnInterval, const Vector2& initialSpeed, float lifeTime );
 	bool CheckCollision( const Ship* ship ) const;
-
+	
 private:
 	void Clear();
 	void UpdateBullets( float deltaTime );

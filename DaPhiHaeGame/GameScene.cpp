@@ -19,11 +19,13 @@ GameScene::GameScene( IPlatform* platform )
 	, mMainCam( new Camera2D( 0, static_cast<float>(cWorldWidth), 0, static_cast<float>(cWorldHeight) ) )
 	, mSpriteBatcher( new SpriteBatcher( gAsset->mainAtlas ) )
 	, mShip( new Ship() )
-	, mStageInfo( new StageInformation() )
+	, mStageInfo( NULL )
 	, mBulletManager( new BulletManager() )
 	, mGUI( new GUI( cWorldWidth, cWorldHeight ) )
 	, mGameStatistics( new GameStatistics() )
 {
+	mStageInfo = new StageInformation( mBulletManager );
+
 	RestartGame();
 	mGameStatistics->Load();
 }
@@ -59,10 +61,10 @@ void GameScene::Pause() {
 void GameScene::Update( float deltaTime ) {
 	ProcessTouchInput();
 	mBulletManager->Update( deltaTime );
+	mStageInfo->Update( deltaTime );
+	mShip->Update( deltaTime );
 
 	if ( IsGameRunning() ) {
-		mShip->Update( deltaTime );
-		mStageInfo->Update( deltaTime );
 		CheckCollision();
 		gGameStatistics->CountElapsedTime( deltaTime );
 	}
