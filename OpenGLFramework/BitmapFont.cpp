@@ -2,11 +2,15 @@
 #include "BitmapFont.h"
 #include "SpriteAtlas.h"
 #include "SpriteBatcher.h"
+#include "Rect.h"
+#include "FntParser.h"
 
-BitmapFont::BitmapFont( SpriteAtlas* atlas )
+BitmapFont::BitmapFont( const char* fntFileName, SpriteAtlas* atlas, int left, int top )
 	: mAtlas( atlas )
 {
+	FntParser parser( fntFileName );
 	mFontMap.clear();
+	CreateTable( &parser.GetDictionary(), atlas, left, top );
 }
 
 
@@ -14,6 +18,16 @@ BitmapFont::~BitmapFont()
 {
 	mAtlas = NULL;
 	mFontMap.clear();
+}
+
+void BitmapFont::CreateTable( GlyphDictionary* dictionary, SpriteAtlas* atlas, int left, int top ) {
+	GlyphDictionary::iterator it;
+	for ( it = dictionary->begin(); it != dictionary->end(); ++it ) {
+		const Rect& glyphRect = it->second;
+		SpriteHandle handle = atlas->RegisterSprite( left + glyphRect.GetLeft(), top + glyphRect.GetTop(), left + glyphRect.GetRight(), top + glyphRect.GetBottom() );
+		printf( "%c : %f, %f, %f, %f\n", it->first,  left + glyphRect.GetLeft(), top + glyphRect.GetTop(), left + glyphRect.GetRight(), top + glyphRect.GetBottom() );
+		RegisterGlyph( it->first, handle );
+	}
 }
 
 void BitmapFont::RegisterGlyph( char character, SpriteHandle sprite ) {
@@ -31,7 +45,7 @@ void BitmapFont::DrawTexts( const char* string, Vector2 startPosition, SpriteBat
 		Rect size = mAtlas->GetSpriteCoord( found->second );
 		float glyphWidth = size.GetWidth() * mAtlas->GetWidth();
 		float glyphHeight = size.GetHeight() * mAtlas->GetHeight();
-		Rect position( startPosition, Vector2( glyphWidth, glyphHeight ) );
+		Rect position( startPosition.x, startPosition.x + glyphWidth, startPosition.y, startPosition.y + glyphHeight );
 		batcher->DrawSprite( position, found->second );
 		startPosition.x += glyphWidth;
 	}

@@ -4,18 +4,22 @@
 typedef unsigned int SpriteHandle;
 class SpriteBatcher;
 class SpriteAtlas;
+#include "FntParser.h"
 
 class BitmapFont
 {
 public:
-	BitmapFont( SpriteAtlas* atlas );
+	BitmapFont( const char* fntFileName, SpriteAtlas* atlas, int left, int top );
 	~BitmapFont();
 
 	void RegisterGlyph( char character, SpriteHandle sprite );
 	void DrawTexts( const char* string, Vector2 position, SpriteBatcher* batcher );
 
 private:
-	SpriteAtlas*					mAtlas;
+	void CreateTable( GlyphDictionary* fntFile, SpriteAtlas* atlas, int left, int top );
+
+private:
+	const SpriteAtlas*				mAtlas;
 	std::map<char, SpriteHandle>	mFontMap;
 };
 

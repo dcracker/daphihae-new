@@ -109,7 +109,7 @@ Pages* FntParser::ParsePages( IFile* fntFile, int numPages ) {
 Char** FntParser::ParseChars( IFile* fntFile ) {
 	GET_BLOCK_SIZE( fntFile, Char, size );
 
-	int numChars = size / sizeof(Char);
+	int numChars = size / sizeof(Char);	// TODO : save numChars
 	Char** chars = new Char*[numChars];
 
 	for ( int i=0; i < numChars; ++i ) {
@@ -132,4 +132,22 @@ KerningPairs** FntParser::ParseKerning( IFile* fntFile ) {
 	}
 
 	return kernings;
+}
+
+GlyphDictionary FntParser::GetDictionary() const {
+	GlyphDictionary dictionary;
+	for ( int i=0; i < 95; ++i ) {
+		Char* glyph = mChars[i];
+		dictionary.insert( std::pair<char, Rect>( static_cast<char>( glyph->id ), GetGlyphRect( glyph ) ) );
+	}
+
+	return dictionary;
+}
+
+Rect FntParser::GetGlyphRect( Char* glyph ) {
+	float x = static_cast<float>( glyph->x );
+	float y = static_cast<float>( glyph->y );
+	float width = static_cast<float>( glyph->width );
+	float height = static_cast<float>( glyph->height );
+	return Rect( x, x + width, y + height, y );
 }

@@ -62,26 +62,6 @@ Rect SpriteAtlas::GetAnimationFrame( unsigned int key, float frameTime ) const {
 	return mSpriteCoords[mSpriteAnimation[key].GetCurrentFrame( frameTime )];
 }
 
-BitmapFont* SpriteAtlas::RegisterBitmapFont( float left, float top, float right, float bottom, Vector2 glyphSize ) {
-	Rect fontArea( left, right, bottom, top );
-	int numHorizontal = static_cast<int>(fontArea.GetWidth() / glyphSize.x);
-	int numVertical = static_cast<int>(-1 * fontArea.GetHeight() / glyphSize.y);
-	assert( numHorizontal > 0 && numVertical > 0 );
-	Vector2 start( fontArea.GetLeft(), fontArea.GetTop() );
-
-	BitmapFont* font = new BitmapFont( this );
-	for ( int v=0; v < numVertical; ++v ) {
-		for ( int h=0; h < numHorizontal; ++h ) {
-			unsigned int sprite = RegisterSprite(	start.x + glyphSize.x * h,
-											start.y + glyphSize.y * v,
-											start.x + glyphSize.x * (h + 1),
-											start.y + glyphSize.y * (v + 1) );
-			font->RegisterGlyph( '0' + h + v * numHorizontal, sprite );
-		}
-	}
-	return font;
-}
-
 void SpriteAtlas::Load( const IFileIO* fileIO ) {
 	bool notInitializedYet = !TextureHasLoaded();
 	Texture::Load( fileIO );

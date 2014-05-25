@@ -1,5 +1,7 @@
-#pragma once
 // ref : http://www.angelcode.com/products/bmfont/doc/file_format.html#bin
+#pragma once
+#include <map>
+#include "Rect.h"
 
 class IFile;
 
@@ -66,18 +68,21 @@ struct KerningPairs {
 	unsigned int second;
 	short amount;
 };
-
 #pragma pack( pop )
 
+typedef std::map<char, Rect> GlyphDictionary;
 class FntParser
 {
 public:
 	FntParser( const char* fntFileName );
 	~FntParser();
 
+	GlyphDictionary GetDictionary() const;
+
 private:
 	void ParseFile( IFile* fntFile );
 
+private:
 	static void ParseHeader( IFile* fntFile );
 	static void ParseBlockHeader( IFile* fntFile, BYTE* out_blockId, int* out_blockSize );
 	static Info* ParseInfo( IFile* fntFile );
@@ -85,6 +90,7 @@ private:
 	static Pages* ParsePages( IFile* fntFile, int numPages );
 	static Char** ParseChars( IFile* fntFile );
 	static KerningPairs** ParseKerning( IFile* fntFile );
+	static Rect GetGlyphRect( Char* glyph );
 
 private:
 	Info*	mInfo;
