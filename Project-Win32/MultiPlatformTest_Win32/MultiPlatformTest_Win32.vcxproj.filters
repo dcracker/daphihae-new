@@ -189,6 +189,9 @@
     <ClInclude Include="..\..\DaPhiHaeGame\GameStatistics.h">
       <Filter>DaPhiHaeGame</Filter>
     </ClInclude>
+    <ClInclude Include="FntParser.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -289,6 +292,9 @@
     </ClCompile>
     <ClCompile Include="..\..\DaPhiHaeGame\GameStatistics.cpp">
       <Filter>DaPhiHaeGame</Filter>
+    </ClCompile>
+    <ClCompile Include="FntParser.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

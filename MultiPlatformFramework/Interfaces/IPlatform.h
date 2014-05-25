@@ -5,8 +5,9 @@
 #include "IFileIO.h"
 #include "IGraphics.h"
 #include "IAudio.h"
+#include "TSingleton.hpp"
 
-class IPlatform {
+class IPlatform : public TSingleton<IPlatform> {
 public:
 	virtual ~IPlatform() {}
 

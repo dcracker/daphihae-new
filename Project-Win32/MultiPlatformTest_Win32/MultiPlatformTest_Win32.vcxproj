@@ -130,6 +130,7 @@
     <ClInclude Include="..\..\OpenGLFramework\SpriteAtlas.h" />
     <ClInclude Include="..\..\OpenGLFramework\SpriteBatcher.h" />
     <ClInclude Include="..\..\OpenGLFramework\Texture.h" />
+    <ClInclude Include="FntParser.h" />
     <ClInclude Include="MultiPlatformTest_Win32.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
@@ -167,6 +168,7 @@
     <ClCompile Include="..\..\OpenGLFramework\SpriteAtlas.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\SpriteBatcher.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\Texture.cpp" />
+    <ClCompile Include="FntParser.cpp" />
     <ClCompile Include="MultiPlatformTest_Win32.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
