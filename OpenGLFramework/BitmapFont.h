@@ -16,7 +16,7 @@ public:
 	void DrawTexts( const char* string, Vector2 position, SpriteBatcher* batcher );
 
 private:
-	void CreateTable( GlyphDictionary* fntFile, SpriteAtlas* atlas, int left, int top );
+	void CreateTable( GlyphDictionary* dictionary, SpriteAtlas* atlas, int left, int top );
 
 private:
 	const SpriteAtlas*				mAtlas;

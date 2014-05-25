@@ -23,17 +23,17 @@ void GUI::DrawGUI( SpriteBatcher* batcher ) const {
 	char buf[bufferSize];
 	std::string guiText;
 	guiText = "High Score : ";
-	_itoa_s( gGameStatistics->GetHighScore( 1 ), buf, bufferSize, 10 );
+	sprintf_s( buf, bufferSize, "%d", gGameStatistics->GetHighScore( 1 ) );
 	guiText.append( buf );
 	gAsset->font->DrawTexts( guiText.c_str(), cHighScorePosition, batcher );
 
 	guiText = "Score : ";
-	_itoa_s( gGameStatistics->GetCurrentScore(), buf, bufferSize, 10 );
+	sprintf_s( buf, bufferSize, "%d", gGameStatistics->GetCurrentScore() );
 	guiText.append( buf );
 	gAsset->font->DrawTexts( guiText.c_str(), cCurrentScorePosition, batcher );
 
 	guiText = "Lv : ";
-	_itoa_s( gGameStatistics->GetCurrentLevel(), buf, bufferSize, 10 );
+	sprintf_s( buf, bufferSize, "%d", gGameStatistics->GetCurrentLevel() );
 	guiText.append( buf );
 	gAsset->font->DrawTexts( guiText.c_str(), cLevelNumberPosition, batcher );
 }

@@ -9,6 +9,10 @@
 #define glFrustum glFrustumf
 #define glOrtho	glOrthof
 
+// adaptations for gcc
+typedef unsigned char BYTE;
+#define sprintf_s( buf, size, ... ) snprintf( buf, size, __VA_ARGS__ )
+
 #include "Common/CommonHeaders.h"
 #include "OpenGLCommons.h"
 

@@ -273,6 +273,16 @@
 			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/DaPhiHae.h</locationURI>
 		</link>
 		<link>
+			<name>jni/DaPhiHaeGame/GUI.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/GUI.cpp</locationURI>
+		</link>
+		<link>
+			<name>jni/DaPhiHaeGame/GUI.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/GUI.h</locationURI>
+		</link>
+		<link>
 			<name>jni/DaPhiHaeGame/GameScene.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/GameScene.cpp</locationURI>
@@ -281,6 +291,16 @@
 			<name>jni/DaPhiHaeGame/GameScene.h</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/GameScene.h</locationURI>
+		</link>
+		<link>
+			<name>jni/DaPhiHaeGame/GameStatistics.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/GameStatistics.cpp</locationURI>
+		</link>
+		<link>
+			<name>jni/DaPhiHaeGame/GameStatistics.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/GameStatistics.h</locationURI>
 		</link>
 		<link>
 			<name>jni/DaPhiHaeGame/Ship.cpp</name>
@@ -301,11 +321,6 @@
 			<name>jni/DaPhiHaeGame/StageInformation.h</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/StageInformation.h</locationURI>
-		</link>
-		<link>
-			<name>jni/DaPhiHaeGame/TSingleton.hpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/TSingleton.hpp</locationURI>
 		</link>
 		<link>
 			<name>jni/DaPhiHaeGame/Util.h</name>
@@ -348,6 +363,16 @@
 			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Interfaces/IPlatform.h</locationURI>
 		</link>
 		<link>
+			<name>jni/OpenGLFramework/BitmapFont.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/BitmapFont.cpp</locationURI>
+		</link>
+		<link>
+			<name>jni/OpenGLFramework/BitmapFont.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/BitmapFont.h</locationURI>
+		</link>
+		<link>
 			<name>jni/OpenGLFramework/Camera.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/Camera.cpp</locationURI>
@@ -366,6 +391,16 @@
 			<name>jni/OpenGLFramework/Camera2D.h</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/Camera2D.h</locationURI>
+		</link>
+		<link>
+			<name>jni/OpenGLFramework/FntParser.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/FntParser.cpp</locationURI>
+		</link>
+		<link>
+			<name>jni/OpenGLFramework/FntParser.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/FntParser.h</locationURI>
 		</link>
 		<link>
 			<name>jni/OpenGLFramework/Image.cpp</name>

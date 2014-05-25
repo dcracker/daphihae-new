@@ -10,7 +10,8 @@ BitmapFont::BitmapFont( const char* fntFileName, SpriteAtlas* atlas, int left, i
 {
 	FntParser parser( fntFileName );
 	mFontMap.clear();
-	CreateTable( &parser.GetDictionary(), atlas, left, top );
+	GlyphDictionary dictionary = parser.GetDictionary();
+	CreateTable( &dictionary, atlas, left, top );
 }
 
 

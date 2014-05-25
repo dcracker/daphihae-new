@@ -1,5 +1,6 @@
 #pragma once
 
+#define GLM_FORCE_RADIANS
 #include "glmtypedef.h"
 
 #define PI 3.1415926535897932384626433832795
