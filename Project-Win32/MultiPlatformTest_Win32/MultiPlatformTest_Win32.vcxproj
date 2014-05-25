@@ -96,7 +96,6 @@
     <ClInclude Include="..\..\DaPhiHaeGame\StageInformation.h" />
     <ClInclude Include="..\..\DaPhiHaeGame\Util.h" />
     <ClInclude Include="..\..\DaPhiHaeGame\Ship.h" />
-    <ClInclude Include="..\..\DaPhiHaeGame\TSingleton.hpp" />
     <ClInclude Include="..\..\MultiPlatformFramework\Common\CommonHeaders.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Common\CommonInput.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Common\CommonTouchMessageHandler.h" />
@@ -111,6 +110,7 @@
     <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IGraphics.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IInput.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IPlatform.h" />
+    <ClInclude Include="..\..\MultiPlatformFramework\TSingleton.hpp" />
     <ClInclude Include="..\..\MultiPlatformFramework\Windows\logger.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsCommon.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsFile.h" />
@@ -122,6 +122,7 @@
     <ClInclude Include="..\..\OpenGLFramework\BitmapFont.h" />
     <ClInclude Include="..\..\OpenGLFramework\Camera.h" />
     <ClInclude Include="..\..\OpenGLFramework\Camera2D.h" />
+    <ClInclude Include="..\..\OpenGLFramework\FntParser.h" />
     <ClInclude Include="..\..\OpenGLFramework\glmtypedef.h" />
     <ClInclude Include="..\..\OpenGLFramework\Image.h" />
     <ClInclude Include="..\..\OpenGLFramework\OpenGLCommons.h" />
@@ -130,7 +131,6 @@
     <ClInclude Include="..\..\OpenGLFramework\SpriteAtlas.h" />
     <ClInclude Include="..\..\OpenGLFramework\SpriteBatcher.h" />
     <ClInclude Include="..\..\OpenGLFramework\Texture.h" />
-    <ClInclude Include="FntParser.h" />
     <ClInclude Include="MultiPlatformTest_Win32.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
@@ -162,13 +162,13 @@
     <ClCompile Include="..\..\OpenGLFramework\BitmapFont.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\Camera.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\Camera2D.cpp" />
+    <ClCompile Include="..\..\OpenGLFramework\FntParser.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\Image.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\Rect.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\SpriteAnimation.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\SpriteAtlas.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\SpriteBatcher.cpp" />
     <ClCompile Include="..\..\OpenGLFramework\Texture.cpp" />
-    <ClCompile Include="FntParser.cpp" />
     <ClCompile Include="MultiPlatformTest_Win32.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
