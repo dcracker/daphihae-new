@@ -21,7 +21,7 @@ void Camera::Bind() const {
 	glMatrixMode( GL_PROJECTION );
 	glLoadIdentity();
 
-	float h = tan( mFov / 2 * DEG_TO_RAD ) * mNear;
+	float h = static_cast<float>(tan( mFov / 2 * DEG_TO_RAD )) * mNear;
 	float w = h * mAspectRatio;
 	glFrustum( -w, w, -h, h, mNear, mFar );
 

@@ -12,9 +12,9 @@ public:
 
 	void Save() const {}
 	void Load() {
-		mHighScore[0] = 1000;
-		mHighScore[1] = 500;
-		mHighScore[2] = 100;
+		mHighScore[0] = 100;
+		mHighScore[1] = 50;
+		mHighScore[2] = 10;
 	}
 
 	void GameStart();

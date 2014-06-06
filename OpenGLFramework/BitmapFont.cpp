@@ -26,7 +26,6 @@ void BitmapFont::CreateTable( GlyphDictionary* dictionary, SpriteAtlas* atlas, i
 	for ( it = dictionary->begin(); it != dictionary->end(); ++it ) {
 		const Rect& glyphRect = it->second;
 		SpriteHandle handle = atlas->RegisterSprite( left + glyphRect.GetLeft(), top + glyphRect.GetTop(), left + glyphRect.GetRight(), top + glyphRect.GetBottom() );
-		printf( "%c : %f, %f, %f, %f\n", it->first,  left + glyphRect.GetLeft(), top + glyphRect.GetTop(), left + glyphRect.GetRight(), top + glyphRect.GetBottom() );
 		RegisterGlyph( it->first, handle );
 	}
 }

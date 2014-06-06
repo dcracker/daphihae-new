@@ -143,7 +143,11 @@ void GameScene::BatchSprites() {
 	mSpriteBatcher->Clear();
 	mBulletManager->Render( mSpriteBatcher );
 	mShip->Render( mSpriteBatcher );
-	mGUI->DrawGUI( mSpriteBatcher );
+	mGUI->DrawInGameGUI( mSpriteBatcher );
+
+	if ( IsGameRunning() == false ) {
+		mGUI->DrawGameOverScreen( mSpriteBatcher );
+	}
 }
 
 void GameScene::CheckCollision() {

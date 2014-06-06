@@ -21,6 +21,7 @@ public:
 public:
 	SpriteAtlas* const mainAtlas;
 	BitmapFont* const font;
+	BitmapFont* const boldFont;
 
 	const unsigned int ship;
 	const unsigned int oldBullet;
