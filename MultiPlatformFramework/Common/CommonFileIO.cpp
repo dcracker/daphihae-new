@@ -2,9 +2,12 @@
 #include "CommonFileIO.h"
 #include "CommonFileReader.h"
 #include "CommonFileWriter.h"
+#include <stdio.h>
 
 #include "logger.h"
 #define LOG_TAG "File"
+
+#pragma warning( disable : 4996 )
 
 const char* const CommonFileIO::cReadMode = "rb";
 const char* const CommonFileIO::cWriteMode = "wb";
@@ -38,7 +41,12 @@ IFileWriter* CommonFileIO::WriteExternalStorage( const char* fileName ) const {
 }
 
 IFileReader* CommonFileIO::ReadAsset( const char* fileName ) const {
-	return OpenFile<CommonFileReader>( mAssetPath, fileName, cReadMode );
+	CommonFileReader* assetFile = OpenFile<CommonFileReader>( mAssetPath, fileName, cReadMode );
+	if ( assetFile == NULL ) {
+		LOG_ERROR("Cannot find an asset %s", fileName );
+	}
+
+	return assetFile;
 }
 
 template <typename T>

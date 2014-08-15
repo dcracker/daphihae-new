@@ -1,16 +1,14 @@
 #pragma once
 
-#include "../Interfaces/IFileIO.h"
+#include "../Common/CommonFileIO.h"
 
-class WindowsFileIO : public IFileIO
+class WindowsFileIO : public CommonFileIO
 {
 public:
 	WindowsFileIO();
 	~WindowsFileIO();
 
-	IFileReader* ReadStorage( const char* fileName ) const;
-	IFileWriter* WriteStorage( const char* fileName ) const;
-	IFileReader* ReadAsset( const char* fileName ) const;
+	IFileWriter* WriteData( const char* fileName ) const;
 
 private:
 	static bool DoesFolderExist( const char* folderName );

@@ -111,9 +111,6 @@
     <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsFileIO.h">
       <Filter>Framework\Windows</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsFile.h">
-      <Filter>Framework\Windows</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\OpenGLFramework\glmtypedef.h">
       <Filter>Framework\OpenGL</Filter>
     </ClInclude>
@@ -198,11 +195,14 @@
     <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IFileWriter.h">
       <Filter>Framework\Interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsFileReader.h">
-      <Filter>Framework\Windows</Filter>
+    <ClInclude Include="..\..\MultiPlatformFramework\Common\CommonFileIO.h">
+      <Filter>Framework\Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsFileWriter.h">
-      <Filter>Framework\Windows</Filter>
+    <ClInclude Include="..\..\MultiPlatformFramework\Common\CommonFileReader.h">
+      <Filter>Framework\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\Common\CommonFileWriter.h">
+      <Filter>Framework\Common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -240,9 +240,6 @@
       <Filter>Framework\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsFileIO.cpp">
-      <Filter>Framework\Windows</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsFile.cpp">
       <Filter>Framework\Windows</Filter>
     </ClCompile>
     <ClCompile Include="..\..\OpenGLFramework\SpriteBatcher.cpp">
@@ -308,11 +305,14 @@
     <ClCompile Include="..\..\OpenGLFramework\FntParser.cpp">
       <Filter>Framework\OpenGL</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsFileReader.cpp">
-      <Filter>Framework\Windows</Filter>
+    <ClCompile Include="..\..\MultiPlatformFramework\Common\CommonFileIO.cpp">
+      <Filter>Framework\Common</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsFileWriter.cpp">
-      <Filter>Framework\Windows</Filter>
+    <ClCompile Include="..\..\MultiPlatformFramework\Common\CommonFileReader.cpp">
+      <Filter>Framework\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\MultiPlatformFramework\Common\CommonFileWriter.cpp">
+      <Filter>Framework\Common</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

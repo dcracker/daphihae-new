@@ -11,6 +11,7 @@ const char* const WindowsFileIO::cDataPath = "./Data/";
 #define LOG_TAG "File"
 
 WindowsFileIO::WindowsFileIO()
+	: CommonFileIO( cAssetPath, cDataPath, NULL )
 {
 }
 
@@ -19,37 +20,12 @@ WindowsFileIO::~WindowsFileIO()
 {
 }
 
-IFileReader* WindowsFileIO::ReadStorage( const char* fileName ) const {
-	WindowsFile* openFile = new WindowsFile( cDataPath, fileName, GENERIC_READ );
-
-	if ( openFile->IsVaild() ) {
-		return new WindowsFileReader( openFile );
-	}
-	else {
-		return NULL;
-	}
-}
-
-IFileWriter* WindowsFileIO::WriteStorage( const char* fileName ) const {
+IFileWriter* WindowsFileIO::WriteData( const char* fileName ) const {
 	if ( DoesFolderExist( cDataPath ) == false ) {
 		CreateDirectory( cDataPath, NULL );
 	}
 
-	return new WindowsFileWriter( cDataPath, fileName );
-}
-
-IFileReader* WindowsFileIO::ReadAsset( const char* fileName ) const {
-	WindowsFile* openFile = new WindowsFile( cAssetPath, fileName, GENERIC_READ );
-
-//	LOG_INFO( "read asset : %s ", fileName );
-	if ( openFile->IsVaild() ) {
-		return new WindowsFileReader( openFile );
-	}
-	else {
-		LOG_ERROR( "cannot read asset : %s", fileName );
-		assert( false && "cannot read asset" );
-		return NULL;
-	}
+	return CommonFileIO::WriteData( fileName );
 }
 
 bool WindowsFileIO::DoesFolderExist( const char* folderName ) {
