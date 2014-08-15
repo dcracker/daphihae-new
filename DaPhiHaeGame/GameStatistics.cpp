@@ -68,8 +68,8 @@ void GameStatistics::Load() {
 	}
 	else {
 		saveFile->ReadByte( mHighScore, sizeof(mHighScore[0]) * 3 );
+		saveFile->Close();
 	}
-	saveFile->Close();
 }
 
 void GameStatistics::InitScore() {
