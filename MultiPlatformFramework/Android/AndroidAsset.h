@@ -1,16 +1,17 @@
 #ifndef ANDROIDASSET_H_
 #define ANDROIDASSET_H_
 
-#include "Interfaces/IFile.h"
+#include "Interfaces/IFileReader.h"
 
 class AAssetManager;
 class AAsset;
-class AndroidAsset : public IFile {
+class AndroidAsset : public IFileReader {
 public:
 	AndroidAsset( AAssetManager* mgr, const char* fileName );
 	~AndroidAsset();
 
-	const char* GetFileName() { return cFileName; }
+	const char* GetFileName() const { return cFileName; }
+	void Close();
 	bool ReadByte( void* out_byteBuffer, int numByteToRead );
 
 private:

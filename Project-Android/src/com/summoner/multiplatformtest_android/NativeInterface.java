@@ -6,7 +6,7 @@ import android.view.Surface;
 
 public class NativeInterface {
 	// native methods
-	public native static void OnCreate( AssetManager assetManager );
+	public native static void OnCreate( AssetManager assetManager, String dataRoot );
 	public native static void OnResume();
 	public native static void OnPause();
 	public native static void OnDestroy();

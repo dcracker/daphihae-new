@@ -9,4 +9,4 @@ public:
 	virtual bool ReadByte( void* out_byteBuffer, int numByteToRead ) = 0;
 };
 
-#endif IFILE_READER_H_
+#endif // IFILE_READER_H_

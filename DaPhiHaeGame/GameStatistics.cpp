@@ -59,7 +59,7 @@ int GameStatistics::GetCurrentLevel() const {
 }
 
 void GameStatistics::Save() const {
-	IFileWriter* saveFile = IPlatform::getInstancePtr()->GetFileIO()->WriteStorage( cSaveFileName );
+	IFileWriter* saveFile = IPlatform::getInstancePtr()->GetFileIO()->WriteData( cSaveFileName );
 	if ( saveFile == NULL ) {
 		LOG_ERROR( "save file create failed." );
 		return;
@@ -69,7 +69,7 @@ void GameStatistics::Save() const {
 }
 
 void GameStatistics::Load() {
-	IFileReader* saveFile = IPlatform::getInstancePtr()->GetFileIO()->ReadStorage( cSaveFileName );
+	IFileReader* saveFile = IPlatform::getInstancePtr()->GetFileIO()->ReadData( cSaveFileName );
 	if ( saveFile == NULL ) {
 		InitScore();
 	}

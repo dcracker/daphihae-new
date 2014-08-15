@@ -9,10 +9,10 @@
 #include "logger.h"
 #define LOG_TAG "Test"
 
-AndroidPlatform::AndroidPlatform( JNIEnv* env, jobject assetManager, const CommonTouchMessageHandler* touchHandler )
+AndroidPlatform::AndroidPlatform( JNIEnv* env, jobject assetManager, const char* dataRoot, const CommonTouchMessageHandler* touchHandler )
 	: mGraphics( new AndroidGraphics() )
 	, mInput( new AndroidInput( touchHandler ) )
-	, mFileIO( new AndroidFileIO( env, assetManager ) )
+	, mFileIO( new AndroidFileIO( env, assetManager, dataRoot ) )
 	, mJavaVM( NULL )
 	, mJniEnv( NULL )
 {

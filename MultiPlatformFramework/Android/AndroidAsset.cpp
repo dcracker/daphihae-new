@@ -17,11 +17,15 @@ AndroidAsset::AndroidAsset( AAssetManager* mgr, const char* fileName )
 }
 
 AndroidAsset::~AndroidAsset() {
-	AAsset_close( mAssetFile );
-	mAssetFile = NULL;
+	Close();
 }
 
 bool AndroidAsset::ReadByte( void* out_byteBuffer, int numBytesToRead ) {
 	int numBytesHasRead = AAsset_read( mAssetFile, out_byteBuffer, numBytesToRead );
 	return (numBytesHasRead == numBytesToRead);
+}
+
+void AndroidAsset::Close() {
+	AAsset_close( mAssetFile );
+	mAssetFile = NULL;
 }

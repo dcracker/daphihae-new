@@ -158,6 +158,36 @@
 			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Android/logger.h</locationURI>
 		</link>
 		<link>
+			<name>jni/Common/CommonFileIO.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Common/CommonFileIO.cpp</locationURI>
+		</link>
+		<link>
+			<name>jni/Common/CommonFileIO.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Common/CommonFileIO.h</locationURI>
+		</link>
+		<link>
+			<name>jni/Common/CommonFileReader.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Common/CommonFileReader.cpp</locationURI>
+		</link>
+		<link>
+			<name>jni/Common/CommonFileReader.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Common/CommonFileReader.h</locationURI>
+		</link>
+		<link>
+			<name>jni/Common/CommonFileWriter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Common/CommonFileWriter.cpp</locationURI>
+		</link>
+		<link>
+			<name>jni/Common/CommonFileWriter.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Common/CommonFileWriter.h</locationURI>
+		</link>
+		<link>
 			<name>jni/Common/CommonHeaders.h</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Common/CommonHeaders.h</locationURI>
@@ -333,9 +363,24 @@
 			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Interfaces/IAudio.h</locationURI>
 		</link>
 		<link>
+			<name>jni/Interfaces/IFile.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Interfaces/IFile.h</locationURI>
+		</link>
+		<link>
 			<name>jni/Interfaces/IFileIO.h</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Interfaces/IFileIO.h</locationURI>
+		</link>
+		<link>
+			<name>jni/Interfaces/IFileReader.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Interfaces/IFileReader.h</locationURI>
+		</link>
+		<link>
+			<name>jni/Interfaces/IFileWriter.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Interfaces/IFileWriter.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Interfaces/IGame.h</name>

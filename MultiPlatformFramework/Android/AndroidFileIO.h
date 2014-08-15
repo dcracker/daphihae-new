@@ -2,18 +2,15 @@
 #define ANDROIDFILEIO_H_
 
 #include <jni.h>
-#include "../Interfaces/IFileIO.h"
+#include "../Common/CommonFileIO.h"
 
 class AAssetManager;
-class AndroidFileIO : public IFileIO {
+class AndroidFileIO : public CommonFileIO {
 public:
-	AndroidFileIO( JNIEnv* env, jobject assetManager );
+	AndroidFileIO( JNIEnv* env, jobject assetManager, const char* dataRoot );
 	~AndroidFileIO();
 
-	IFile* ReadStorage( const char* fileName ) const;
-	IFile* WriteStorage( const char* fileName ) const;
-
-	IFile* ReadAsset( const char* fileName ) const;
+	IFileReader* ReadAsset( const char* fileName ) const;
 
 private:
 	AAssetManager* mAssetManager;

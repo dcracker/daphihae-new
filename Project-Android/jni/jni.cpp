@@ -30,15 +30,17 @@ static AndroidPlatform*	platform = NULL;
 static DaPhiHae*	game = NULL;
 static CommonTouchMessageHandler* touchHandler;
 
-IMPL_JNI_API_WITH_PARAM( OnCreate, jobject assetManager ) {
+IMPL_JNI_API_WITH_PARAM( OnCreate, jobject assetManager, jstring dataRoot ) {
 #ifndef NDEBUG
 //usleep(5000 * 1000);	// wait for debuger attach.
 #endif
+	const char* dataRootPath = env->GetStringUTFChars( dataRoot , NULL );
 	LOG_INFO( "NativeOnStart()" );
 	touchHandler = new CommonTouchMessageHandler();
-	platform = new AndroidPlatform( env, assetManager, touchHandler );
+	platform = new AndroidPlatform( env, assetManager, dataRootPath, touchHandler );
 	game = new DaPhiHae( platform );
 	loop = new MainGameLoop( game, platform, new AndroidTimer() );
+
 }
 
 IMPL_JNI_API( OnResume ) {

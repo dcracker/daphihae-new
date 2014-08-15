@@ -25,7 +25,7 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback {
 		setContentView( view );
 		
 		// start game
-		NativeInterface.OnCreate( getAssets() );
+		NativeInterface.OnCreate( getAssets(), getApplicationContext().getFilesDir().toString() );
 	}
 	
 	@Override

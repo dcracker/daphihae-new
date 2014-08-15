@@ -13,7 +13,7 @@ class CommonTouchMessageHandler;
 
 class AndroidPlatform : public IPlatform, public IGameLoopListener {
 public:
-	AndroidPlatform( JNIEnv* env, jobject assetManager, const CommonTouchMessageHandler* touchHandler );
+	AndroidPlatform( JNIEnv* env, jobject assetManager, const char* dataRoot, const CommonTouchMessageHandler* touchHandler );
 	~AndroidPlatform();
 
 		  IInput*		GetInput() 		const;

@@ -9,4 +9,4 @@ public:
 	virtual bool WriteByte( const void* byteBuffer, int numByteToRead ) = 0;
 };
 
-#endif IFILE_WRITER_H_
+#endif // IFILE_WRITER_H_

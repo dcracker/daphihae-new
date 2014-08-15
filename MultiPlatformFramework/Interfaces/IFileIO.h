@@ -8,8 +8,11 @@ class IFileIO {
 public:
 	virtual ~IFileIO () {}
 	
-	virtual IFileReader* ReadStorage( const char* fileName ) const = 0;
-	virtual IFileWriter* WriteStorage( const char* fileName ) const = 0;
+	virtual IFileReader* ReadData( const char* fileName ) const = 0;
+	virtual IFileWriter* WriteData( const char* fileName ) const = 0;
+
+	virtual IFileReader* ReadExternalStorage( const char* fileName ) const = 0;
+	virtual IFileWriter* WriteExternalStorage( const char* fileName ) const = 0;
 
 	virtual IFileReader* ReadAsset( const char* fileName ) const = 0;
 };
