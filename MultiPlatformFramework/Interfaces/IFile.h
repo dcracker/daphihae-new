@@ -5,11 +5,8 @@ class IFile {
 public:
 	virtual ~IFile() {}
 
-	virtual const char* GetFileName() = 0;
-
-	// open at create, close at destroy
-
-	virtual bool ReadByte( void* out_byteBuffer, int numByteToRead ) = 0;
+	virtual const char* GetFileName() const = 0;
+	virtual void Close() = 0;
 };
 
 #endif /* IFILE_H_ */

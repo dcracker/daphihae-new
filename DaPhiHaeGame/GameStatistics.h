@@ -10,12 +10,9 @@ public:
 	GameStatistics();
 	~GameStatistics();
 
-	void Save() const {}
-	void Load() {
-		mHighScore[0] = 100;
-		mHighScore[1] = 50;
-		mHighScore[2] = 10;
-	}
+	void Save() const;
+	void Load();
+	void InitScore();
 
 	void GameStart();
 	void GameFinished();
@@ -28,9 +25,11 @@ public:
 	int GetCurrentLevel() const;
 
 private:
-	int mCurrentScore;
-
 	const static int cNumScoresToSave = 3;
+	const static char* const cSaveFileName;
+
+private:
+	int mCurrentScore;
 	int mHighScore[cNumScoresToSave];
 
 	float mElapsedTime;

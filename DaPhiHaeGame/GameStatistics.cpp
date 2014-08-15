@@ -1,5 +1,10 @@
 #include "stdafx.h"
 #include "GameStatistics.h"
+#include "Interfaces/IPlatform.h"
+#include "Interfaces/IFileReader.h"
+#include "Interfaces/IFileWriter.h"
+
+const char* const GameStatistics::cSaveFileName = "score.dph";
 
 GameStatistics::GameStatistics()
 	: mCurrentScore( 0 )
@@ -7,7 +12,6 @@ GameStatistics::GameStatistics()
 	, mCurrentLevel( 0 )
 {
 }
-
 
 GameStatistics::~GameStatistics()
 {
@@ -49,4 +53,27 @@ int GameStatistics::GetHighScore( int rank ) const {
 
 int GameStatistics::GetCurrentLevel() const {
 	return mCurrentLevel;
+}
+
+void GameStatistics::Save() const {
+	IFileWriter* saveFile = IPlatform::getInstancePtr()->GetFileIO()->WriteStorage( cSaveFileName );
+	saveFile->WriteByte( mHighScore, sizeof(mHighScore[0]) * 3 );
+	saveFile->Close();
+}
+
+void GameStatistics::Load() {
+	IFileReader* saveFile = IPlatform::getInstancePtr()->GetFileIO()->ReadStorage( cSaveFileName );
+	if ( saveFile == NULL ) {
+		InitScore();
+	}
+	else {
+		saveFile->ReadByte( mHighScore, sizeof(mHighScore[0]) * 3 );
+	}
+	saveFile->Close();
+}
+
+void GameStatistics::InitScore() {
+	mHighScore[0] = 100;
+	mHighScore[1] = 50;
+	mHighScore[2] = 10;
 }

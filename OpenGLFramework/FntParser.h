@@ -3,7 +3,7 @@
 #include <map>
 #include "Rect.h"
 
-class IFile;
+class IFileReader;
 
 #pragma pack( push, 1 )
 struct Info {
@@ -80,16 +80,16 @@ public:
 	GlyphDictionary GetDictionary() const;
 
 private:
-	void ParseFile( IFile* fntFile );
+	void ParseFile( IFileReader* fntFile );
 
 private:
-	static void ParseHeader( IFile* fntFile );
-	static void ParseBlockHeader( IFile* fntFile, BYTE* out_blockId, int* out_blockSize );
-	static Info* ParseInfo( IFile* fntFile );
-	static Common* ParseCommon( IFile* fntFile );
-	static Pages* ParsePages( IFile* fntFile, int numPages );
-	static Char** ParseChars( IFile* fntFile );
-	static KerningPairs** ParseKerning( IFile* fntFile );
+	static void ParseHeader( IFileReader* fntFile );
+	static void ParseBlockHeader( IFileReader* fntFile, BYTE* out_blockId, int* out_blockSize );
+	static Info* ParseInfo( IFileReader* fntFile );
+	static Common* ParseCommon( IFileReader* fntFile );
+	static Pages* ParsePages( IFileReader* fntFile, int numPages );
+	static Char** ParseChars( IFileReader* fntFile );
+	static KerningPairs** ParseKerning( IFileReader* fntFile );
 	static Rect GetGlyphRect( Char* glyph );
 
 private:

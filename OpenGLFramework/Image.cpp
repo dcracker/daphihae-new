@@ -2,7 +2,7 @@
 #include "stdafx.h"
 
 #include "Image.h"
-#include "Interfaces/IFile.h"
+#include "Interfaces/IFileReader.h"
 #include "png.h"
 
 #include "logger.h"
@@ -29,7 +29,7 @@ Image::~Image() {
 // ref : book - Android NDK Beginner's Guide
 static void png_read_callback( png_structp png, png_bytep data, png_size_t size );
 
-Image* Image::LoadPNG( IFile* file ) {
+Image* Image::LoadPNG( IFileReader* file ) {
 	png_byte header[8];
 	if ( file->ReadByte( header, sizeof(header) ) == false ) {
 		RETURN_ERROR( "failed to read png header from %s", file->GetFileName( ) );
@@ -161,7 +161,7 @@ Image* Image::LoadPNG( IFile* file ) {
 }
 
 static void png_read_callback(png_structp png, png_bytep data, png_size_t size) {
-	IFile* file = (IFile*)png_get_io_ptr( png );
+	IFileReader* file = (IFileReader*)png_get_io_ptr( png );
 	if ( file->ReadByte( data, (int)size ) == false ) {
 		LOG_ERROR( "Error while reading PNG file" );
 	}

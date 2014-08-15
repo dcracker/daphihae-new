@@ -192,6 +192,18 @@
     <ClInclude Include="..\..\MultiPlatformFramework\TSingleton.hpp">
       <Filter>Framework</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IFileReader.h">
+      <Filter>Framework\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IFileWriter.h">
+      <Filter>Framework\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsFileReader.h">
+      <Filter>Framework\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsFileWriter.h">
+      <Filter>Framework\Windows</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -295,6 +307,12 @@
     </ClCompile>
     <ClCompile Include="..\..\OpenGLFramework\FntParser.cpp">
       <Filter>Framework\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsFileReader.cpp">
+      <Filter>Framework\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsFileWriter.cpp">
+      <Filter>Framework\Windows</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

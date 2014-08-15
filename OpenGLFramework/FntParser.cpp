@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "FntParser.h"
-#include "Interfaces/IFile.h"
+#include "Interfaces/IFileReader.h"
 #include "Interfaces/IPlatform.h"
 #include "logger.h"
 
@@ -21,7 +21,7 @@ FntParser::FntParser( const char* fntFileName )
 	, mChars( NULL )
 	, mKernings( NULL )
 {
-	IFile* file = IPlatform::getInstancePtr()->GetFileIO()->ReadAsset( fntFileName );
+	IFileReader* file = IPlatform::getInstancePtr()->GetFileIO()->ReadAsset( fntFileName );
 	LOG_INFO( "%s\n", file->GetFileName() );
 	ParseFile( file );
 	delete file;
@@ -41,7 +41,7 @@ FntParser::~FntParser()
 	SAFE_DELETE( mKernings );
 }
 
-void FntParser::ParseFile( IFile* fntFile ) {
+void FntParser::ParseFile( IFileReader* fntFile ) {
 	ParseHeader( fntFile );
 	mInfo = ParseInfo( fntFile );
 	mCommon = ParseCommon( fntFile );
@@ -50,7 +50,7 @@ void FntParser::ParseFile( IFile* fntFile ) {
 	mKernings = ParseKerning( fntFile );
 }
 
-void FntParser::ParseHeader( IFile* fntFile ) {
+void FntParser::ParseHeader( IFileReader* fntFile ) {
 	char buf[4] = {0,};
 	fntFile->ReadByte( buf, 3 );
 	assert( strcmp( buf, "BMF" ) == 0 );
@@ -60,12 +60,12 @@ void FntParser::ParseHeader( IFile* fntFile ) {
 	assert( versionNumber == 3 );
 }
 
-void FntParser::ParseBlockHeader( IFile* fntFile, BYTE* out_blockId, int* out_blockSize ) {
+void FntParser::ParseBlockHeader( IFileReader* fntFile, BYTE* out_blockId, int* out_blockSize ) {
 	fntFile->ReadByte( out_blockId, 1 );
 	fntFile->ReadByte( out_blockSize, 4 );
 }
 
-Info* FntParser::ParseInfo( IFile* fntFile ) {
+Info* FntParser::ParseInfo( IFileReader* fntFile ) {
 	GET_BLOCK_SIZE( fntFile, Info, size );
 
 	Info* info = new Info();
@@ -80,7 +80,7 @@ Info* FntParser::ParseInfo( IFile* fntFile ) {
 	return info;
 }
 
-Common* FntParser::ParseCommon( IFile* fntFile ) {
+Common* FntParser::ParseCommon( IFileReader* fntFile ) {
 	GET_BLOCK_SIZE( fntFile, Common, size );
 
 	Common* common = new Common();
@@ -88,7 +88,7 @@ Common* FntParser::ParseCommon( IFile* fntFile ) {
 	return common;
 }
 
-Pages* FntParser::ParsePages( IFile* fntFile, int numPages ) {
+Pages* FntParser::ParsePages( IFileReader* fntFile, int numPages ) {
 	GET_BLOCK_SIZE( fntFile, Pages, size );
 
 	Pages* pages = new Pages();
@@ -106,7 +106,7 @@ Pages* FntParser::ParsePages( IFile* fntFile, int numPages ) {
 	return pages;
 }
 
-Char** FntParser::ParseChars( IFile* fntFile ) {
+Char** FntParser::ParseChars( IFileReader* fntFile ) {
 	GET_BLOCK_SIZE( fntFile, Char, size );
 
 	int numChars = size / sizeof(Char);	// TODO : save numChars
@@ -120,7 +120,7 @@ Char** FntParser::ParseChars( IFile* fntFile ) {
 	return chars;
 }
 
-KerningPairs** FntParser::ParseKerning( IFile* fntFile ) {
+KerningPairs** FntParser::ParseKerning( IFileReader* fntFile ) {
 	GET_BLOCK_SIZE( fntFile, KerningPairs, size );
 
 	int numKernings = size / sizeof(KerningPairs);

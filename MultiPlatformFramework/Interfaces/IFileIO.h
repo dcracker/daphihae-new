@@ -1,16 +1,17 @@
 #ifndef IFileIO_H_
 #define IFileIO_H_
 
-#include "IFile.h"
+class IFileReader;
+class IFileWriter;
 
 class IFileIO {
 public:
 	virtual ~IFileIO () {}
 	
-	virtual IFile* ReadStorage( const char* fileName ) const = 0;
-	virtual IFile* WriteStorage( const char* fileName ) const = 0;
+	virtual IFileReader* ReadStorage( const char* fileName ) const = 0;
+	virtual IFileWriter* WriteStorage( const char* fileName ) const = 0;
 
-	virtual IFile* ReadAsset( const char* fileName ) const = 0;
+	virtual IFileReader* ReadAsset( const char* fileName ) const = 0;
 };
 
 #endif	// IFileIO_H_

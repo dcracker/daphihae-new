@@ -5,18 +5,28 @@
 #include "GameStatistics.h"
 #include <string>
 
+#include "SpriteBatcher.h"
+
 GUI::GUI( int screenWidth, int screenHeight )
 	: cHighScorePosition( 5, screenHeight - 20 )
 	, cCurrentScorePosition( 5, 5 )
 	, cLevelNumberPosition( screenWidth - 50, 5 )
-	, cGameOverPosition( screenWidth * 0.5f - 22.5, screenHeight * 0.5f + 40 )
+	, cGameOverPosition( screenWidth * 0.5f - 22.5f, screenHeight * 0.5f + 40 )
 	, cRankingPosition( cGameOverPosition.x - 10, cGameOverPosition.y - 30 )
+	, cTitlePosition( screenWidth * 0.5f, screenHeight * 0.7f )
+	, cTitleSize( 61, 20 )
+	, cStartMessagePosition( (screenWidth - 66) * 0.5f, screenHeight * 0.2f )
 {
 }
 
 
 GUI::~GUI()
 {
+}
+
+void GUI::DrawTitleScreen( SpriteBatcher* batcher ) const {
+	batcher->DrawSprite( Rect( cTitlePosition, cTitleSize ), gAsset->title );
+	DrawTexts( "Tap to Start", cStartMessagePosition, batcher );
 }
 
 void GUI::DrawInGameGUI( SpriteBatcher* batcher ) const {

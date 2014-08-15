@@ -3,7 +3,7 @@
 
 #include "Common/CommonHeaders.h"
 
-class IFile;
+class IFileReader;
 
 class Image {
 public:
@@ -21,7 +21,7 @@ public:
 	const BYTE* const cImageData;
 
 public:
-	static Image* LoadPNG( IFile* file );
+	static Image* LoadPNG( IFileReader* file );
 };
 
 #endif /* IMAGE_H_ */

@@ -8,11 +8,15 @@ public:
 	WindowsFileIO();
 	~WindowsFileIO();
 
-	IFile* ReadStorage( const char* fileName ) const;
-	IFile* WriteStorage( const char* fileName ) const;
-	IFile* ReadAsset( const char* fileName ) const;
+	IFileReader* ReadStorage( const char* fileName ) const;
+	IFileWriter* WriteStorage( const char* fileName ) const;
+	IFileReader* ReadAsset( const char* fileName ) const;
 
 private:
-	static char* const sAssetPath;
+	static bool DoesFolderExist( const char* folderName );
+
+private:
+	static const char* const cAssetPath;
+	static const char* const cDataPath;
 };
 

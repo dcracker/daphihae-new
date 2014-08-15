@@ -3,6 +3,7 @@
 
 #include "Texture.h"
 #include "Interfaces/IFileIO.h"
+#include "Interfaces/IFileReader.h"
 #include "Image.h"
 
 Texture::Texture( const char* assetName )
@@ -23,7 +24,7 @@ Texture::~Texture() {
 }
 
 void Texture::Load( const IFileIO* fileIO ) {
-	IFile* asset = fileIO->ReadAsset( cFileName );
+	IFileReader* asset = fileIO->ReadAsset( cFileName );
 	Image* image = Image::LoadPNG( asset );
 
 	mTextureId = GenerateGLTexture( image );

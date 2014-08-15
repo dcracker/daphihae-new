@@ -23,10 +23,10 @@ GameScene::GameScene( IPlatform* platform )
 	, mBulletManager( new BulletManager() )
 	, mGUI( new GUI( cWorldWidth, cWorldHeight ) )
 	, mGameStatistics( new GameStatistics() )
+	, mTitle( true )
 {
 	mStageInfo = new StageInformation( mBulletManager );
 
-	RestartGame();
 	mGameStatistics->Load();
 }
 
@@ -60,13 +60,16 @@ void GameScene::Pause() {
 
 void GameScene::Update( float deltaTime ) {
 	ProcessTouchInput();
-	mBulletManager->Update( deltaTime );
-	mStageInfo->Update( deltaTime );
-	mShip->Update( deltaTime );
 
-	if ( IsGameRunning() ) {
-		CheckCollision();
-		gGameStatistics->CountElapsedTime( deltaTime );
+	if ( mTitle == false ) {
+		mBulletManager->Update( deltaTime );
+		mStageInfo->Update( deltaTime );
+		mShip->Update( deltaTime );
+
+		if ( IsGameRunning() ) {
+			CheckCollision();
+			gGameStatistics->CountElapsedTime( deltaTime );
+		}
 	}
 
 	BatchSprites();
@@ -79,7 +82,7 @@ void GameScene::Render() const {
 }
 
 bool GameScene::IsGameRunning() const {
-	return mShip->IsAlive() == true;
+	return mTitle == false && mShip->IsAlive() == true;
 }
 
 void GameScene::RestartGame() {
@@ -87,6 +90,7 @@ void GameScene::RestartGame() {
 	mBulletManager->Reset();
 	mStageInfo->Retry();	// need to call after mBulletManager::Reset();
 	mGameStatistics->GameStart();
+	mTitle = false;
 }
 
 void GameScene::ProcessTouchInput() {
@@ -141,12 +145,18 @@ void GameScene::ProcessInputForRestart() {
 
 void GameScene::BatchSprites() {
 	mSpriteBatcher->Clear();
-	mBulletManager->Render( mSpriteBatcher );
-	mShip->Render( mSpriteBatcher );
-	mGUI->DrawInGameGUI( mSpriteBatcher );
+	
+	if ( mTitle == true ) {
+		mGUI->DrawTitleScreen( mSpriteBatcher );
+	}
+	else {
+		mBulletManager->Render( mSpriteBatcher );
+		mShip->Render( mSpriteBatcher );
+		mGUI->DrawInGameGUI( mSpriteBatcher );
 
-	if ( IsGameRunning() == false ) {
-		mGUI->DrawGameOverScreen( mSpriteBatcher );
+		if ( IsGameRunning() == false ) {
+			mGUI->DrawGameOverScreen( mSpriteBatcher );
+		}
 	}
 }
 

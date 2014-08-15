@@ -7,7 +7,9 @@
  */
 #include "stdafx.h"
 
+#if _DEBUG
 #pragma comment(linker, "/entry:WinMainCRTStartup /subsystem:console")
+#endif
 
 #include "WindowsTimer.h"
 #include "WindowsPlatform.h"

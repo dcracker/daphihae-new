@@ -1,9 +1,6 @@
 #include "stdafx.h"
 #include "WindowsFile.h"
 
-#include "logger.h"
-#define LOG_TAG "File"
-
 WindowsFile::WindowsFile( const char* path, const char* fileName, DWORD access )
 	: cFileName( fileName )
 	, mFileHandle( INVALID_HANDLE_VALUE )
@@ -16,10 +13,6 @@ WindowsFile::WindowsFile( const char* path, const char* fileName, DWORD access )
 	
 	// open
 	mFileHandle = CreateFile( filePath, access, 0, 0, GetCreationDisposition( access ), 0, 0 );
-	if ( mFileHandle == INVALID_HANDLE_VALUE ) {
-		LOG_ERROR( "cannot read asset : %s", filePath );
-		assert( false && "cannot read asset" );
-	}
 
 	delete[] filePath;
 }
@@ -29,15 +22,26 @@ WindowsFile::~WindowsFile()
 	CloseHandle( mFileHandle );
 }
 
-const char* WindowsFile::GetFileName( ) {
+const char* WindowsFile::GetFileName() const {
 	return cFileName;
 }
 
-bool WindowsFile::ReadByte( void* out_byteBuffer, int numByteToRead ) {
+bool WindowsFile::IsVaild() const {
+	return mFileHandle != INVALID_HANDLE_VALUE;
+}
+
+bool WindowsFile::ReadByte( void* out_byteBuffer, int numByteToRead ) const {
 	DWORD byteToRead = static_cast<DWORD>(numByteToRead);
 	DWORD byteHasRead = 0;
 	ReadFile( mFileHandle, out_byteBuffer, byteToRead, &byteHasRead, NULL );
 	return (byteHasRead == byteToRead);
+}
+
+bool WindowsFile::WriteByte( const void* byteBuffer, int numByteToWrite ) {
+	DWORD byteToWrite = static_cast<DWORD>(numByteToWrite);
+	DWORD byteHasWritten = 0;
+	WriteFile( mFileHandle, byteBuffer, byteToWrite, &byteHasWritten, NULL );
+	return (byteHasWritten == byteToWrite);
 }
 
 DWORD WindowsFile::GetCreationDisposition( DWORD access ) {

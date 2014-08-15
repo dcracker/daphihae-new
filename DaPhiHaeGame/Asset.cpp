@@ -2,9 +2,6 @@
 #include "Asset.h"
 
 #include "SpriteAtlas.h"
-#include "Camera2D.h"
-#include "Rect.h"
-#include "SpriteAnimation.h"
 #include "BitmapFont.h"
 
 Asset::Asset()
@@ -14,8 +11,9 @@ Asset::Asset()
 	, roundBullet( mainAtlas->RegisterSprite( 45, 0, 60, 15 ) )
 	, arrowBullet( mainAtlas->RegisterSprite( 30, 0, 45, 15 ) )
 	, animDead( mainAtlas->RegisterAnimation( 0.033f, 0, 16, 153, 33, Vector2( 17, 17 ) ) )
-	, font( new BitmapFont( "Ascii.fnt", mainAtlas, 0, 33 ) )
-	, boldFont( new BitmapFont( "Ascii_bold.fnt", mainAtlas, 0, 129 ) )
+	, title( mainAtlas->RegisterSprite( 0, 128, 61, 148 ) )
+	//, font( new BitmapFont( "Ascii.fnt", mainAtlas, 0, 33 ) )
+	, boldFont( new BitmapFont( "Ascii_bold.fnt", mainAtlas, 0, 33 ) )
 {
 }
 

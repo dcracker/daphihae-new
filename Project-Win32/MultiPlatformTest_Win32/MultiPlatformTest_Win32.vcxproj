@@ -27,7 +27,7 @@
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -68,7 +68,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\OpenGLFramework;$(SolutionDir)..\MultiPlatformFramework\Interfaces;$(SolutionDir)..\MultiPlatformFramework\Windows;$(SolutionDir)..\MultiPlatformFramework\Common;$(SolutionDIr)..\libs\libpng\;$(SolutionDir)..\libs\pthread\include;$(ProjectDir)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\DaPhiHaeGame;$(SolutionDir)..\OpenGLFramework;$(SolutionDir)..\MultiPlatformFramework;$(SolutionDir)..\MultiPlatformFramework\Windows;$(SolutionDIr)..\libs\libpng\;$(SolutionDir)..\libs\glm;$(SolutionDir)..\libs\pthread\include;$(ProjectDir)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -105,6 +105,8 @@
     <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IBitmap.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IFile.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IFileIO.h" />
+    <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IFileReader.h" />
+    <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IFileWriter.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IGame.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IGameLoopListener.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Interfaces\IGraphics.h" />
@@ -115,6 +117,8 @@
     <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsCommon.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsFile.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsFileIO.h" />
+    <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsFileReader.h" />
+    <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsFileWriter.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsGraphics.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsInput.h" />
     <ClInclude Include="..\..\MultiPlatformFramework\Windows\WindowsPlatform.h" />
@@ -155,6 +159,8 @@
     <ClCompile Include="..\..\MultiPlatformFramework\Common\Timer.cpp" />
     <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsFile.cpp" />
     <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsFileIO.cpp" />
+    <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsFileReader.cpp" />
+    <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsFileWriter.cpp" />
     <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsGraphics.cpp" />
     <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsInput.cpp" />
     <ClCompile Include="..\..\MultiPlatformFramework\Windows\WindowsPlatform.cpp" />

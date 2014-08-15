@@ -10,6 +10,7 @@ public:
 	GUI( int screenWidth, int screenHeight );
 	~GUI();
 
+	void DrawTitleScreen( SpriteBatcher* batcher ) const;
 	void DrawInGameGUI( SpriteBatcher* batcher ) const;
 	void DrawGameOverScreen( SpriteBatcher* batcher ) const;
 
@@ -25,5 +26,9 @@ private:
 
 	const Vector2 cGameOverPosition;
 	const Vector2 cRankingPosition;
+
+	const Vector2 cTitlePosition;
+	const Vector2 cTitleSize;
+	const Vector2 cStartMessagePosition;
 };
 

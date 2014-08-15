@@ -50,5 +50,7 @@ private:
 	StageInformation*	mStageInfo;
 	Ship*				mShip;
 	BulletManager*		mBulletManager;
+
+	bool				mTitle;
 };
 

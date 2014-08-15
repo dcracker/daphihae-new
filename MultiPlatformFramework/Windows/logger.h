@@ -1,5 +1,6 @@
 #pragma once
 
+#if _DEBUG
 #include <stdio.h>
 
 #define LOG_INFO(...) \
@@ -11,3 +12,7 @@
 	fprintf( stderr, "%s", LOG_TAG ); \
 	fprintf( stderr, __VA_ARGS__ ); \
 	fprintf( stderr, "\n" );
+#else
+#define LOG_INFO(...) __noop
+#define LOG_ERROR(...) __noop
+#endif
