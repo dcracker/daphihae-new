@@ -50,7 +50,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
 	loop = new MainGameLoop( &gameInstance, &platformInstance, new WindowsTimer() );
 
 	// Create Our OpenGL Window
-	WindowsGraphics::CreateNewWindow( "NeHe's OpenGL Framework", 320, 480, 16, WndProc );
+	WindowsGraphics::CreateNewWindow( "DaPhiHae", 320, 480, 16, WndProc );
 	MSG Message;									// Windows Message Structure
 	while( GetMessage(&Message,0,0,0) ) {
 		TranslateMessage(&Message);

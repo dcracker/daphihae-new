@@ -9,3 +9,5 @@ Project-Win32/ipch/
 Project-Android/lint.xml
 Data/score.dph
 Project-Win32/MultiPlatformTest_Win32/Release/
+*.opensdf
+*.sdf
