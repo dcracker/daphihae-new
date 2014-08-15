@@ -1,4 +1,4 @@
-package com.summoner.multiplatformtest_android;
+package com.summoner.daphihae;
 
 import android.app.Activity;
 import android.content.Context;

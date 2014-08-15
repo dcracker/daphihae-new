@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>MultiplatformTest_Android</name>
+	<name>DaPhiHae</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -80,442 +80,448 @@
 		<link>
 			<name>jni/OpenGLTest.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/OpenGLTest.cpp</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/OpenGLTest.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/OpenGLTest.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/OpenGLTest.h</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/OpenGLTest.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Android/AndroidAsset.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Android/AndroidAsset.cpp</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Android/AndroidAsset.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/Android/AndroidAsset.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Android/AndroidAsset.h</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Android/AndroidAsset.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Android/AndroidCommon.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Android/AndroidCommon.h</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Android/AndroidCommon.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Android/AndroidFileIO.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Android/AndroidFileIO.cpp</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Android/AndroidFileIO.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/Android/AndroidFileIO.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Android/AndroidFileIO.h</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Android/AndroidFileIO.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Android/AndroidGraphics.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Android/AndroidGraphics.cpp</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Android/AndroidGraphics.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/Android/AndroidGraphics.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Android/AndroidGraphics.h</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Android/AndroidGraphics.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Android/AndroidInput.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Android/AndroidInput.cpp</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Android/AndroidInput.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/Android/AndroidInput.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Android/AndroidInput.h</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Android/AndroidInput.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Android/AndroidPlatform.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Android/AndroidPlatform.cpp</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Android/AndroidPlatform.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/Android/AndroidPlatform.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Android/AndroidPlatform.h</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Android/AndroidPlatform.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Android/AndroidTimer.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Android/AndroidTimer.cpp</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Android/AndroidTimer.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/Android/AndroidTimer.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Android/AndroidTimer.h</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Android/AndroidTimer.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Android/logger.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Android/logger.h</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Android/logger.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Common/CommonFileIO.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Common/CommonFileIO.cpp</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Common/CommonFileIO.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/Common/CommonFileIO.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Common/CommonFileIO.h</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Common/CommonFileIO.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Common/CommonFileReader.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Common/CommonFileReader.cpp</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Common/CommonFileReader.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/Common/CommonFileReader.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Common/CommonFileReader.h</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Common/CommonFileReader.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Common/CommonFileWriter.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Common/CommonFileWriter.cpp</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Common/CommonFileWriter.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/Common/CommonFileWriter.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Common/CommonFileWriter.h</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Common/CommonFileWriter.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Common/CommonHeaders.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Common/CommonHeaders.h</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Common/CommonHeaders.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Common/CommonInput.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Common/CommonInput.cpp</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Common/CommonInput.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/Common/CommonInput.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Common/CommonInput.h</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Common/CommonInput.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Common/CommonTouchMessageHandler.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Common/CommonTouchMessageHandler.cpp</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Common/CommonTouchMessageHandler.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/Common/CommonTouchMessageHandler.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Common/CommonTouchMessageHandler.h</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Common/CommonTouchMessageHandler.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Common/MainGameLoop.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Common/MainGameLoop.cpp</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Common/MainGameLoop.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/Common/MainGameLoop.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Common/MainGameLoop.h</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Common/MainGameLoop.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Common/Timer.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Common/Timer.cpp</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Common/Timer.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/Common/Timer.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Common/Timer.h</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Common/Timer.h</locationURI>
 		</link>
 		<link>
 			<name>jni/DaPhiHaeGame/Asset.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/Asset.cpp</locationURI>
+			<locationURI>copy_PARENT/DaPhiHaeGame/Asset.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/DaPhiHaeGame/Asset.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/Asset.h</locationURI>
+			<locationURI>copy_PARENT/DaPhiHaeGame/Asset.h</locationURI>
 		</link>
 		<link>
 			<name>jni/DaPhiHaeGame/Bullet.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/Bullet.cpp</locationURI>
+			<locationURI>copy_PARENT/DaPhiHaeGame/Bullet.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/DaPhiHaeGame/Bullet.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/Bullet.h</locationURI>
+			<locationURI>copy_PARENT/DaPhiHaeGame/Bullet.h</locationURI>
 		</link>
 		<link>
 			<name>jni/DaPhiHaeGame/BulletManager.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/BulletManager.cpp</locationURI>
+			<locationURI>copy_PARENT/DaPhiHaeGame/BulletManager.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/DaPhiHaeGame/BulletManager.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/BulletManager.h</locationURI>
+			<locationURI>copy_PARENT/DaPhiHaeGame/BulletManager.h</locationURI>
 		</link>
 		<link>
 			<name>jni/DaPhiHaeGame/BulletPool.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/BulletPool.cpp</locationURI>
+			<locationURI>copy_PARENT/DaPhiHaeGame/BulletPool.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/DaPhiHaeGame/BulletPool.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/BulletPool.h</locationURI>
+			<locationURI>copy_PARENT/DaPhiHaeGame/BulletPool.h</locationURI>
 		</link>
 		<link>
 			<name>jni/DaPhiHaeGame/BulletSpawner.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/BulletSpawner.cpp</locationURI>
+			<locationURI>copy_PARENT/DaPhiHaeGame/BulletSpawner.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/DaPhiHaeGame/BulletSpawner.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/BulletSpawner.h</locationURI>
+			<locationURI>copy_PARENT/DaPhiHaeGame/BulletSpawner.h</locationURI>
 		</link>
 		<link>
 			<name>jni/DaPhiHaeGame/CollisionCircle.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/CollisionCircle.cpp</locationURI>
+			<locationURI>copy_PARENT/DaPhiHaeGame/CollisionCircle.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/DaPhiHaeGame/CollisionCircle.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/CollisionCircle.h</locationURI>
+			<locationURI>copy_PARENT/DaPhiHaeGame/CollisionCircle.h</locationURI>
 		</link>
 		<link>
 			<name>jni/DaPhiHaeGame/DaPhiHae.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/DaPhiHae.cpp</locationURI>
+			<locationURI>copy_PARENT/DaPhiHaeGame/DaPhiHae.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/DaPhiHaeGame/DaPhiHae.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/DaPhiHae.h</locationURI>
+			<locationURI>copy_PARENT/DaPhiHaeGame/DaPhiHae.h</locationURI>
 		</link>
 		<link>
 			<name>jni/DaPhiHaeGame/GUI.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/GUI.cpp</locationURI>
+			<locationURI>copy_PARENT/DaPhiHaeGame/GUI.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/DaPhiHaeGame/GUI.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/GUI.h</locationURI>
+			<locationURI>copy_PARENT/DaPhiHaeGame/GUI.h</locationURI>
 		</link>
 		<link>
 			<name>jni/DaPhiHaeGame/GameScene.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/GameScene.cpp</locationURI>
+			<locationURI>copy_PARENT/DaPhiHaeGame/GameScene.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/DaPhiHaeGame/GameScene.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/GameScene.h</locationURI>
+			<locationURI>copy_PARENT/DaPhiHaeGame/GameScene.h</locationURI>
 		</link>
 		<link>
 			<name>jni/DaPhiHaeGame/GameStatistics.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/GameStatistics.cpp</locationURI>
+			<locationURI>copy_PARENT/DaPhiHaeGame/GameStatistics.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/DaPhiHaeGame/GameStatistics.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/GameStatistics.h</locationURI>
+			<locationURI>copy_PARENT/DaPhiHaeGame/GameStatistics.h</locationURI>
 		</link>
 		<link>
 			<name>jni/DaPhiHaeGame/Ship.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/Ship.cpp</locationURI>
+			<locationURI>copy_PARENT/DaPhiHaeGame/Ship.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/DaPhiHaeGame/Ship.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/Ship.h</locationURI>
+			<locationURI>copy_PARENT/DaPhiHaeGame/Ship.h</locationURI>
 		</link>
 		<link>
 			<name>jni/DaPhiHaeGame/StageInformation.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/StageInformation.cpp</locationURI>
+			<locationURI>copy_PARENT/DaPhiHaeGame/StageInformation.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/DaPhiHaeGame/StageInformation.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/StageInformation.h</locationURI>
+			<locationURI>copy_PARENT/DaPhiHaeGame/StageInformation.h</locationURI>
 		</link>
 		<link>
 			<name>jni/DaPhiHaeGame/Util.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/DaPhiHaeGame/Util.h</locationURI>
+			<locationURI>copy_PARENT/DaPhiHaeGame/Util.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Interfaces/IAudio.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Interfaces/IAudio.h</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Interfaces/IAudio.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Interfaces/IFile.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Interfaces/IFile.h</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Interfaces/IFile.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Interfaces/IFileIO.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Interfaces/IFileIO.h</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Interfaces/IFileIO.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Interfaces/IFileReader.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Interfaces/IFileReader.h</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Interfaces/IFileReader.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Interfaces/IFileWriter.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Interfaces/IFileWriter.h</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Interfaces/IFileWriter.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Interfaces/IGame.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Interfaces/IGame.h</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Interfaces/IGame.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Interfaces/IGameLoopListener.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Interfaces/IGameLoopListener.h</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Interfaces/IGameLoopListener.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Interfaces/IGraphics.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Interfaces/IGraphics.h</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Interfaces/IGraphics.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Interfaces/IInput.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Interfaces/IInput.h</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Interfaces/IInput.h</locationURI>
 		</link>
 		<link>
 			<name>jni/Interfaces/IPlatform.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/MultiPlatformFramework/Interfaces/IPlatform.h</locationURI>
+			<locationURI>copy_PARENT/MultiPlatformFramework/Interfaces/IPlatform.h</locationURI>
 		</link>
 		<link>
 			<name>jni/OpenGLFramework/BitmapFont.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/BitmapFont.cpp</locationURI>
+			<locationURI>copy_PARENT/OpenGLFramework/BitmapFont.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/OpenGLFramework/BitmapFont.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/BitmapFont.h</locationURI>
+			<locationURI>copy_PARENT/OpenGLFramework/BitmapFont.h</locationURI>
 		</link>
 		<link>
 			<name>jni/OpenGLFramework/Camera.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/Camera.cpp</locationURI>
+			<locationURI>copy_PARENT/OpenGLFramework/Camera.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/OpenGLFramework/Camera.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/Camera.h</locationURI>
+			<locationURI>copy_PARENT/OpenGLFramework/Camera.h</locationURI>
 		</link>
 		<link>
 			<name>jni/OpenGLFramework/Camera2D.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/Camera2D.cpp</locationURI>
+			<locationURI>copy_PARENT/OpenGLFramework/Camera2D.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/OpenGLFramework/Camera2D.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/Camera2D.h</locationURI>
+			<locationURI>copy_PARENT/OpenGLFramework/Camera2D.h</locationURI>
 		</link>
 		<link>
 			<name>jni/OpenGLFramework/FntParser.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/FntParser.cpp</locationURI>
+			<locationURI>copy_PARENT/OpenGLFramework/FntParser.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/OpenGLFramework/FntParser.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/FntParser.h</locationURI>
+			<locationURI>copy_PARENT/OpenGLFramework/FntParser.h</locationURI>
 		</link>
 		<link>
 			<name>jni/OpenGLFramework/Image.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/Image.cpp</locationURI>
+			<locationURI>copy_PARENT/OpenGLFramework/Image.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/OpenGLFramework/Image.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/Image.h</locationURI>
+			<locationURI>copy_PARENT/OpenGLFramework/Image.h</locationURI>
 		</link>
 		<link>
 			<name>jni/OpenGLFramework/OpenGLCommons.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/OpenGLCommons.h</locationURI>
+			<locationURI>copy_PARENT/OpenGLFramework/OpenGLCommons.h</locationURI>
 		</link>
 		<link>
 			<name>jni/OpenGLFramework/Rect.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/Rect.cpp</locationURI>
+			<locationURI>copy_PARENT/OpenGLFramework/Rect.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/OpenGLFramework/Rect.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/Rect.h</locationURI>
+			<locationURI>copy_PARENT/OpenGLFramework/Rect.h</locationURI>
 		</link>
 		<link>
 			<name>jni/OpenGLFramework/SpriteAnimation.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/SpriteAnimation.cpp</locationURI>
+			<locationURI>copy_PARENT/OpenGLFramework/SpriteAnimation.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/OpenGLFramework/SpriteAnimation.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/SpriteAnimation.h</locationURI>
+			<locationURI>copy_PARENT/OpenGLFramework/SpriteAnimation.h</locationURI>
 		</link>
 		<link>
 			<name>jni/OpenGLFramework/SpriteAtlas.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/SpriteAtlas.cpp</locationURI>
+			<locationURI>copy_PARENT/OpenGLFramework/SpriteAtlas.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/OpenGLFramework/SpriteAtlas.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/SpriteAtlas.h</locationURI>
+			<locationURI>copy_PARENT/OpenGLFramework/SpriteAtlas.h</locationURI>
 		</link>
 		<link>
 			<name>jni/OpenGLFramework/SpriteBatcher.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/SpriteBatcher.cpp</locationURI>
+			<locationURI>copy_PARENT/OpenGLFramework/SpriteBatcher.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/OpenGLFramework/SpriteBatcher.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/SpriteBatcher.h</locationURI>
+			<locationURI>copy_PARENT/OpenGLFramework/SpriteBatcher.h</locationURI>
 		</link>
 		<link>
 			<name>jni/OpenGLFramework/Texture.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/Texture.cpp</locationURI>
+			<locationURI>copy_PARENT/OpenGLFramework/Texture.cpp</locationURI>
 		</link>
 		<link>
 			<name>jni/OpenGLFramework/Texture.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/Texture.h</locationURI>
+			<locationURI>copy_PARENT/OpenGLFramework/Texture.h</locationURI>
 		</link>
 		<link>
 			<name>jni/OpenGLFramework/glmtypedef.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/OpenGLFramework/glmtypedef.h</locationURI>
+			<locationURI>copy_PARENT/OpenGLFramework/glmtypedef.h</locationURI>
 		</link>
 	</linkedResources>
+	<variableList>
+		<variable>
+			<name>copy_PARENT</name>
+			<value>$%7BPARENT-1-PROJECT_LOC%7D/DaPhiHae-new</value>
+		</variable>
+	</variableList>
 </projectDescription>

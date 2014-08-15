@@ -14,7 +14,7 @@
 #endif
 
 #define JNI_METHOD( methodName ) \
-	Java_com_summoner_multiplatformtest_1android_NativeInterface_##methodName
+	Java_com_summoner_daphihae_NativeInterface_##methodName
 #define IMPL_JNI_API( methodName ) \
 	void JNI_METHOD(methodName)( JNIEnv* env, jclass javaThis )
 #define IMPL_JNI_API_WITH_PARAM( methodName, ... ) \
