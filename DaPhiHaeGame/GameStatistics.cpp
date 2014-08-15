@@ -3,6 +3,9 @@
 #include "Interfaces/IPlatform.h"
 #include "Interfaces/IFileReader.h"
 #include "Interfaces/IFileWriter.h"
+#include "logger.h"
+
+#define LOG_TAG "GameStatistics"
 
 const char* const GameStatistics::cSaveFileName = "score.dph";
 
@@ -57,6 +60,10 @@ int GameStatistics::GetCurrentLevel() const {
 
 void GameStatistics::Save() const {
 	IFileWriter* saveFile = IPlatform::getInstancePtr()->GetFileIO()->WriteStorage( cSaveFileName );
+	if ( saveFile == NULL ) {
+		LOG_ERROR( "save file create failed." );
+		return;
+	}
 	saveFile->WriteByte( mHighScore, sizeof(mHighScore[0]) * 3 );
 	saveFile->Close();
 }
